@@ -28,7 +28,7 @@ les activités correspondantes ne sont pas réalisées.
 ## Régénérer les documents
 
 Les documents sont produits par les scripts Python de `../sources/` (dépendances dans `../.venv` :
-pandas, reportlab, openpyxl).
+pandas, reportlab, openpyxl). Les procédures complètes sont décrites dans `01_UC01_besoin_exploration/preuves/README.md` et `02_UC02_architecture/preuves/README.md`.
 
 Les données ne sont pas dans le dépôt. Pour relancer les scripts d'analyse, décompresser l'archive
 `retail_project.zip` dans `donnees/` à la racine du projet (on obtient `donnees/retail_project/data/` et
