@@ -1,0 +1,9 @@
+# Valeurs de référence pour les contrôles de réconciliation des flux (data/ + data_refresh/)
+# commandes : wc -l ; cut -d'|' -f<n> | sort -u | wc -l   (2026-11-16)
+store_sales : data 667579 + data_refresh 6632 = 674211 lignes
+web_sales : data 668052 + data_refresh 6879 = 674931 lignes
+inventory : data 23255100 + data_refresh 234900 = 23490000 lignes
+tickets distincts store_sales : data 89100 + data_refresh 900
+commandes distinctes web_sales : data 89100 + data_refresh 900
+item : data 17820 + data_refresh 180
+relevé de stock complet attendu : 18 000 produits x 5 entrepôts = 90 000 lignes

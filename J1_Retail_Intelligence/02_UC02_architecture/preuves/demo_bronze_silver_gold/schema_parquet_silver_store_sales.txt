@@ -1,0 +1,31 @@
+# Schéma Parquet de silver/ventes/store_sales (types stockés dans le fichier)
+ss_sold_date_sk: int64
+ss_sold_time_sk: int64
+ss_item_sk: int64
+ss_customer_sk: int64
+ss_cdemo_sk: int64
+ss_hdemo_sk: int64
+ss_addr_sk: int64
+ss_store_sk: int64
+ss_promo_sk: int64
+ss_ticket_number: int64
+ss_quantity: int64
+ss_wholesale_cost: double
+ss_list_price: double
+ss_sales_price: double
+ss_ext_discount_amt: double
+ss_ext_sales_price: double
+ss_ext_wholesale_cost: double
+ss_ext_list_price: double
+ss_ext_tax: double
+ss_coupon_amt: double
+ss_net_paid: double
+ss_net_paid_inc_tax: double
+ss_net_profit: double
+_lot: large_string
+_fichier_source: large_string
+_date_ingestion: large_string
+_id_ligne: large_string
+canal: large_string
+-- schema metadata --
+pandas: '{"index_columns": [], "column_indexes": [], "columns": [{"name":' + 3800

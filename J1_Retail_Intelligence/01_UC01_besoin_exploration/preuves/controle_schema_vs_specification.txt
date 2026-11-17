@@ -1,0 +1,40 @@
+# Contrôle : en-têtes (noms et ordre des colonnes) utilisés pour lire les .dat de data/ et data_refresh/
+# Référence : TPCX-BB_v1.7.0.pdf (spécification TPC Express Big Bench 1.7.0)
+#   - pages 62-67 (B.1) : seulement les ~122 colonnes utilisées par les requêtes -> noms vérifiables, pas l'ordre complet
+#   - pages 72-97 (B.2, Table Data Generation Rules) : toutes les colonnes, dans l'ordre -> référence du contrôle
+# Méthode : texte du PDF extrait (pymupdf), noms de colonnes repérés ligne par ligne (noms coupés recollés) ;
+#   pour chaque table, recherche de la liste de colonnes du schéma, dans l'ordre, dans sa section de la spécification.
+# Côté fichiers : nombre de champs mesuré sur 100 % des lignes (inventaire_fichiers.csv, colonne lignes_hors_format).
+
+table                    spec (ordre)   pages     champs data/   champs data_refresh/  remarque
+customer                 identique      p.73-74   18 (100 %)     18 (100 %)            
+customer_address         identique      p.73-74   13 (100 %)     13 (100 %)            
+customer_demographics    identique      p.73-75   9 (100 %)      pas de fichier        
+date_dim                 identique      p.72-73   28 (100 %)     pas de fichier        
+household_demographics   identique      p.73-75   5 (100 %)      pas de fichier        
+income_band              identique      p.91-91   3 (100 %)      pas de fichier        
+inventory                identique      p.76-77   4 (100 %)      4 (100 %)             
+item                     identique      p.75-76   22 (100 %)     22 (100 %)            
+item_marketprices        identique      p.76-76   6 (100 %)      6 (100 %)             
+product_reviews          identique      p.78-78   8 (100 %)      8 (100 %)             
+promotion                identique      p.77-77   19 (100 %)     pas de fichier        
+reason                   identique      p.91-91   3 (100 %)      pas de fichier        
+ship_mode                identique      p.91-91   6 (100 %)      pas de fichier        
+store                    identique      p.78-79   29 (100 %)     pas de fichier        
+store_returns            identique      p.82-82   20 (100 %)     20 (100 %)            
+store_sales              identique      p.79-80   23 (100 %)     23 (100 %)            
+time_dim                 identique      p.73-73   10 (100 %)     pas de fichier        
+warehouse                identique      p.88-89   14 (100 %)     pas de fichier        
+web_clickstreams         identique      p.87-88   6 (100 %)      6 (100 %)             colonne wcs_click_sk présente dans la spec, absente des fichiers
+web_page                 identique      p.89-89   14 (100 %)     pas de fichier        
+web_returns              identique      p.84-85   24 (100 %)     24 (100 %)            
+web_sales                identique      p.83-84   34 (100 %)     34 (100 %)            colonne ws_sk présente dans la spec, absente des fichiers
+web_site                 identique      p.90-90   26 (100 %)     pas de fichier        
+
+Conclusion :
+- 23 tables sur 23 : les colonnes utilisées ont les mêmes noms et le même ordre que la spécification.
+- 2 écarts, côté spécification : web_sales a une clé ws_sk et web_clickstreams une clé wcs_click_sk, placées avant
+  les autres colonnes. Les fichiers ne les contiennent pas : 34 et 6 champs sur 100 % des lignes, et le premier champ
+  est une date (ex. 36890 = 2001-01-01 dans date_dim). La spécification indique elle-même (p. 62) qu'en cas de
+  conflit, « the TPCx-BB kit implementation prevails » : on suit les fichiers.
+- data_refresh/ : mêmes nombres de champs que data/ sur 100 % des lignes ; le même schéma s'applique.

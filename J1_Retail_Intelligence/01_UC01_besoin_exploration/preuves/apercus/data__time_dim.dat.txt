@@ -1,0 +1,6 @@
+# retail_project/data/time_dim/time_dim.dat - 5 premières lignes brutes
+0|AAAAAAAAAAAAAAAA|0|0|0|0|AM|third|night|
+1|AAAAAAAAAAAAAAAB|1|0|0|1|AM|third|night|
+2|AAAAAAAAAAAAAAAC|2|0|0|2|AM|third|night|
+3|AAAAAAAAAAAAAAAD|3|0|0|3|AM|third|night|
+4|AAAAAAAAAAAAAAAE|4|0|0|4|AM|third|night|

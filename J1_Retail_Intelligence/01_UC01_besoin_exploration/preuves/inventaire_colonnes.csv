@@ -1,0 +1,523 @@
+dossier,table,position,colonne,type_observe,longueur_max,nb_nulls,pct_nulls,nb_distincts,min,max,exemple,unique_non_nul
+data,customer,1,c_customer_sk,entier,,0,0.0,99000,0,98999,0,oui
+data,customer,2,c_customer_id,texte,16.0,0,0.0,99000,,,AAAAAAAAAAAAAAAA,oui
+data,customer,3,c_current_cdemo_sk,entier (lu en décimal car valeurs nulles),,18,0.018,96438,18.0,1920796.0,1824793.0,non
+data,customer,4,c_current_hdemo_sk,entier (lu en décimal car valeurs nulles),,29,0.029,7200,0.0,7199.0,3203.0,non
+data,customer,5,c_current_addr_sk,entier (lu en décimal car valeurs nulles),,22,0.022,42734,0.0,49499.0,2555.0,non
+data,customer,6,c_first_shipto_date_sk,entier (lu en décimal car valeurs nulles),,25,0.025,65121,3.0,109570.0,28776.0,non
+data,customer,7,c_first_sales_date_sk,entier (lu en décimal car valeurs nulles),,18,0.018,65187,1.0,109568.0,14690.0,non
+data,customer,8,c_salutation,texte,4.0,28,0.028,6,,,Ms.,non
+data,customer,9,c_first_name,texte,11.0,0,0.0,4115,,,Marisa,non
+data,customer,10,c_last_name,texte,13.0,0,0.0,4981,,,Harrington,non
+data,customer,11,c_preferred_cust_flag,texte,1.0,27,0.027,2,,,N,non
+data,customer,12,c_birth_day,entier (lu en décimal car valeurs nulles),,18,0.018,31,1.0,31.0,17.0,non
+data,customer,13,c_birth_month,entier (lu en décimal car valeurs nulles),,25,0.025,12,1.0,12.0,4.0,non
+data,customer,14,c_birth_year,entier (lu en décimal car valeurs nulles),,30,0.03,69,1924.0,1992.0,1988.0,non
+data,customer,15,c_birth_country,texte,20.0,16,0.016,212,,,UNITED ARAB EMIRATES,non
+data,customer,16,c_login,texte,13.0,26,0.026,87102,,,RRCyuY3XfE3a,non
+data,customer,17,c_email_address,texte,41.0,23,0.023,98655,,,Marisa.Harrington@lawyer.com,non
+data,customer,18,c_last_review_date,texte,10.0,31,0.031,82656,,,gdMmGdU9,non
+data,customer_address,1,ca_address_sk,entier,,0,0.0,49500,0,49499,0,oui
+data,customer_address,2,ca_address_id,texte,16.0,0,0.0,49500,,,AAAAAAAAAAAAAAAA,oui
+data,customer_address,3,ca_street_number,entier (lu en décimal car valeurs nulles),,14,0.028,1000,1.0,1000.0,561.0,non
+data,customer_address,4,ca_street_name,texte,21.0,10,0.02,6893,,,Cedar 12th,non
+data,customer_address,5,ca_street_type,texte,9.0,13,0.026,20,,,Road,non
+data,customer_address,6,ca_suite_number,texte,10.0,23,0.046,42232,,,J5jix6JEFD,non
+data,customer_address,7,ca_city,texte,20.0,0,0.0,986,,,Genoa,non
+data,customer_address,8,ca_county,texte,28.0,0,0.0,1846,,,Tuscarawas County,non
+data,customer_address,9,ca_state,texte,2.0,0,0.0,51,,,OH,non
+data,customer_address,10,ca_zip,entier (lu en décimal car valeurs nulles),,14,0.028,38050,10002.0,99998.0,64453.0,non
+data,customer_address,11,ca_country,texte,13.0,0,0.0,1,,,United States,non
+data,customer_address,12,ca_gmt_offset,entier,,0,0.0,6,-10,-5,-5,non
+data,customer_address,13,ca_location_type,texte,13.0,0,0.0,3,,,single family,non
+data,customer_demographics,1,cd_demo_sk,entier,,0,0.0,1920800,0,1920799,0,oui
+data,customer_demographics,2,cd_gender,texte,1.0,486,0.025,2,,,F,non
+data,customer_demographics,3,cd_marital_status,texte,1.0,485,0.025,5,,,U,non
+data,customer_demographics,4,cd_education_status,texte,15.0,506,0.026,7,,,Primary,non
+data,customer_demographics,5,cd_purchase_estimate,entier (lu en décimal car valeurs nulles),,507,0.026,20,500.0,10000.0,6000.0,non
+data,customer_demographics,6,cd_credit_rating,texte,9.0,506,0.026,4,,,Good,non
+data,customer_demographics,7,cd_dep_count,entier (lu en décimal car valeurs nulles),,544,0.028,10,0.0,9.0,0.0,non
+data,customer_demographics,8,cd_dep_employed_count,entier (lu en décimal car valeurs nulles),,488,0.025,10,0.0,9.0,5.0,non
+data,customer_demographics,9,cd_dep_college_count,entier (lu en décimal car valeurs nulles),,500,0.026,10,0.0,9.0,0.0,non
+data,date_dim,1,d_date_sk,entier,,0,0.0,109573,0,109572,0,oui
+data,date_dim,2,d_date_id,texte,16.0,0,0.0,109573,,,AAAAAAAAAAAAAAAA,oui
+data,date_dim,3,d_date,date AAAA-MM-JJ (texte),,0,0.0,109573,,,1900-01-01,oui
+data,date_dim,4,d_month_seq,entier,,0,0.0,3600,0,3599,0,non
+data,date_dim,5,d_week_seq,entier,,0,0.0,15654,0,15653,0,non
+data,date_dim,6,d_quarter_seq,entier,,0,0.0,1200,0,1199,0,non
+data,date_dim,7,d_year,entier,,0,0.0,300,1900,2199,1900,non
+data,date_dim,8,d_dow,entier,,0,0.0,7,1,7,1,non
+data,date_dim,9,d_moy,entier,,0,0.0,12,1,12,1,non
+data,date_dim,10,d_dom,entier,,0,0.0,31,1,31,1,non
+data,date_dim,11,d_qoy,entier,,0,0.0,4,1,4,1,non
+data,date_dim,12,d_fy_year,entier,,0,0.0,300,1900,2199,1900,non
+data,date_dim,13,d_fy_quarter_seq,entier,,0,0.0,1200,0,1199,0,non
+data,date_dim,14,d_fy_week_seq,entier,,0,0.0,15654,0,15653,0,non
+data,date_dim,15,d_day_name,texte,9.0,0,0.0,7,,,Monday,non
+data,date_dim,16,d_quarter_name,texte,6.0,0,0.0,1200,,,1900Q1,non
+data,date_dim,17,d_holiday,texte,1.0,0,0.0,1,,,Y,non
+data,date_dim,18,d_weekend,texte,1.0,0,0.0,2,,,N,non
+data,date_dim,19,d_following_holiday,texte,1.0,0,0.0,2,,,N,non
+data,date_dim,20,d_first_dom,entier,,0,0.0,56753,2415021,2488069,2448812,non
+data,date_dim,21,d_last_dom,entier,,0,0.0,56970,2415020,2488370,2458802,non
+data,date_dim,22,d_same_day_ly,entier,,0,0.0,56725,2414657,2487705,2472542,non
+data,date_dim,23,d_same_day_lq,entier,,0,0.0,56778,2414930,2487977,2420941,non
+data,date_dim,24,d_current_day,texte,1.0,0,0.0,2,,,N,non
+data,date_dim,25,d_current_week,texte,1.0,0,0.0,2,,,N,non
+data,date_dim,26,d_current_month,texte,1.0,0,0.0,2,,,N,non
+data,date_dim,27,d_current_quarter,texte,1.0,0,0.0,2,,,N,non
+data,date_dim,28,d_current_year,texte,1.0,0,0.0,2,,,N,non
+data,household_demographics,1,hd_demo_sk,entier,,0,0.0,7200,0,7199,0,oui
+data,household_demographics,2,hd_income_band_sk,entier (lu en décimal car valeurs nulles),,2,0.028,20,0.0,19.0,3.0,non
+data,household_demographics,3,hd_buy_potential,texte,10.0,1,0.014,6,,,1001-5000,non
+data,household_demographics,4,hd_dep_count,entier (lu en décimal car valeurs nulles),,2,0.028,10,0.0,9.0,0.0,non
+data,household_demographics,5,hd_vehicle_count,entier (lu en décimal car valeurs nulles),,2,0.028,6,-1.0,4.0,0.0,non
+data,income_band,1,ib_income_band_sk,entier,,0,0.0,20,0,19,0,oui
+data,income_band,2,ib_lower_bound,entier,,0,0.0,20,1,190001,1,oui
+data,income_band,3,ib_upper_bound,entier,,0,0.0,20,10000,200000,10000,oui
+data,inventory,1,inv_date_sk,entier,,0,0.0,259,36890,38696,36890,non
+data,inventory,2,inv_item_sk,entier,,0,0.0,18000,0,17999,0,non
+data,inventory,3,inv_warehouse_sk,entier,,0,0.0,5,0,4,0,non
+data,inventory,4,inv_quantity_on_hand,entier (lu en décimal car valeurs nulles),,5999,0.026,1001,0.0,1000.0,503.0,non
+data,item,1,i_item_sk,entier,,0,0.0,17820,0,17819,0,oui
+data,item,2,i_item_id,texte,16.0,0,0.0,17820,,,AAAAAAAAAAAAAAAA,oui
+data,item,3,i_rec_start_date,date AAAA-MM-JJ (texte),,0,0.0,364,,,2000-01-14,non
+data,item,4,i_rec_end_date,vide (100 % nul),,17820,100.0,0,,,,non
+data,item,5,i_item_desc,texte,200.0,4,0.022,17816,,,quickly even dinos beneath the frays must have to boost bold,non
+data,item,6,i_current_price,décimal,,0,0.0,8343,0.1,99.98,72.29,non
+data,item,7,i_wholesale_cost,décimal,,0,0.0,7598,0.02,87.35,64.96,non
+data,item,8,i_brand_id,entier (lu en décimal car valeurs nulles),,8,0.045,17797,1001703.0,10015586.0,3898712.0,non
+data,item,9,i_brand,texte,50.0,6,0.034,17554,,,71TS7NSbvH1YbdiQMG6ttBHKAljiNoIRB,non
+data,item,10,i_class_id,entier,,0,0.0,16,1,16,1,non
+data,item,11,i_class,texte,26.0,0,0.0,74,,,Fan Shop,non
+data,item,12,i_category_id,entier,,0,0.0,9,1,9,9,non
+data,item,13,i_category,texte,24.0,0,0.0,9,,,Sports & Outdoors,non
+data,item,14,i_manufact_id,entier,,0,0.0,1000,1,1000,995,non
+data,item,15,i_manufact,texte,50.0,0,0.0,17481,,,2VOxvrIWwlJQTSk6,non
+data,item,16,i_size,texte,11.0,2502,14.04,6,,,small,non
+data,item,17,i_formulation,texte,20.0,0,0.0,16916,,,99Ee1r6uFbZSSClAX3,non
+data,item,18,i_color,texte,10.0,0,0.0,92,,,dodger,non
+data,item,19,i_units,texte,7.0,863,4.843,20,,,Oz,non
+data,item,20,i_container,texte,7.0,0,0.0,1,,,Unknown,non
+data,item,21,i_manager_id,entier,,0,0.0,100,1,100,18,non
+data,item,22,i_product_name,texte,50.0,0,0.0,17820,,,8m9n5Q7T33DNWidoA6nWlg6ydmpA1SKOoOJLXiLVb,oui
+data,item_marketprices,1,imp_sk,entier,,0,0.0,89100,0,89099,0,oui
+data,item_marketprices,2,imp_item_sk,entier,,0,0.0,17820,0,17819,5810,non
+data,item_marketprices,3,imp_competitor,texte,16.0,0,0.0,1000,,,AAAAAAAAAAAAAANN,non
+data,item_marketprices,4,imp_competitor_price,décimal,,29,0.033,9989,0.09,99.98,95.41,non
+data,item_marketprices,5,imp_start_date,entier,,0,0.0,1808,36890,38697,36890,non
+data,item_marketprices,6,imp_end_date,entier (lu en décimal car valeurs nulles),,30,0.034,1794,36897.0,38717.0,38405.0,non
+data,product_reviews,1,pr_review_sk,entier,,0,0.0,89601,0,89990,0,oui
+data,product_reviews,2,pr_review_date,date AAAA-MM-JJ (texte),,0,0.0,1827,,,2002-08-06,non
+data,product_reviews,3,pr_review_time,heure HH:MM:SS (texte),,0,0.0,10100,,,09:16:45,non
+data,product_reviews,4,pr_review_rating,entier,,0,0.0,5,1,5,5,non
+data,product_reviews,5,pr_item_sk,entier,,0,0.0,16731,0,17819,8612,non
+data,product_reviews,6,pr_user_sk,entier,,0,0.0,39244,2,98998,20019,non
+data,product_reviews,7,pr_order_sk,entier,,0,0.0,88723,0,89097,62441,non
+data,product_reviews,8,pr_review_content,texte,7190.0,5,0.006,82820,,,"Catch Without Arms, Zebraskin, Tanbark, Planting Seeds, and ",non
+data,promotion,1,p_promo_sk,entier,,0,0.0,300,0,299,0,oui
+data,promotion,2,p_promo_id,texte,16.0,0,0.0,300,,,AAAAAAAAAAAAAAAA,oui
+data,promotion,3,p_start_date_sk,entier,,0,0.0,300,560,109404,61336,oui
+data,promotion,4,p_end_date_sk,entier,,0,0.0,299,2268,109558,94523,non
+data,promotion,5,p_item_sk,entier,,0,0.0,298,9,17812,14434,non
+data,promotion,6,p_cost,décimal,,0,0.0,298,12.63,995.16,445.17,non
+data,promotion,7,p_response_target,entier,,0,0.0,1,1,1,1,non
+data,promotion,8,p_promo_name,texte,5.0,0,0.0,9,,,pri,non
+data,promotion,9,p_channel_dmail,texte,1.0,0,0.0,2,,,Y,non
+data,promotion,10,p_channel_email,texte,1.0,0,0.0,2,,,N,non
+data,promotion,11,p_channel_catalog,texte,1.0,0,0.0,2,,,N,non
+data,promotion,12,p_channel_tv,texte,1.0,0,0.0,2,,,N,non
+data,promotion,13,p_channel_radio,texte,1.0,1,0.333,2,,,N,non
+data,promotion,14,p_channel_press,texte,1.0,0,0.0,2,,,N,non
+data,promotion,15,p_channel_event,texte,1.0,0,0.0,2,,,N,non
+data,promotion,16,p_channel_demo,texte,1.0,0,0.0,2,,,N,non
+data,promotion,17,p_channel_details,texte,100.0,0,0.0,300,,,always bold warthogs despite the dugouts will play closely,oui
+data,promotion,18,p_purpose,texte,7.0,0,0.0,1,,,Unknown,non
+data,promotion,19,p_discount_active,texte,1.0,0,0.0,2,,,N,non
+data,reason,1,r_reason_sk,entier,,0,0.0,35,0,34,0,oui
+data,reason,2,r_reason_id,texte,15.0,0,0.0,35,,,59h3KawhwK,oui
+data,reason,3,r_reason_desc,texte,99.0,0,0.0,35,,,slyly thin dugouts on the ironically enticing realms woul,oui
+data,ship_mode,1,sm_ship_mode_sk,entier,,0,0.0,20,0,19,0,oui
+data,ship_mode,2,sm_ship_mode_id,texte,14.0,0,0.0,20,,,GX9qF2bN,oui
+data,ship_mode,3,sm_type,texte,30.0,0,0.0,20,,,0k0a5LMf,oui
+data,ship_mode,4,sm_code,texte,10.0,0,0.0,20,,,9DPuF6E,oui
+data,ship_mode,5,sm_carrier,texte,20.0,0,0.0,20,,,JpQUqCDAHAO5n7I,oui
+data,ship_mode,6,sm_contract,texte,20.0,0,0.0,20,,,86kCyujyVunz3EGDYCRE,oui
+data,store,1,s_store_sk,entier,,0,0.0,12,0,11,0,oui
+data,store,2,s_store_id,texte,16.0,0,0.0,12,,,AAAAAAAAAAAAAAAA,oui
+data,store,3,s_rec_start_date,date AAAA-MM-JJ (texte),,0,0.0,7,,,2000-08-02,non
+data,store,4,s_rec_end_date,vide (100 % nul),,12,100.0,0,,,,non
+data,store,5,s_closed_date_sk,entier,,0,0.0,12,6235,88139,71238,oui
+data,store,6,s_store_name,texte,12.0,0,0.0,12,,,Forest,oui
+data,store,7,s_number_employees,entier,,0,0.0,9,213,298,217,non
+data,store,8,s_floor_space,entier,,0,0.0,12,5777026,8891512,8891512,oui
+data,store,9,s_hours,texte,8.0,0,0.0,3,,,8AM-12AM,non
+data,store,10,s_manager,texte,14.0,0,0.0,12,,,Joshua Watson,oui
+data,store,11,s_market_id,entier,,0,0.0,6,2,8,6,non
+data,store,12,s_geography_class,texte,7.0,0,0.0,1,,,Unknown,non
+data,store,13,s_market_desc,texte,94.0,0,0.0,12,,,realms sublate quickly outside the epitaphs; evenly silent p,oui
+data,store,14,s_market_manager,texte,16.0,0,0.0,12,,,Randy King,oui
+data,store,15,s_division_id,entier,,0,0.0,1,1,1,1,non
+data,store,16,s_division_name,texte,7.0,0,0.0,1,,,Unknown,non
+data,store,17,s_company_id,entier,,0,0.0,1,1,1,1,non
+data,store,18,s_company_name,texte,7.0,0,0.0,1,,,Unknown,non
+data,store,19,s_street_number,entier,,0,0.0,12,132,993,916,oui
+data,store,20,s_street_name,texte,15.0,0,0.0,12,,,1st,oui
+data,store,21,s_street_type,texte,9.0,0,0.0,12,,,Boulevard,oui
+data,store,22,s_suite_number,texte,9.0,0,0.0,12,,,XF,oui
+data,store,23,s_city,texte,12.0,0,0.0,12,,,Post Oak,oui
+data,store,24,s_county,texte,17.0,0,0.0,12,,,Hinsdale County,oui
+data,store,25,s_state,texte,2.0,0,0.0,8,,,CO,non
+data,store,26,s_zip,entier,,0,0.0,12,40988,97832,47562,oui
+data,store,27,s_country,texte,13.0,0,0.0,1,,,United States,non
+data,store,28,s_gmt_offset,entier,,0,0.0,4,-8,-5,-7,non
+data,store,29,s_tax_precentage,décimal,,0,0.0,7,0.03,0.1,0.06,non
+data,store_returns,1,sr_returned_date_sk,entier,,0,0.0,2221,36914,39398,38806,non
+data,store_returns,2,sr_return_time_sk,entier,,0,0.0,30697,2,86399,37121,non
+data,store_returns,3,sr_item_sk,entier,,0,0.0,12551,0,17819,15784,non
+data,store_returns,4,sr_customer_sk,entier,,0,0.0,6226,2,98991,5206,non
+data,store_returns,5,sr_cdemo_sk,entier (lu en décimal car valeurs nulles),,21,0.055,6277,226.0,1920352.0,647228.0,non
+data,store_returns,6,sr_hdemo_sk,entier (lu en décimal car valeurs nulles),,15,0.04,4215,1.0,7197.0,4483.0,non
+data,store_returns,7,sr_addr_sk,entier (lu en décimal car valeurs nulles),,42,0.111,5913,8.0,49493.0,7207.0,non
+data,store_returns,8,sr_store_sk,entier,,0,0.0,12,0,11,5,non
+data,store_returns,9,sr_reason_sk,entier (lu en décimal car valeurs nulles),,11,0.029,35,0.0,34.0,17.0,non
+data,store_returns,10,sr_ticket_number,entier,,0,0.0,8910,7,89096,64537,non
+data,store_returns,11,sr_return_quantity,entier,,0,0.0,100,1,100,9,non
+data,store_returns,12,sr_return_amt,décimal,,0,0.0,29163,0.0,15441.3,142.38,non
+data,store_returns,13,sr_return_tax,décimal,,0,0.0,11617,0.0,1159.19,2.85,non
+data,store_returns,14,sr_return_amt_inc_tax,décimal,,0,0.0,32024,0.0,16522.19,145.23,non
+data,store_returns,15,sr_fee,décimal,,0,0.0,9712,0.5,100.0,39.94,non
+data,store_returns,16,sr_return_ship_cost,décimal,,0,0.0,32264,0.0,15089.41,554.44,non
+data,store_returns,17,sr_refunded_cash,décimal,,0,0.0,26912,0.0,12818.84,101.09,non
+data,store_returns,18,sr_reversed_charge,décimal,,0,0.0,21080,0.0,7473.37,8.26,non
+data,store_returns,19,sr_store_credit,décimal,,0,0.0,20717,0.0,8846.21,33.03,non
+data,store_returns,20,sr_net_loss,décimal,,0,0.0,32952,0.0,15089.41,560.14,non
+data,store_sales,1,ss_sold_date_sk,entier,,0,0.0,1808,36890,38697,36890,non
+data,store_sales,2,ss_sold_time_sk,entier,,0,0.0,55645,0,86399,71480,non
+data,store_sales,3,ss_item_sk,entier,,0,0.0,17820,0,17819,10001,non
+data,store_sales,4,ss_customer_sk,entier,,0,0.0,37336,2,98999,44404,non
+data,store_sales,5,ss_cdemo_sk,entier (lu en décimal car valeurs nulles),,238,0.036,36953,18.0,1920742.0,493944.0,non
+data,store_sales,6,ss_hdemo_sk,entier (lu en décimal car valeurs nulles),,295,0.044,7161,0.0,7199.0,2898.0,non
+data,store_sales,7,ss_addr_sk,entier (lu en décimal car valeurs nulles),,448,0.067,26286,0.0,49499.0,44093.0,non
+data,store_sales,8,ss_store_sk,entier,,0,0.0,12,0,11,10,non
+data,store_sales,9,ss_promo_sk,entier (lu en décimal car valeurs nulles),,158,0.024,300,0.0,299.0,294.0,non
+data,store_sales,10,ss_ticket_number,entier,,0,0.0,89100,0,89099,0,non
+data,store_sales,11,ss_quantity,entier,,0,0.0,100,1,100,31,non
+data,store_sales,12,ss_wholesale_cost,décimal,,0,0.0,9901,1.0,100.0,18.0,non
+data,store_sales,13,ss_list_price,décimal,,0,0.0,19524,1.0,200.0,30.78,non
+data,store_sales,14,ss_sales_price,décimal,,0,0.0,17199,0.0,199.3,23.08,non
+data,store_sales,15,ss_ext_discount_amt,décimal,,0,0.0,238093,0.0,18984.0,238.7,non
+data,store_sales,16,ss_ext_sales_price,décimal,,0,0.0,237770,0.0,18745.0,715.48,non
+data,store_sales,17,ss_ext_wholesale_cost,décimal,,0,0.0,264513,1.0,9997.0,558.0,non
+data,store_sales,18,ss_ext_list_price,décimal,,0,0.0,328908,1.2,19814.0,954.18,non
+data,store_sales,19,ss_ext_tax,décimal,,0,0.0,53387,0.0,1637.8,21.46,non
+data,store_sales,20,ss_coupon_amt,décimal,,0,0.0,87123,0.0,14371.66,0.0,non
+data,store_sales,21,ss_net_paid,décimal,,0,0.0,255026,0.0,18745.0,715.48,non
+data,store_sales,22,ss_net_paid_inc_tax,décimal,,0,0.0,315642,0.0,19869.7,736.94,non
+data,store_sales,23,ss_net_profit,décimal,,0,0.0,288874,-9866.6,9134.0,157.48,non
+data,time_dim,1,t_time_sk,entier,,0,0.0,86400,0,86399,0,oui
+data,time_dim,2,t_time_id,texte,16.0,0,0.0,86400,,,AAAAAAAAAAAAAAAA,oui
+data,time_dim,3,t_time,entier,,0,0.0,86400,0,86399,0,oui
+data,time_dim,4,t_hour,entier,,0,0.0,24,0,23,0,non
+data,time_dim,5,t_minute,entier,,0,0.0,60,0,59,0,non
+data,time_dim,6,t_second,entier,,0,0.0,60,0,59,0,non
+data,time_dim,7,t_am_pm,texte,2.0,0,0.0,2,,,AM,non
+data,time_dim,8,t_shift,texte,6.0,0,0.0,3,,,third,non
+data,time_dim,9,t_sub_shift,texte,9.0,0,0.0,4,,,night,non
+data,time_dim,10,t_meal_time,texte,9.0,50400,58.333,3,,,breakfast,non
+data,warehouse,1,w_warehouse_sk,entier,,0,0.0,5,0,4,0,oui
+data,warehouse,2,w_warehouse_id,texte,16.0,0,0.0,5,,,AAAAAAAAAAAAAAAA,oui
+data,warehouse,3,w_warehouse_name,texte,20.0,0,0.0,5,,,somas between the ho,oui
+data,warehouse,4,w_warehouse_sq_ft,entier,,0,0.0,5,339122,845707,467315,oui
+data,warehouse,5,w_street_number,entier,,0,0.0,5,181,738,738,oui
+data,warehouse,6,w_street_name,texte,11.0,0,0.0,5,,,Main Smith,oui
+data,warehouse,7,w_street_type,texte,5.0,0,0.0,5,,,Cir.,oui
+data,warehouse,8,w_suite_number,texte,6.0,0,0.0,5,,,Y5,oui
+data,warehouse,9,w_city,texte,15.0,0,0.0,5,,,Bethel,oui
+data,warehouse,10,w_county,texte,14.0,0,0.0,5,,,Scott County,oui
+data,warehouse,11,w_state,texte,2.0,0,0.0,5,,,KY,oui
+data,warehouse,12,w_zip,entier,,0,0.0,5,16496,87891,52585,oui
+data,warehouse,13,w_country,texte,13.0,0,0.0,1,,,United States,non
+data,warehouse,14,w_gmt_offset,entier,,0,0.0,3,-7,-5,-5,non
+data,web_clickstreams,1,wcs_click_date_sk,entier,,0,0.0,1808,36890,38697,36890,non
+data,web_clickstreams,2,wcs_click_time_sk,entier,,0,0.0,86400,0,86399,71470,non
+data,web_clickstreams,3,wcs_sales_sk,entier (lu en décimal car valeurs nulles),,6102498,90.133,89100,0.0,89099.0,0.0,non
+data,web_clickstreams,4,wcs_item_sk,entier,,0,0.0,17820,0,17819,4867,non
+data,web_clickstreams,5,wcs_web_page_sk,entier (lu en décimal car valeurs nulles),,164,0.002,60,0.0,59.0,28.0,non
+data,web_clickstreams,6,wcs_user_sk,entier (lu en décimal car valeurs nulles),,2853461,42.145,88695,0.0,98998.0,85457.0,non
+data,web_page,1,wp_web_page_sk,entier,,0,0.0,60,0,59,0,oui
+data,web_page,2,wp_web_page_id,texte,16.0,0,0.0,60,,,AAAAAAAAAAAAAAAA,oui
+data,web_page,3,wp_rec_start_date,date AAAA-MM-JJ (texte),,0,0.0,36,,,2000-08-14,non
+data,web_page,4,wp_rec_end_date,vide (100 % nul),,60,100.0,0,,,,non
+data,web_page,5,wp_creation_date_sk,entier,,0,0.0,60,764,105025,103908,oui
+data,web_page,6,wp_access_date_sk,entier,,0,0.0,60,22445,109285,107243,oui
+data,web_page,7,wp_autogen_flag,entier,,0,0.0,2,0,1,0,non
+data,web_page,8,wp_customer_sk,entier,,0,0.0,60,534,97275,57966,oui
+data,web_page,9,wp_url,texte,100.0,0,0.0,60,,,http://www.jDgp6pYGC9UBr6t3N4eNKgz66QFWyeH1DvSTGhtMwDGoLjyzm,oui
+data,web_page,10,wp_type,texte,9.0,0,0.0,8,,,review,non
+data,web_page,11,wp_char_count,entier,,0,0.0,59,610,7968,2405,non
+data,web_page,12,wp_link_count,entier,,0,0.0,22,2,25,10,non
+data,web_page,13,wp_image_count,entier,,0,0.0,7,1,7,7,non
+data,web_page,14,wp_max_ad_count,entier,,0,0.0,5,0,4,3,non
+data,web_returns,1,wr_returned_date_sk,entier,,0,0.0,2492,36915,39523,38952,non
+data,web_returns,2,wr_returned_time_sk,entier,,0,0.0,30996,0,86393,68126,non
+data,web_returns,3,wr_item_sk,entier,,0,0.0,12601,1,17818,9590,non
+data,web_returns,4,wr_refunded_customer_sk,entier,,0,0.0,6437,2,98989,52948,non
+data,web_returns,5,wr_refunded_cdemo_sk,entier (lu en décimal car valeurs nulles),,40,0.104,6424,226.0,1920652.0,893223.0,non
+data,web_returns,6,wr_refunded_hdemo_sk,entier (lu en décimal car valeurs nulles),,19,0.049,4285,1.0,7196.0,2020.0,non
+data,web_returns,7,wr_refunded_addr_sk,entier (lu en décimal car valeurs nulles),,42,0.109,6012,9.0,49499.0,6942.0,non
+data,web_returns,8,wr_returning_customer_sk,entier,,0,0.0,6437,2,98989,52948,non
+data,web_returns,9,wr_returning_cdemo_sk,entier (lu en décimal car valeurs nulles),,63,0.164,6422,226.0,1920652.0,893223.0,non
+data,web_returns,10,wr_returning_hdemo_sk,entier (lu en décimal car valeurs nulles),,33,0.086,4285,1.0,7196.0,2020.0,non
+data,web_returns,11,wr_returning_addr_sk,entier (lu en décimal car valeurs nulles),,57,0.148,6010,9.0,49499.0,6942.0,non
+data,web_returns,12,wr_web_page_sk,entier (lu en décimal car valeurs nulles),,10,0.026,60,0.0,59.0,32.0,non
+data,web_returns,13,wr_reason_sk,entier (lu en décimal car valeurs nulles),,7,0.018,35,0.0,34.0,13.0,non
+data,web_returns,14,wr_order_number,entier,,0,0.0,8910,6,89092,63444,non
+data,web_returns,15,wr_return_quantity,entier,,0,0.0,100,1,100,33,non
+data,web_returns,16,wr_return_amt,décimal,,0,0.0,31025,0.0,21944.16,626.01,non
+data,web_returns,17,wr_return_tax,décimal,,0,0.0,13473,0.0,1603.38,25.04,non
+data,web_returns,18,wr_return_amt_inc_tax,décimal,,0,0.0,33563,0.0,23041.37,651.05,non
+data,web_returns,19,wr_fee,décimal,,0,0.0,9735,0.5,100.0,18.74,non
+data,web_returns,20,wr_return_ship_cost,décimal,,0,0.0,33640,0.0,22251.64,958.4,non
+data,web_returns,21,wr_refunded_cash,décimal,,0,0.0,28703,0.0,17605.44,244.14,non
+data,web_returns,22,wr_reversed_charge,décimal,,0,0.0,23037,0.0,13448.48,286.4,non
+data,web_returns,23,wr_account_credit,décimal,,0,0.0,22664,0.0,14338.32,95.47,non
+data,web_returns,24,wr_net_loss,décimal,,0,0.0,34439,0.0,23511.98,1008.48,non
+data,web_sales,1,ws_sold_date_sk,entier,,0,0.0,1808,36890,38697,36890,non
+data,web_sales,2,ws_sold_time_sk,entier,,0,0.0,55563,0,86398,26789,non
+data,web_sales,3,ws_ship_date_sk,entier,,0,0.0,1927,36891,38817,36993,non
+data,web_sales,4,ws_item_sk,entier,,0,0.0,17820,0,17819,794,non
+data,web_sales,5,ws_bill_customer_sk,entier,,0,0.0,37367,2,98998,85457,non
+data,web_sales,6,ws_bill_cdemo_sk,entier (lu en décimal car valeurs nulles),,309,0.046,36985,18.0,1920793.0,380790.0,non
+data,web_sales,7,ws_bill_hdemo_sk,entier (lu en décimal car valeurs nulles),,288,0.043,7152,0.0,7199.0,2436.0,non
+data,web_sales,8,ws_bill_addr_sk,entier (lu en décimal car valeurs nulles),,272,0.041,26208,0.0,49499.0,42649.0,non
+data,web_sales,9,ws_ship_customer_sk,entier,,0,0.0,39377,2,98998,29934,non
+data,web_sales,10,ws_ship_cdemo_sk,entier (lu en décimal car valeurs nulles),,492,0.074,38952,18.0,1920793.0,1583844.0,non
+data,web_sales,11,ws_ship_hdemo_sk,entier (lu en décimal car valeurs nulles),,495,0.074,7166,0.0,7199.0,5251.0,non
+data,web_sales,12,ws_ship_addr_sk,entier (lu en décimal car valeurs nulles),,398,0.06,27154,0.0,49499.0,525.0,non
+data,web_sales,13,ws_web_page_sk,entier (lu en décimal car valeurs nulles),,164,0.025,60,0.0,59.0,2.0,non
+data,web_sales,14,ws_web_site_sk,entier (lu en décimal car valeurs nulles),,154,0.023,30,0.0,29.0,14.0,non
+data,web_sales,15,ws_ship_mode_sk,entier (lu en décimal car valeurs nulles),,170,0.025,20,0.0,19.0,1.0,non
+data,web_sales,16,ws_warehouse_sk,entier (lu en décimal car valeurs nulles),,158,0.024,5,0.0,4.0,3.0,non
+data,web_sales,17,ws_promo_sk,entier (lu en décimal car valeurs nulles),,121,0.018,300,0.0,299.0,120.0,non
+data,web_sales,18,ws_order_number,entier,,0,0.0,89100,0,89099,0,non
+data,web_sales,19,ws_quantity,entier,,0,0.0,100,1,100,93,non
+data,web_sales,20,ws_wholesale_cost,décimal,,0,0.0,9901,1.0,100.0,32.62,non
+data,web_sales,21,ws_list_price,décimal,,0,0.0,28932,1.03,299.82,81.22,non
+data,web_sales,22,ws_sales_price,décimal,,0,0.0,24334,0.0,299.67,59.29,non
+data,web_sales,23,ws_ext_discount_amt,décimal,,0,0.0,273369,0.0,29682.18,2039.49,non
+data,web_sales,24,ws_ext_sales_price,décimal,,0,0.0,272379,0.0,28808.01,5513.97,non
+data,web_sales,25,ws_ext_wholesale_cost,décimal,,0,0.0,264108,1.01,9998.0,3033.66,non
+data,web_sales,26,ws_ext_list_price,décimal,,0,0.0,371439,1.28,29858.0,7553.46,non
+data,web_sales,27,ws_ext_tax,décimal,,0,0.0,65792,0.0,2421.72,330.84,non
+data,web_sales,28,ws_coupon_amt,décimal,,0,0.0,93607,0.0,27569.64,0.0,non
+data,web_sales,29,ws_ext_ship_cost,décimal,,0,0.0,277674,0.0,14216.37,1661.76,non
+data,web_sales,30,ws_net_paid,décimal,,0,0.0,289544,0.0,28808.01,5513.97,non
+data,web_sales,31,ws_net_paid_inc_tax,décimal,,0,0.0,351954,0.0,30248.41,5844.81,non
+data,web_sales,32,ws_net_paid_inc_ship,décimal,,0,0.0,436619,0.0,38975.5,7175.73,non
+data,web_sales,33,ws_net_paid_inc_ship_tax,décimal,,0,0.0,441575,0.0,41246.72,7506.57,non
+data,web_sales,34,ws_net_profit,décimal,,0,0.0,322066,-9894.06,18977.31,2480.31,non
+data,web_site,1,web_site_sk,entier,,0,0.0,30,0,29,0,oui
+data,web_site,2,web_site_id,texte,16.0,0,0.0,30,,,AAAAAAAAAAAAAAAA,oui
+data,web_site,3,web_rec_start_date,date AAAA-MM-JJ (texte),,0,0.0,18,,,2002-01-03,non
+data,web_site,4,web_rec_end_date,vide (100 % nul),,30,100.0,0,,,,non
+data,web_site,5,web_name,texte,6.0,0,0.0,5,,,site_0,non
+data,web_site,6,web_open_date_sk,entier,,0,0.0,30,132,108774,12694,oui
+data,web_site,7,web_close_date_sk,entier,,0,0.0,30,14930,109009,77464,oui
+data,web_site,8,web_class,texte,7.0,0,0.0,1,,,Unknown,non
+data,web_site,9,web_manager,texte,20.0,0,0.0,30,,,Robert Stewart,oui
+data,web_site,10,web_mkt_id,entier,,0,0.0,6,1,6,1,non
+data,web_site,11,web_mkt_class,texte,50.0,0,0.0,30,,,even ruthless multipliers should have to mai,oui
+data,web_site,12,web_mkt_desc,texte,100.0,0,0.0,30,,,ruthless bold notornis doubt: closely quiet hockey players b,oui
+data,web_site,13,web_market_manager,texte,18.0,0,0.0,30,,,James Feliciano,oui
+data,web_site,14,web_company_id,entier,,0,0.0,6,1,6,3,non
+data,web_site,15,web_company_name,texte,5.0,0,0.0,9,,,bar,non
+data,web_site,16,web_street_number,entier,,0,0.0,29,17,968,625,non
+data,web_site,17,web_street_name,texte,14.0,0,0.0,28,,,1st,non
+data,web_site,18,web_street_type,texte,9.0,0,0.0,15,,,Lane,non
+data,web_site,19,web_suite_number,texte,10.0,0,0.0,30,,,FGa6,oui
+data,web_site,20,web_city,texte,20.0,0,0.0,30,,,Bolton,oui
+data,web_site,21,web_county,texte,21.0,0,0.0,28,,,Cumberland County,non
+data,web_site,22,web_state,texte,2.0,0,0.0,19,,,NJ,non
+data,web_site,23,web_zip,entier,,0,0.0,30,12092,96546,68675,oui
+data,web_site,24,web_country,texte,13.0,0,0.0,1,,,United States,non
+data,web_site,25,web_gmt_offset,entier,,0,0.0,3,-7,-5,-5,non
+data,web_site,26,web_tax_percentage,décimal,,0,0.0,10,0.01,0.11,0.04,non
+data_refresh,customer,1,c_customer_sk,entier,,0,0.0,1000,99000,99999,99000,oui
+data_refresh,customer,2,c_customer_id,texte,16.0,0,0.0,1000,,,AAAAAAAAAAAAFQLS,oui
+data_refresh,customer,3,c_current_cdemo_sk,entier,,0,0.0,1000,7171,1919420,1743789,oui
+data_refresh,customer,4,c_current_hdemo_sk,entier,,0,0.0,943,13,7182,2912,non
+data_refresh,customer,5,c_current_addr_sk,entier,,0,0.0,988,23,49997,15817,non
+data_refresh,customer,6,c_first_shipto_date_sk,entier,,0,0.0,999,300,109511,12124,non
+data_refresh,customer,7,c_first_sales_date_sk,entier,,0,0.0,996,119,109471,46820,non
+data_refresh,customer,8,c_salutation,texte,4.0,0,0.0,6,,,Mr.,non
+data_refresh,customer,9,c_first_name,texte,11.0,0,0.0,503,,,Michael,non
+data_refresh,customer,10,c_last_name,texte,11.0,0,0.0,650,,,Broyles,non
+data_refresh,customer,11,c_preferred_cust_flag,texte,1.0,0,0.0,2,,,N,non
+data_refresh,customer,12,c_birth_day,entier,,0,0.0,31,1,31,30,non
+data_refresh,customer,13,c_birth_month,entier,,0,0.0,12,1,12,8,non
+data_refresh,customer,14,c_birth_year,entier,,0,0.0,69,1924,1992,1961,non
+data_refresh,customer,15,c_birth_country,texte,20.0,0,0.0,212,,,LATVIA,non
+data_refresh,customer,16,c_login,texte,13.0,0,0.0,955,,,vtJOqYQQJ7,non
+data_refresh,customer,17,c_email_address,texte,37.0,0,0.0,1000,,,Michael.Broyles@peacemail.com,oui
+data_refresh,customer,18,c_last_review_date,texte,10.0,0,0.0,954,,,0ka0ymX,non
+data_refresh,customer_address,1,ca_address_sk,entier,,0,0.0,500,49500,49999,49500,oui
+data_refresh,customer_address,2,ca_address_id,texte,16.0,0,0.0,500,,,AAAAAAAAAAAACVFW,oui
+data_refresh,customer_address,3,ca_street_number,entier,,0,0.0,397,1,1000,575,non
+data_refresh,customer_address,4,ca_street_name,texte,20.0,0,0.0,325,,,Pine,non
+data_refresh,customer_address,5,ca_street_type,texte,9.0,0,0.0,20,,,Pkwy,non
+data_refresh,customer_address,6,ca_suite_number,texte,10.0,0,0.0,482,,,JcbRPPJch,non
+data_refresh,customer_address,7,ca_city,texte,16.0,0,0.0,368,,,Decatur,non
+data_refresh,customer_address,8,ca_county,texte,23.0,0,0.0,384,,,Meade County,non
+data_refresh,customer_address,9,ca_state,texte,2.0,0,0.0,48,,,KS,non
+data_refresh,customer_address,10,ca_zip,entier,,0,0.0,499,10072,99759,70585,non
+data_refresh,customer_address,11,ca_country,texte,13.0,0,0.0,1,,,United States,non
+data_refresh,customer_address,12,ca_gmt_offset,entier,,0,0.0,6,-10,-5,-6,non
+data_refresh,customer_address,13,ca_location_type,texte,13.0,0,0.0,3,,,condo,non
+data_refresh,inventory,1,inv_date_sk,entier,,0,0.0,3,38696,38710,38696,non
+data_refresh,inventory,2,inv_item_sk,entier,,0,0.0,18000,0,17999,17100,non
+data_refresh,inventory,3,inv_warehouse_sk,entier,,0,0.0,5,0,4,1,non
+data_refresh,inventory,4,inv_quantity_on_hand,entier (lu en décimal car valeurs nulles),,63,0.027,1001,0.0,1000.0,24.0,non
+data_refresh,item,1,i_item_sk,entier,,0,0.0,180,17820,17999,17820,oui
+data_refresh,item,2,i_item_id,texte,16.0,0,0.0,180,,,AAAAAAAAAAAABAJK,oui
+data_refresh,item,3,i_rec_start_date,date AAAA-MM-JJ (texte),,0,0.0,142,,,2000-07-09,non
+data_refresh,item,4,i_rec_end_date,vide (100 % nul),,180,100.0,0,,,,non
+data_refresh,item,5,i_item_desc,texte,200.0,0,0.0,180,,,regular somas past the fluffy braids engage upon the thin id,oui
+data_refresh,item,6,i_current_price,décimal,,0,0.0,178,0.19,99.85,74.53,non
+data_refresh,item,7,i_wholesale_cost,décimal,,0,0.0,178,0.21,87.29,47.52,non
+data_refresh,item,8,i_brand_id,entier,,0,0.0,180,1015113,9959565,3413837,oui
+data_refresh,item,9,i_brand,texte,49.0,0,0.0,180,,,FAmZ5OQp19b6YnHEIGowTI,oui
+data_refresh,item,10,i_class_id,entier,,0,0.0,15,1,15,10,non
+data_refresh,item,11,i_class,texte,23.0,0,0.0,38,,,Country,non
+data_refresh,item,12,i_category_id,entier,,0,0.0,9,1,9,2,non
+data_refresh,item,13,i_category,texte,24.0,0,0.0,9,,,Music,non
+data_refresh,item,14,i_manufact_id,entier,,0,0.0,158,2,1000,91,non
+data_refresh,item,15,i_manufact,texte,49.0,0,0.0,180,,,7aJWxd7IChKqW4JLUki5m0wrvRn8YHTM0xZNoWu,oui
+data_refresh,item,16,i_size,texte,11.0,24,13.333,6,,,extra large,non
+data_refresh,item,17,i_formulation,texte,20.0,0,0.0,179,,,UbhvWihafwtRfWepd,non
+data_refresh,item,18,i_color,texte,10.0,0,0.0,83,,,cyan,non
+data_refresh,item,19,i_units,texte,7.0,10,5.556,20,,,Oz,non
+data_refresh,item,20,i_container,texte,7.0,0,0.0,1,,,Unknown,non
+data_refresh,item,21,i_manager_id,entier,,0,0.0,84,1,100,57,non
+data_refresh,item,22,i_product_name,texte,50.0,0,0.0,180,,,8MJdS2aYdSydZ9Zw6llsXatytb6AUrj42owNPSpbbr0ARL,oui
+data_refresh,item_marketprices,1,imp_sk,entier,,0,0.0,900,89100,89999,89100,oui
+data_refresh,item_marketprices,2,imp_item_sk,entier,,0,0.0,882,7,17997,9103,non
+data_refresh,item_marketprices,3,imp_competitor,texte,16.0,0,0.0,583,,,AAAAAAAAAAAAABII,non
+data_refresh,item_marketprices,4,imp_competitor_price,décimal,,0,0.0,862,0.12,99.93,72.13,non
+data_refresh,item_marketprices,5,imp_start_date,entier,,0,0.0,19,38697,38715,38697,non
+data_refresh,item_marketprices,6,imp_end_date,entier,,0,0.0,20,38698,38717,38717,non
+data_refresh,product_reviews,1,pr_review_sk,entier,,0,0.0,907,89991,90899,89991,oui
+data_refresh,product_reviews,2,pr_review_date,date AAAA-MM-JJ (texte),,0,0.0,719,,,2001-04-30,non
+data_refresh,product_reviews,3,pr_review_time,heure HH:MM:SS (texte),,0,0.0,856,,,17:36:54,non
+data_refresh,product_reviews,4,pr_review_rating,entier,,0,0.0,5,1,5,5,non
+data_refresh,product_reviews,5,pr_item_sk,entier,,0,0.0,683,2,17985,679,non
+data_refresh,product_reviews,6,pr_user_sk,entier,,0,0.0,844,48,99834,7611,non
+data_refresh,product_reviews,7,pr_order_sk,entier,,0,0.0,907,93,89968,55550,oui
+data_refresh,product_reviews,8,pr_review_content,texte,4269.0,0,0.0,904,,,My acid reflux onset by my pregnancy.At first tried it and d,non
+data_refresh,store_returns,1,sr_returned_date_sk,entier,,0,0.0,89,37125,39233,37587,non
+data_refresh,store_returns,2,sr_return_time_sk,entier,,0,0.0,425,138,86396,32662,non
+data_refresh,store_returns,3,sr_item_sk,entier,,0,0.0,361,78,17937,10095,non
+data_refresh,store_returns,4,sr_customer_sk,entier,,0,0.0,89,1273,97967,1273,non
+data_refresh,store_returns,5,sr_cdemo_sk,entier,,0,0.0,89,24440,1887950,1878036,non
+data_refresh,store_returns,6,sr_hdemo_sk,entier,,0,0.0,89,166,7182,6392,non
+data_refresh,store_returns,7,sr_addr_sk,entier,,0,0.0,89,1047,49893,38601,non
+data_refresh,store_returns,8,sr_store_sk,entier,,0,0.0,12,0,11,5,non
+data_refresh,store_returns,9,sr_reason_sk,entier,,0,0.0,35,0,34,27,non
+data_refresh,store_returns,10,sr_ticket_number,entier,,0,0.0,90,245,88624,3483,non
+data_refresh,store_returns,11,sr_return_quantity,entier,,0,0.0,82,1,94,17,non
+data_refresh,store_returns,12,sr_return_amt,décimal,,0,0.0,422,0.0,9991.2,151.64,non
+data_refresh,store_returns,13,sr_return_tax,décimal,,0,0.0,377,0.0,799.3,13.65,non
+data_refresh,store_returns,14,sr_return_amt_inc_tax,décimal,,0,0.0,424,0.0,10790.5,165.29,non
+data_refresh,store_returns,15,sr_fee,décimal,,0,0.0,411,0.86,99.6,73.86,non
+data_refresh,store_returns,16,sr_return_ship_cost,décimal,,0,0.0,426,2.26,8817.44,392.93,oui
+data_refresh,store_returns,17,sr_refunded_cash,décimal,,0,0.0,423,0.0,6993.84,122.83,non
+data_refresh,store_returns,18,sr_reversed_charge,décimal,,0,0.0,415,0.0,4390.85,17.86,non
+data_refresh,store_returns,19,sr_store_credit,décimal,,0,0.0,414,0.0,2732.33,10.95,non
+data_refresh,store_returns,20,sr_net_loss,décimal,,0,0.0,425,4.76,9188.68,420.23,non
+data_refresh,store_sales,1,ss_sold_date_sk,entier,,0,0.0,19,38697,38715,38697,non
+data_refresh,store_sales,2,ss_sold_time_sk,entier,,0,0.0,896,80,86215,21281,non
+data_refresh,store_sales,3,ss_item_sk,entier,,0,0.0,3536,3,17989,12731,non
+data_refresh,store_sales,4,ss_customer_sk,entier,,0,0.0,827,66,99894,54531,non
+data_refresh,store_sales,5,ss_cdemo_sk,entier (lu en décimal car valeurs nulles),,12,0.181,825,1339.0,1920675.0,1475324.0,non
+data_refresh,store_sales,6,ss_hdemo_sk,entier (lu en décimal car valeurs nulles),,13,0.196,767,4.0,7188.0,178.0,non
+data_refresh,store_sales,7,ss_addr_sk,entier (lu en décimal car valeurs nulles),,14,0.211,822,22.0,49930.0,47932.0,non
+data_refresh,store_sales,8,ss_store_sk,entier,,0,0.0,12,0,11,11,non
+data_refresh,store_sales,9,ss_promo_sk,entier (lu en décimal car valeurs nulles),,1,0.015,300,0.0,299.0,210.0,non
+data_refresh,store_sales,10,ss_ticket_number,entier,,0,0.0,900,89100,89999,89100,non
+data_refresh,store_sales,11,ss_quantity,entier,,0,0.0,100,1,100,52,non
+data_refresh,store_sales,12,ss_wholesale_cost,décimal,,0,0.0,4806,1.0,99.98,49.36,non
+data_refresh,store_sales,13,ss_list_price,décimal,,0,0.0,5503,1.07,193.97,60.22,non
+data_refresh,store_sales,14,ss_sales_price,décimal,,0,0.0,4621,0.0,187.08,24.09,non
+data_refresh,store_sales,15,ss_ext_discount_amt,décimal,,0,0.0,6369,0.0,16024.14,1878.76,non
+data_refresh,store_sales,16,ss_ext_sales_price,décimal,,0,0.0,6415,0.0,18520.92,1252.68,non
+data_refresh,store_sales,17,ss_ext_wholesale_cost,décimal,,0,0.0,6517,1.69,9974.0,2566.72,non
+data_refresh,store_sales,18,ss_ext_list_price,décimal,,0,0.0,6535,2.38,19093.14,3131.44,non
+data_refresh,store_sales,19,ss_ext_tax,décimal,,0,0.0,4722,0.0,1666.88,19.92,non
+data_refresh,store_sales,20,ss_coupon_amt,décimal,,0,0.0,1331,0.0,10876.33,588.76,non
+data_refresh,store_sales,21,ss_net_paid,décimal,,0,0.0,6442,0.0,18520.92,663.92,non
+data_refresh,store_sales,22,ss_net_paid_inc_tax,décimal,,0,0.0,6483,0.0,20187.8,683.84,non
+data_refresh,store_sales,23,ss_net_profit,décimal,,0,0.0,6484,-8585.28,9022.86,-1902.8,non
+data_refresh,web_clickstreams,1,wcs_click_date_sk,entier,,0,0.0,19,38697,38715,38697,non
+data_refresh,web_clickstreams,2,wcs_click_time_sk,entier,,0,0.0,44840,2,86398,11222,non
+data_refresh,web_clickstreams,3,wcs_sales_sk,entier (lu en décimal car valeurs nulles),,62109,90.029,900,89100.0,89999.0,89100.0,non
+data_refresh,web_clickstreams,4,wcs_item_sk,entier,,0,0.0,17553,0,17999,9912,non
+data_refresh,web_clickstreams,5,wcs_web_page_sk,entier (lu en décimal car valeurs nulles),,2,0.003,60,0.0,59.0,32.0,non
+data_refresh,web_clickstreams,6,wcs_user_sk,entier (lu en décimal car valeurs nulles),,29167,42.278,2603,9.0,99945.0,63997.0,non
+data_refresh,web_returns,1,wr_returned_date_sk,entier,,0,0.0,365,36994,39429,38953,non
+data_refresh,web_returns,2,wr_returned_time_sk,entier,,0,0.0,400,165,85931,75847,oui
+data_refresh,web_returns,3,wr_item_sk,entier,,0,0.0,328,19,17900,1898,non
+data_refresh,web_returns,4,wr_refunded_customer_sk,entier,,0,0.0,90,1543,98738,77591,non
+data_refresh,web_returns,5,wr_refunded_cdemo_sk,entier,,0,0.0,90,16857,1913824,1380176,non
+data_refresh,web_returns,6,wr_refunded_hdemo_sk,entier,,0,0.0,88,4,7146,3351,non
+data_refresh,web_returns,7,wr_refunded_addr_sk,entier,,0,0.0,90,266,49918,40932,non
+data_refresh,web_returns,8,wr_returning_customer_sk,entier,,0,0.0,90,1543,98738,77591,non
+data_refresh,web_returns,9,wr_returning_cdemo_sk,entier,,0,0.0,90,16857,1913824,1380176,non
+data_refresh,web_returns,10,wr_returning_hdemo_sk,entier,,0,0.0,88,4,7146,3351,non
+data_refresh,web_returns,11,wr_returning_addr_sk,entier,,0,0.0,90,266,49918,40932,non
+data_refresh,web_returns,12,wr_web_page_sk,entier,,0,0.0,60,0,59,42,non
+data_refresh,web_returns,13,wr_reason_sk,entier,,0,0.0,35,0,34,22,non
+data_refresh,web_returns,14,wr_order_number,entier,,0,0.0,90,718,89967,85134,non
+data_refresh,web_returns,15,wr_return_quantity,entier,,0,0.0,81,1,96,15,non
+data_refresh,web_returns,16,wr_return_amt,décimal,,0,0.0,397,0.0,11358.72,20.7,non
+data_refresh,web_returns,17,wr_return_tax,décimal,,0,0.0,348,0.0,1022.28,1.45,non
+data_refresh,web_returns,18,wr_return_amt_inc_tax,décimal,,0,0.0,399,0.0,12381.0,22.15,non
+data_refresh,web_returns,19,wr_fee,décimal,,0,0.0,382,0.85,99.72,9.49,non
+data_refresh,web_returns,20,wr_return_ship_cost,décimal,,0,0.0,400,0.75,17824.64,114.05,oui
+data_refresh,web_returns,21,wr_refunded_cash,décimal,,0,0.0,399,0.0,9541.32,14.7,non
+data_refresh,web_returns,22,wr_reversed_charge,décimal,,0,0.0,396,0.0,5415.23,5.94,non
+data_refresh,web_returns,23,wr_account_credit,décimal,,0,0.0,390,0.0,4503.98,0.06,non
+data_refresh,web_returns,24,wr_net_loss,décimal,,0,0.0,400,0.93,17824.64,116.95,oui
+data_refresh,web_sales,1,ws_sold_date_sk,entier,,0,0.0,19,38697,38715,38697,non
+data_refresh,web_sales,2,ws_sold_time_sk,entier,,0,0.0,895,32,86315,38598,non
+data_refresh,web_sales,3,ws_ship_date_sk,entier,,0,0.0,137,38699,38835,38806,non
+data_refresh,web_sales,4,ws_item_sk,entier,,0,0.0,3692,0,17998,17861,non
+data_refresh,web_sales,5,ws_bill_customer_sk,entier,,0,0.0,847,9,99945,95479,non
+data_refresh,web_sales,6,ws_bill_cdemo_sk,entier,,0,0.0,847,1099,1919911,481076,non
+data_refresh,web_sales,7,ws_bill_hdemo_sk,entier (lu en décimal car valeurs nulles),,13,0.189,795,3.0,7191.0,5618.0,non
+data_refresh,web_sales,8,ws_bill_addr_sk,entier (lu en décimal car valeurs nulles),,10,0.145,837,18.0,49937.0,14580.0,non
+data_refresh,web_sales,9,ws_ship_customer_sk,entier,,0,0.0,854,145,99945,95479,non
+data_refresh,web_sales,10,ws_ship_cdemo_sk,entier,,0,0.0,854,1099,1919911,481076,non
+data_refresh,web_sales,11,ws_ship_hdemo_sk,entier (lu en décimal car valeurs nulles),,13,0.189,803,3.0,7191.0,5618.0,non
+data_refresh,web_sales,12,ws_ship_addr_sk,entier (lu en décimal car valeurs nulles),,10,0.145,844,18.0,49937.0,14580.0,non
+data_refresh,web_sales,13,ws_web_page_sk,entier (lu en décimal car valeurs nulles),,2,0.029,60,0.0,59.0,58.0,non
+data_refresh,web_sales,14,ws_web_site_sk,entier (lu en décimal car valeurs nulles),,3,0.044,30,0.0,29.0,22.0,non
+data_refresh,web_sales,15,ws_ship_mode_sk,entier (lu en décimal car valeurs nulles),,1,0.015,20,0.0,19.0,4.0,non
+data_refresh,web_sales,16,ws_warehouse_sk,entier (lu en décimal car valeurs nulles),,2,0.029,5,0.0,4.0,1.0,non
+data_refresh,web_sales,17,ws_promo_sk,entier (lu en décimal car valeurs nulles),,2,0.029,300,0.0,299.0,118.0,non
+data_refresh,web_sales,18,ws_order_number,entier,,0,0.0,900,89100,89999,89100,non
+data_refresh,web_sales,19,ws_quantity,entier,,0,0.0,100,1,100,44,non
+data_refresh,web_sales,20,ws_wholesale_cost,décimal,,0,0.0,5024,1.01,99.99,27.96,non
+data_refresh,web_sales,21,ws_list_price,décimal,,0,0.0,5940,1.28,296.16,67.66,non
+data_refresh,web_sales,22,ws_sales_price,décimal,,0,0.0,5081,0.0,276.11,41.27,non
+data_refresh,web_sales,23,ws_ext_discount_amt,décimal,,0,0.0,6657,0.0,23960.64,1161.16,non
+data_refresh,web_sales,24,ws_ext_sales_price,décimal,,0,0.0,6678,0.0,23944.0,1815.88,non
+data_refresh,web_sales,25,ws_ext_wholesale_cost,décimal,,0,0.0,6753,2.14,9733.36,1230.24,non
+data_refresh,web_sales,26,ws_ext_list_price,décimal,,0,0.0,6806,4.58,28845.0,2977.04,non
+data_refresh,web_sales,27,ws_ext_tax,décimal,,0,0.0,5153,0.0,2035.49,63.19,non
+data_refresh,web_sales,28,ws_coupon_amt,décimal,,0,0.0,1418,0.0,19178.36,762.67,non
+data_refresh,web_sales,29,ws_ext_ship_cost,décimal,,0,0.0,6668,0.0,11858.68,774.03,non
+data_refresh,web_sales,30,ws_net_paid,décimal,,0,0.0,6698,0.0,23944.0,1053.21,non
+data_refresh,web_sales,31,ws_net_paid_inc_tax,décimal,,0,0.0,6755,0.0,24662.32,1116.4,non
+data_refresh,web_sales,32,ws_net_paid_inc_ship,décimal,,0,0.0,6840,1.3,33368.64,1827.24,non
+data_refresh,web_sales,33,ws_net_paid_inc_ship_tax,décimal,,0,0.0,6844,1.33,34086.96,1890.43,non
+data_refresh,web_sales,34,ws_net_profit,décimal,,0,0.0,6758,-9397.56,14510.0,-177.03,non

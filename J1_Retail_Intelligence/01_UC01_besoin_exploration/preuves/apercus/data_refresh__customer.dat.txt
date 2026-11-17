@@ -1,0 +1,6 @@
+# retail_project/data_refresh/customer/customer.dat - 5 premières lignes brutes
+99000|AAAAAAAAAAAAFQLS|1743789|2912|15817|12124|46820|Mr.|Michael|Broyles|N|30|8|1961|LATVIA|vtJOqYQQJ7|Michael.Broyles@peacemail.com|0ka0ymX
+99001|AAAAAAAAAAAAFQLT|987779|5060|31776|42067|99363|Mr.|Dennis|Tobin|N|22|4|1949|MAURITANIA|lnZ4|Dennis.Tobin@privacyharbor.com|ro7j4k
+99002|AAAAAAAAAAAAFQLU|1423325|5795|5270|73986|42194|Sir|Clifford|Rice|N|19|10|1940|LIECHTENSTEIN|R36tSZ|Clifford.Rice@gmx.us|dgHE
+99003|AAAAAAAAAAAAFQLV|75420|6713|17247|26080|70858|Ms.|Bethany|Arnold|Y|9|5|1969|GUATEMALA|BFHV|Bethany.Arnold@enveloped.org|Udx2UU63xb
+99004|AAAAAAAAAAAAFQLW|524918|6002|34615|72545|2765|Miss|Concetta|Smith|Y|23|9|1944|ARGENTINA|7AvWF1QMV|Concetta.Smith@kify.net|Fx4f3rqQ

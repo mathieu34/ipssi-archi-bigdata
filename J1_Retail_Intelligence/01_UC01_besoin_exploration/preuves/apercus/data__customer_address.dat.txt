@@ -1,0 +1,6 @@
+# retail_project/data/customer_address/customer_address.dat - 5 premières lignes brutes
+0|AAAAAAAAAAAAAAAA|561|Cedar 12th|Road|J5jix6JEFD|Genoa|Tuscarawas County|OH|64453|United States|-5|single family
+1|AAAAAAAAAAAAAAAB|473|Birch Poplar|Ct.|tEmwYrz|Chapel Hill|Hodgeman County|KS|17270|United States|-6|single family
+2|AAAAAAAAAAAAAAAC|786|2nd Poplar|Way|6a123dP|Midway|Spotsylvania County|VA|14835|United States|-5|apartment
+3|AAAAAAAAAAAAAAAD|177|Oak Lakeview|Way|O0WsP|Enterprise|Greeley County|NE|72163|United States|-6|single family
+4|AAAAAAAAAAAAAAAE|237|Church Park|Way|pOc0GbdFn|Arcadia|Putnam County|GA|21603|United States|-5|apartment

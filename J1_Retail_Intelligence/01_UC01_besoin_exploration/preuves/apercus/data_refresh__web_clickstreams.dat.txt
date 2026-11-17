@@ -1,0 +1,6 @@
+# retail_project/data_refresh/web_clickstreams/web_clickstreams.dat - 5 premières lignes brutes
+38697|11222||9912|32|63997
+38697|17398||17495|39|63997
+38697|26083||5969|13|63997
+38697|38456||9238|49|63997
+38697|63489||254|34|63997

@@ -1,0 +1,6 @@
+# retail_project/data_refresh/inventory/inventory.dat - 5 premières lignes brutes
+38696|17100|1|24
+38696|17101|1|533
+38696|17102|1|771
+38696|17103|1|799
+38696|17104|1|930

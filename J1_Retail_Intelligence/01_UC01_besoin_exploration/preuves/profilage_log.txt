@@ -1,0 +1,38 @@
+Profilage démarré 2026-11-16 16:22:26 - base /home/math34/tp_bigdata/extract/retail_project
+retail_project/data/customer/customer.dat: 99000 lignes, 18 colonnes, 0.3s
+retail_project/data/customer_address/customer_address.dat: 49500 lignes, 13 colonnes, 0.1s
+retail_project/data/customer_demographics/customer_demographics.dat: 1920800 lignes, 9 colonnes, 2.6s
+retail_project/data/date_dim/date_dim.dat: 109573 lignes, 28 colonnes, 0.3s
+retail_project/data/household_demographics/household_demographics.dat: 7200 lignes, 5 colonnes, 0.0s
+retail_project/data/income_band/income_band.dat: 20 lignes, 3 colonnes, 0.0s
+retail_project/data/inventory/inventory.dat: 23255100 lignes, 4 colonnes, 21.9s
+retail_project/data/item/item.dat: 17820 lignes, 22 colonnes, 0.1s
+retail_project/data/item_marketprices/item_marketprices.dat: 89100 lignes, 6 colonnes, 0.1s
+retail_project/data/item_marketprices/item_marketprices_audit.csv: 5 lignes (csv) 0.0s
+retail_project/data/product_reviews/product_reviews.dat: 89991 lignes, 8 colonnes, 0.4s
+retail_project/data/promotion/promotion.dat: 300 lignes, 19 colonnes, 0.0s
+retail_project/data/reason/reason.dat: 35 lignes, 3 colonnes, 0.0s
+retail_project/data/ship_mode/ship_mode.dat: 20 lignes, 6 colonnes, 0.0s
+retail_project/data/store/store.dat: 12 lignes, 29 colonnes, 0.1s
+retail_project/data/store_returns/store_returns.dat: 37902 lignes, 20 colonnes, 0.1s
+retail_project/data/store_sales/store_sales.dat: 667579 lignes, 23 colonnes, 3.8s
+retail_project/data/time_dim/time_dim.dat: 86400 lignes, 10 colonnes, 0.1s
+retail_project/data/warehouse/warehouse.dat: 5 lignes, 14 colonnes, 0.0s
+retail_project/data/web_clickstreams/web_clickstreams.dat: 6770550 lignes, 6 colonnes, 7.6s
+retail_project/data/web_page/web_page.dat: 60 lignes, 14 colonnes, 0.0s
+retail_project/data/web_returns/web_returns.dat: 38487 lignes, 24 colonnes, 0.1s
+retail_project/data/web_sales/web_sales.dat: 668052 lignes, 34 colonnes, 2.9s
+retail_project/data/web_site/web_site.dat: 30 lignes, 26 colonnes, 0.0s
+retail_project/data_refresh/customer/customer.dat: 1000 lignes, 18 colonnes, 0.0s
+retail_project/data_refresh/customer_address/customer_address.dat: 500 lignes, 13 colonnes, 0.0s
+retail_project/data_refresh/inventory/inventory.dat: 234900 lignes, 4 colonnes, 0.1s
+retail_project/data_refresh/item/item.dat: 180 lignes, 22 colonnes, 0.0s
+retail_project/data_refresh/item_marketprices/item_marketprices.dat: 900 lignes, 6 colonnes, 0.0s
+retail_project/data_refresh/item_marketprices/item_marketprices_audit.csv: 17986 lignes (csv) 0.0s
+retail_project/data_refresh/product_reviews/product_reviews.dat: 909 lignes, 8 colonnes, 0.0s
+retail_project/data_refresh/store_returns/store_returns.dat: 426 lignes, 20 colonnes, 0.0s
+retail_project/data_refresh/store_sales/store_sales.dat: 6632 lignes, 23 colonnes, 0.0s
+retail_project/data_refresh/web_clickstreams/web_clickstreams.dat: 68988 lignes, 6 colonnes, 0.0s
+retail_project/data_refresh/web_returns/web_returns.dat: 400 lignes, 24 colonnes, 0.1s
+retail_project/data_refresh/web_sales/web_sales.dat: 6879 lignes, 34 colonnes, 0.0s
+Terminé en 41s : 36 fichiers, 522 colonnes

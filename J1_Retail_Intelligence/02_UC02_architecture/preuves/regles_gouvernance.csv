@@ -1,0 +1,8 @@
+Point (§5.2.13 F);Règle minimale;Mise en œuvre locale;Mise en œuvre Azure;Indicateur de suivi
+Traçabilité de la provenance;Toute donnée est reliée à son lot, son fichier source et sa date d'ingestion;"Manifeste par lot ; colonnes _lot, _fichier_source, _date_ingestion";"Mêmes colonnes ; manifestes dans le conteneur gouvernance";% de lignes Silver / Gold sans provenance (cible 0)
+Documentation des fichiers et tables;Aucune table n'est publiée sans fiche de catalogue;Catalogue (fichier) repris de inventaire_sources.xlsx;Catalogue équivalent (Microsoft Purview en option, non requis);Nombre de tables sans fiche (cible 0)
+Contrôles de qualité;"Règles automatiques à chaque lot ; bloquantes ou signalées";Scripts Python / Spark (section 4);Mêmes traitements Spark;Taux de rejet par table et par lot
+Gestion des accès;Droits par zone et par profil, au plus juste;Comptes et groupes Linux, droits HDFS;Entra ID, RBAC, ACL;Revue des droits à chaque nouveau profil
+Protection des données;Données personnelles minimisées et cloisonnées;"Exclues du Gold ; Silver restreint";Idem + chiffrement au repos du stockage;Colonnes personnelles présentes en Gold (cible 0)
+Suivi des traitements;Chaque exécution laisse un journal et un rapport de contrôle;Journaux NiFi / Spark dans _journaux/;Azure Monitor (étude);Exécutions en échec, durée, lignes rejetées
+Maîtrise des coûts et des volumes;Conservation, compression et partitionnement définis par zone;"Parquet compressé ; durées de conservation";Niveaux d'accès, cycle de vie, budgets;Volume par zone, coût mensuel

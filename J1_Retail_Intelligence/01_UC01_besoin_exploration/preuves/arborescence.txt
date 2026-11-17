@@ -1,0 +1,73 @@
+/home/math34/tp_bigdata/extract/retail_project  (relevé le 2026-11-16 16:22)
+├── data/   (24 fichiers, 977.0 Mo)
+│   ├── customer/
+│   │       customer.dat  (12.7 Mo)
+│   ├── customer_address/
+│   │       customer_address.dat  (5.1 Mo)
+│   ├── customer_demographics/
+│   │       customer_demographics.dat  (74.2 Mo)
+│   ├── date_dim/
+│   │       date_dim.dat  (14.7 Mo)
+│   ├── household_demographics/
+│   │       household_demographics.dat  (151.5 Ko)
+│   ├── income_band/
+│   │       income_band.dat  (327 o)
+│   ├── inventory/
+│   │       inventory.dat  (405.3 Mo)
+│   ├── item/
+│   │       item.dat  (6.5 Mo)
+│   ├── item_marketprices/
+│   │       item_marketprices.dat  (4.0 Mo)
+│   │       item_marketprices_audit.csv  (273 o)
+│   ├── product_reviews/
+│   │       product_reviews.dat  (53.7 Mo)
+│   ├── promotion/
+│   │       promotion.dat  (45.3 Ko)
+│   ├── reason/
+│   │       reason.dat  (3.0 Ko)
+│   ├── ship_mode/
+│   │       ship_mode.dat  (1.2 Ko)
+│   ├── store/
+│   │       store.dat  (3.3 Ko)
+│   ├── store_returns/
+│   │       store_returns.dat  (4.1 Mo)
+│   ├── store_sales/
+│   │       store_sales.dat  (88.5 Mo)
+│   ├── time_dim/
+│   │       time_dim.dat  (4.9 Mo)
+│   ├── warehouse/
+│   │       warehouse.dat  (584 o)
+│   ├── web_clickstreams/
+│   │       web_clickstreams.dat  (170.4 Mo)
+│   ├── web_page/
+│   │       web_page.dat  (7.9 Ko)
+│   ├── web_returns/
+│   │       web_returns.dat  (5.1 Mo)
+│   ├── web_sales/
+│   │       web_sales.dat  (127.6 Mo)
+│   └── web_site/
+│           web_site.dat  (8.6 Ko)
+├── data_refresh/   (12 fichiers, 9.1 Mo)
+│   ├── customer/
+│   │       customer.dat  (131.2 Ko)
+│   ├── customer_address/
+│   │       customer_address.dat  (53.3 Ko)
+│   ├── inventory/
+│   │       inventory.dat  (4.1 Mo)
+│   ├── item/
+│   │       item.dat  (67.6 Ko)
+│   ├── item_marketprices/
+│   │       item_marketprices.dat  (41.5 Ko)
+│   │       item_marketprices_audit.csv  (147.5 Ko)
+│   ├── product_reviews/
+│   │       product_reviews.dat  (560.2 Ko)
+│   ├── store_returns/
+│   │       store_returns.dat  (47.7 Ko)
+│   ├── store_sales/
+│   │       store_sales.dat  (900.6 Ko)
+│   ├── web_clickstreams/
+│   │       web_clickstreams.dat  (1.7 Mo)
+│   ├── web_returns/
+│   │       web_returns.dat  (54.6 Ko)
+│   └── web_sales/
+│           web_sales.dat  (1.3 Mo)

@@ -1,0 +1,4 @@
+Zone;Rôle dans Retail Intelligence;Entrée;Sortie;Règles
+Bronze;Conserver chaque lot reçu, tel quel, avec sa provenance;Archive retail_project.zip (36 fichiers);.dat et .csv d'origine, rangés par table et par lot;"Écriture unique ; aucune modification ; empreinte SHA-256 comparée à checksum.txt ; accès équipe Data"
+Silver;Rendre les données fiables et homogènes;Bronze, tables du périmètre : store_sales, web_sales, inventory, item, store, date_dim, warehouse, customer;"Parquet typé, nettoyé, data et data_refresh fusionnés ; quarantaine";"Règles de la section 4 ; colonnes techniques de traçabilité ; accès équipe Data"
+Gold;Servir les 12 KPI et les 6 questions métier;Silver;Modèle en étoile + agrégats KPI;"Grain documenté ; réconciliation des totaux avec Silver ; données personnelles exclues ; lecture métier"

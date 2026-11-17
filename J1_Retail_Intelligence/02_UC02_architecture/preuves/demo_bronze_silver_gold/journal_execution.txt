@@ -1,0 +1,24 @@
+# Journal d'exécution de sources/demo_bronze_silver_gold.py (démonstration locale, repli documenté :
+# système de fichiers local au lieu de HDFS, pandas + pyarrow au lieu de Spark)
+09:46:53 Démonstration Bronze -> Silver -> Gold ; source /home/math34/tp_bigdata/extract/retail_project ; lac de démonstration /home/math34/projets/ipssi-archi-bigdata/datalake_demo
+09:46:53 === 1. BRONZE : dépôt des fichiers d'origine, empreinte SHA-256, manifeste par lot
+09:46:54   store_sales lot=data : 667579 lignes, 92764700 octets, copie identique à la source : oui
+09:46:54   item lot=data : 17820 lignes, 6799286 octets, copie identique à la source : oui
+09:46:54   date_dim lot=data : 109573 lignes, 15395800 octets, copie identique à la source : oui
+09:46:54   store_sales lot=data_refresh : 6632 lignes, 922171 octets, copie identique à la source : oui
+09:46:54   item lot=data_refresh : 180 lignes, 69173 octets, copie identique à la source : oui
+09:46:54 === 2. SILVER : typage, contrôles, quarantaine, colonnes de traçabilité, Parquet
+09:46:54   date_dim : 109573 lignes, clé unique, d_holiday écartée -> silver/referentiels/date_dim/
+09:46:55   item : 18000 lignes (data + data_refresh), Q03 clé unique : True, 2612 descriptions rognées -> silver/referentiels/item/
+09:47:04   store_sales lot=data : 667579 lignes lues, 0 en quarantaine
+09:47:04   store_sales lot=data_refresh : 6632 lignes lues, 0 en quarantaine
+09:47:04   store_sales : 674211 lignes valides écrites en Parquet partitionné (60 partitions annee/mois), 0 en quarantaine ; doublons (ticket, produit) conservés : 4182
+09:47:04 === 3. GOLD : agrégat KPI K02 (CA net par catégorie et par année) et réconciliation
+09:47:12   Q10 lignes Bronze = Silver + quarantaine : 674211 / 674211 -> OK
+09:47:12   Q10 CA net Silver = somme Gold : 1162073847.88 / 1162073847.88 -> OK
+09:47:12   CA net Bronze (brut) = Silver + quarantaine : 1162073847.88 / 1162073847.88 -> OK
+09:47:12   Q11 tickets distincts = 90 000 : 90000 / 90000 -> OK
+09:47:12   jointure produit sans perte (catégorie vide) : 0 / 0 -> OK
+09:47:12 === 4. Volumes : fichier texte .dat (Bronze) vs Parquet compressé (Silver)
+09:47:12   store_sales : .dat 93.7 Mo -> Parquet 60.8 Mo (rapport 1.5)
+09:47:12 Terminé en 18 s

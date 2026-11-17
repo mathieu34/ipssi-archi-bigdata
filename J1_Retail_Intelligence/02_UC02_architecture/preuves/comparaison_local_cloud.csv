@@ -1,0 +1,13 @@
+Couche / sujet;Environnement local (parcours);Cible cloud Azure;Statut cloud
+Système;Linux / Ubuntu 24.04 (WSL2);Services managés Azure;-
+Ingestion;Apache NiFi (repli : script Python);NiFi vers ADLS (processeur PutAzureDataLakeStorage) ou Azure Data Factory;ADF : étude
+Stockage des zones;HDFS : /datalake/bronze|silver|gold/;ADLS Gen2 : un conteneur par zone;Objectif obligatoire (J4)
+Traitement;Spark / PySpark en local;Spark dans Azure Synapse (ou autre service Spark);Synapse : étude
+Format analytique;Parquet;Parquet (identique);-
+Exposition;"Spark SQL ; outil BI à choisir";"Synapse SQL (requêtes sur les fichiers) ; outil BI";Étude
+Identités;Comptes et groupes Linux;Microsoft Entra ID (utilisateurs, groupes, identités managées);Conception
+Droits;Permissions et ACL HDFS;RBAC Azure + ACL POSIX d'ADLS Gen2;Conception
+Secrets;Fichiers de configuration locaux;Azure Key Vault, identités managées;Conception
+Supervision;Journaux NiFi / Spark dans _journaux/;Azure Monitor, journaux de diagnostic;Étude
+Coûts;Matériel local (7,5 Go de mémoire WSL, sous le minimum recommandé);Paiement à l'usage : stockage, transactions, calcul;Conception
+Montée en charge;Limitée à la machine;Ressources ajoutées à la demande;-

@@ -1,0 +1,8 @@
+# Contrôle : relevés d'inventaire en combinant data/ et data_refresh/
+relevé 38689: lignes 90000 (data 90000, refresh 0), couples uniques 90000, produits 18000, qté=0 87, qté vide 26
+relevé 38696: lignes 90000 (data 35100, refresh 54900), couples uniques 90000, produits 18000, qté=0 100, qté vide 25
+relevé 38703: lignes 90000 (data 0, refresh 90000), couples uniques 90000, produits 18000, qté=0 78, qté vide 16
+relevé 38710: lignes 90000 (data 0, refresh 90000), couples uniques 90000, produits 18000, qté=0 106, qté vide 31
+date_dim : 38689=2005-12-05, 38696=2005-12-12, 38703=2005-12-19, 38710=2005-12-26
+stock par entrepôt au 2005-12-26 : {0: 8945033.0, 1: 9021746.0, 2: 8972050.0, 3: 9021052.0, 4: 8931476.0}
+relevé 38689 (data seul) produits 18000

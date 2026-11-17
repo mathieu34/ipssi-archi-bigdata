@@ -1,0 +1,13 @@
+ID;Règle;Zone / flux;Type;Seuil;Effet
+Q01;Empreinte de l'archive = checksum.txt;Ingestion;Intégrité;Égalité;Bloquant
+Q02;Nombre de champs par ligne = schéma (23, 34, 4…);Silver, F1-F3;Validité;100 % des lignes;"Ligne en quarantaine ; fichier bloqué si 0 % conforme"
+Q03;"Clé primaire unique (*_sk ; (date, produit, entrepôt) pour le stock)";Silver, F2-F3;Unicité;0 doublon;Bloquant
+Q04;Clés étrangères présentes dans les référentiels;Silver, F1-F3;Intégrité;0 orphelin;Ligne en quarantaine
+Q05;"net_paid = ext_sales_price - coupon_amt ; ext_sales_price = quantity x sales_price";Silver, F1;Cohérence;Écart <= 0,01;Bloquant si l'écart est généralisé
+Q06;quantity > 0 dans les ventes;Silver, F1;Validité;100 %;Ligne en quarantaine
+Q07;Une seule date, un seul client, un seul magasin par transaction;Silver, F1;Cohérence;100 %;Signalé
+Q08;Relevé de stock complet = 90 000 lignes;Silver, F3;Complétude;Égalité;Bloquant pour le relevé
+Q09;Quantité de stock vide comptée à part, jamais remplacée par 0;Silver, F3;Exactitude;-;Règle de transformation
+Q10;Somme de ca_net et nombre de lignes identiques entre Silver et Gold;Gold, F5;Réconciliation;Égalité;Bloquant
+Q11;Transactions distinctes : 90 000 tickets, 90 000 commandes (lots actuels);Gold, F5;Réconciliation;Égalité;Signalé si nouveau lot
+Q12;Aucune colonne personnelle (nom, e-mail, login) en Gold;Gold, F5;Conformité;0 colonne;Bloquant

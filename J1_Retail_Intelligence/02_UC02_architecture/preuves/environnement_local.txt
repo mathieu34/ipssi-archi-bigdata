@@ -1,0 +1,13 @@
+# Environnement local constaté le 2026-11-16 17:36 (commandes : lsb_release, uname, command -v, free, df)
+Système : Ubuntu 24.04.3 LTS sous WSL2 (noyau 6.18.58.1-microsoft-standard-WSL2)
+Python : 3.12.3 ; venv projet : pandas 3.1.1, reportlab, openpyxl
+java : absent
+hadoop : absent
+hdfs : absent
+nifi.sh : absent
+spark-submit : absent
+az : absent
+pyspark (venv) : absent
+Mémoire : 7.5Gi au total, 3.3Gi disponibles
+Disque (home) : 948G libres sur 1007G
+Lecture : composants Big Data non installés au Jour 1 (attendu : Jour 2 et 3) ; mémoire WSL inférieure aux 8 Go minimum recommandés (§3.2).

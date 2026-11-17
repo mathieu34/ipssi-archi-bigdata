@@ -1,0 +1,6 @@
+# retail_project/data/ship_mode/ship_mode.dat - 5 premières lignes brutes
+0|GX9qF2bN|0k0a5LMf|9DPuF6E|JpQUqCDAHAO5n7I|86kCyujyVunz3EGDYCRE
+1|R2ZJblvMEkdCFd|slLBKEIcd4EKHkD75Lur3BMuGE1|rYlS|1jj19TXJSW9Z|pyYTsrgVFP9o
+2|XDKdzkNPYGJN|N6js2CKWyyaiYmSLNbxXCuhCgSF1ch|fzJFaL|1hoB|Xc6cFDMGQwqaCu
+3|xYckuQ|tO0zD0DwrOzLD4hHrxNVG2dxXY6YPa|pZr|WI71XR|9JYR
+4|NBeK|HvuBTYcyP7E2xaygl8EXQ|Ei|vDdoP|dmsGIfpDTBvhjJdeAuoh

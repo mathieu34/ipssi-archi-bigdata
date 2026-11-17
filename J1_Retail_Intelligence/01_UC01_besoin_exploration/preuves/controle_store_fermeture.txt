@@ -1,0 +1,16 @@
+# Contrôle : date de fermeture des magasins (store.s_closed_date_sk) vs ventes (store_sales)
+# closed = d_date de date_dim pour s_closed_date_sk ; min/max = ss_sold_date_sk ; count = lignes de vente
+# ventes_apres_fermeture = lignes avec ss_sold_date_sk > s_closed_date_sk
+    s_store_sk  s_closed_date_sk      closed    min    max  count  ventes_apres_fermeture
+0            0             71238  2095-01-16  36891  38697  56018                       0
+1            1             18994  1952-01-03  36890  38697  55676                   55676
+2            2              8900  1924-05-15  36890  38697  54633                   54633
+3            3             69902  2091-05-21  36890  38696  55397                       0
+4            4             79617  2117-12-26  36890  38697  56211                       0
+5            5             88139  2141-04-26  36890  38697  55122                       0
+6            6             15761  1943-02-26  36890  38697  54574                   54574
+7            7             71446  2095-08-12  36890  38697  57589                       0
+8            8             50689  2038-10-13  36890  38697  55737                       0
+9            9             25131  1968-10-22  36890  38697  56040                   56040
+10          10              6235  1917-01-27  36890  38697  55109                   55109
+11          11             43634  2019-06-20  36890  38697  55473                       0

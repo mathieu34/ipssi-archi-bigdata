@@ -1,0 +1,55 @@
+# Arborescence produite par la démonstration (une seule partition mois=1 affichée par année)
+datalake_demo/
+    bronze/
+        _manifestes/
+            manifeste_lot=data.json  (0.00 Mo)
+            manifeste_lot=data_refresh.json  (0.00 Mo)
+        tpcx_bb/
+            date_dim/
+                lot=data/
+                    date_ingestion=2026-11-17/
+                        date_dim.dat  (15.40 Mo)
+            item/
+                lot=data/
+                    date_ingestion=2026-11-17/
+                        item.dat  (6.80 Mo)
+                lot=data_refresh/
+                    date_ingestion=2026-11-17/
+                        item.dat  (0.07 Mo)
+            store_sales/
+                lot=data/
+                    date_ingestion=2026-11-17/
+                        store_sales.dat  (92.76 Mo)
+                lot=data_refresh/
+                    date_ingestion=2026-11-17/
+                        store_sales.dat  (0.92 Mo)
+    gold/
+        kpi/
+            k02_ca_categorie_annee/
+                part-0.parquet  (0.01 Mo)
+    silver/
+        _quarantaine/
+            store_sales/
+                part-0.parquet  (0.01 Mo)
+        referentiels/
+            date_dim/
+                part-0.parquet  (5.54 Mo)
+            item/
+                part-0.parquet  (4.01 Mo)
+        ventes/
+            store_sales/
+                annee=2001/
+                    mois=1/
+                        899c368654544314b3c117966466ec5d-0.parquet  (1.02 Mo)
+                annee=2002/
+                    mois=1/
+                        899c368654544314b3c117966466ec5d-0.parquet  (1.03 Mo)
+                annee=2003/
+                    mois=1/
+                        899c368654544314b3c117966466ec5d-0.parquet  (1.03 Mo)
+                annee=2004/
+                    mois=1/
+                        899c368654544314b3c117966466ec5d-0.parquet  (1.01 Mo)
+                annee=2005/
+                    mois=1/
+                        899c368654544314b3c117966466ec5d-0.parquet  (1.01 Mo)

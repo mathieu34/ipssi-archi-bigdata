@@ -1,0 +1,6 @@
+# Contrôle : indicateurs calendaires de date_dim (colonnes 17, 18, 19 : d_holiday, d_weekend, d_following_holiday)
+# commande : cut -d'|' -f<n> date_dim.dat | sort | uniq -c
+colonne 17 :  109573 Y 
+colonne 18 :   78267 N   31306 Y 
+colonne 19 :   54907 N   54666 Y 
+Lecture : d_holiday = Y pour 100 % des jours (inutilisable) ; d_following_holiday réparti ~50/50 (incohérent) ; d_weekend = 31 306 / 109 573 = 28,6 % (cohérent avec 2/7).

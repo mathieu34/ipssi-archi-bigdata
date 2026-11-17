@@ -1,0 +1,6 @@
+# retail_project/data/inventory/inventory.dat - 5 premières lignes brutes
+36890|0|0|503
+36890|1|0|624
+36890|2|0|796
+36890|3|0|229
+36890|4|0|699

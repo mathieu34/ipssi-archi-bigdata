@@ -1,0 +1,110 @@
+Contrôles des relations - 2026-11-16 16:30 - source ~/tp_bigdata/extract/retail_project
+=== 1. Relations enfant -> parent (data/ ; parent complété par data_refresh/ en 2e mesure) ===
+store_sales.ss_sold_date_sk -> date_dim.d_date_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 1808/109573, Vérifié
+store_sales.ss_sold_time_sk -> time_dim.t_time_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 55645/86400, Vérifié
+store_sales.ss_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 17820/17820, Vérifié
+store_sales.ss_customer_sk -> customer.c_customer_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 37336/99000, Vérifié
+store_sales.ss_cdemo_sk -> customer_demographics.cd_demo_sk : nulls 238, orphelins 0 (avec refresh 0), parents utilisés 36953/1920800, Vérifié
+store_sales.ss_hdemo_sk -> household_demographics.hd_demo_sk : nulls 295, orphelins 0 (avec refresh 0), parents utilisés 7161/7200, Vérifié
+store_sales.ss_addr_sk -> customer_address.ca_address_sk : nulls 448, orphelins 0 (avec refresh 0), parents utilisés 26286/49500, Vérifié
+store_sales.ss_store_sk -> store.s_store_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 12/12, Vérifié
+store_sales.ss_promo_sk -> promotion.p_promo_sk : nulls 158, orphelins 0 (avec refresh 0), parents utilisés 300/300, Vérifié
+web_sales.ws_sold_date_sk -> date_dim.d_date_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 1808/109573, Vérifié
+web_sales.ws_ship_date_sk -> date_dim.d_date_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 1927/109573, Vérifié
+web_sales.ws_sold_time_sk -> time_dim.t_time_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 55563/86400, Vérifié
+web_sales.ws_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 17820/17820, Vérifié
+web_sales.ws_bill_customer_sk -> customer.c_customer_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 37367/99000, Vérifié
+web_sales.ws_ship_customer_sk -> customer.c_customer_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 39377/99000, Vérifié
+web_sales.ws_bill_addr_sk -> customer_address.ca_address_sk : nulls 272, orphelins 0 (avec refresh 0), parents utilisés 26208/49500, Vérifié
+web_sales.ws_web_page_sk -> web_page.wp_web_page_sk : nulls 164, orphelins 0 (avec refresh 0), parents utilisés 60/60, Vérifié
+web_sales.ws_web_site_sk -> web_site.web_site_sk : nulls 154, orphelins 0 (avec refresh 0), parents utilisés 30/30, Vérifié
+web_sales.ws_ship_mode_sk -> ship_mode.sm_ship_mode_sk : nulls 170, orphelins 0 (avec refresh 0), parents utilisés 20/20, Vérifié
+web_sales.ws_warehouse_sk -> warehouse.w_warehouse_sk : nulls 158, orphelins 0 (avec refresh 0), parents utilisés 5/5, Vérifié
+web_sales.ws_promo_sk -> promotion.p_promo_sk : nulls 121, orphelins 0 (avec refresh 0), parents utilisés 300/300, Vérifié
+store_returns.sr_returned_date_sk -> date_dim.d_date_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 2221/109573, Vérifié
+store_returns.sr_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 12551/17820, Vérifié
+store_returns.sr_customer_sk -> customer.c_customer_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 6226/99000, Vérifié
+store_returns.sr_store_sk -> store.s_store_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 12/12, Vérifié
+store_returns.sr_reason_sk -> reason.r_reason_sk : nulls 11, orphelins 0 (avec refresh 0), parents utilisés 35/35, Vérifié
+web_returns.wr_returned_date_sk -> date_dim.d_date_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 2492/109573, Vérifié
+web_returns.wr_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 12601/17820, Vérifié
+web_returns.wr_reason_sk -> reason.r_reason_sk : nulls 7, orphelins 0 (avec refresh 0), parents utilisés 35/35, Vérifié
+web_returns.wr_web_page_sk -> web_page.wp_web_page_sk : nulls 10, orphelins 0 (avec refresh 0), parents utilisés 60/60, Vérifié
+inventory.inv_date_sk -> date_dim.d_date_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 259/109573, Vérifié
+inventory.inv_item_sk -> item.i_item_sk : nulls 0, orphelins 232380 (avec refresh 0), parents utilisés 17820/17820, Vérifié (avec data_refresh/)
+inventory.inv_warehouse_sk -> warehouse.w_warehouse_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 5/5, Vérifié
+web_clickstreams.wcs_click_date_sk -> date_dim.d_date_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 1808/109573, Vérifié
+web_clickstreams.wcs_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 17820/17820, Vérifié
+web_clickstreams.wcs_web_page_sk -> web_page.wp_web_page_sk : nulls 164, orphelins 0 (avec refresh 0), parents utilisés 60/60, Vérifié
+web_clickstreams.wcs_user_sk -> customer.c_customer_sk : nulls 2853461, orphelins 0 (avec refresh 0), parents utilisés 88695/99000, Vérifié
+web_clickstreams.wcs_sales_sk -> web_sales.ws_order_number : nulls 6102498, orphelins 0 (avec refresh 0), parents utilisés 89100/89100, Hypothèse
+product_reviews.pr_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 16731/17820, Vérifié
+product_reviews.pr_user_sk -> customer.c_customer_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 39244/99000, Vérifié
+product_reviews.pr_order_sk -> web_sales.ws_order_number : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 88723/89100, Hypothèse
+customer.c_current_cdemo_sk -> customer_demographics.cd_demo_sk : nulls 18, orphelins 0 (avec refresh 0), parents utilisés 96438/1920800, Vérifié
+customer.c_current_hdemo_sk -> household_demographics.hd_demo_sk : nulls 29, orphelins 0 (avec refresh 0), parents utilisés 7200/7200, Vérifié
+customer.c_current_addr_sk -> customer_address.ca_address_sk : nulls 22, orphelins 0 (avec refresh 0), parents utilisés 42734/49500, Vérifié
+household_demographics.hd_income_band_sk -> income_band.ib_income_band_sk : nulls 2, orphelins 0 (avec refresh 0), parents utilisés 20/20, Vérifié
+item_marketprices.imp_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 17820/17820, Vérifié
+promotion.p_item_sk -> item.i_item_sk : nulls 0, orphelins 0 (avec refresh 0), parents utilisés 298/17820, Vérifié
+
+=== 2. Doublons (transaction, produit) dans les ventes ===
+store_sales: 8174 lignes dans 4038 groupes (taille max 4)
+  colonnes qui diffèrent au sein des groupes (nb de groupes) : {'ss_promo_sk': 4025, 'ss_quantity': 4006, 'ss_wholesale_cost': 4038, 'ss_list_price': 4038, 'ss_sales_price': 4037, 'ss_ext_discount_amt': 4038, 'ss_ext_sales_price': 4037, 'ss_ext_wholesale_cost': 4038, 'ss_ext_list_price': 4038, 'ss_ext_tax': 4015, 'ss_coupon_amt': 1536, 'ss_net_paid': 4037, 'ss_net_paid_inc_tax': 4037, 'ss_net_profit': 4038}
+  colonnes identiques dans tous les groupes : ['ss_sold_date_sk', 'ss_sold_time_sk', 'ss_customer_sk', 'ss_cdemo_sk', 'ss_hdemo_sk', 'ss_addr_sk', 'ss_store_sk']
+  exemple :
+     ss_sold_date_sk  ss_sold_time_sk  ss_item_sk  ss_customer_sk  ss_cdemo_sk  ss_hdemo_sk  ...  ss_ext_list_price  ss_ext_tax  ss_coupon_amt  ss_net_paid  ss_net_paid_inc_tax  ss_net_profit
+303            36890            27946       10003           92924    1122908.0       2542.0  ...            2227.04       82.40           0.00      1647.96              1730.36         163.37
+306            36890            27946       10003           92924    1122908.0       2542.0  ...            7345.28        0.06          67.71         5.89                 5.95       -3943.21
+319            36890            76375       10000           83216    1440692.0       1124.0  ...            1747.80        0.00           0.00       594.20               594.20        -710.20
+327            36890            76375       10000           83216    1440692.0       1124.0  ...            2844.45        1.82        2184.54        91.02                92.84       -2166.27
+  store_sales: transactions avec plus d'une valeur de ss_sold_date_sk : 0 / 89100
+  store_sales: transactions avec plus d'une valeur de ss_customer_sk : 0 / 89100
+  store_sales: transactions avec plus d'une valeur de ss_store_sk : 0 / 89100
+web_sales: 8067 lignes dans 3991 groupes (taille max 4)
+  colonnes qui diffèrent au sein des groupes (nb de groupes) : {'ws_ship_date_sk': 3948, 'ws_web_page_sk': 3912, 'ws_web_site_sk': 3861, 'ws_ship_mode_sk': 3758, 'ws_warehouse_sk': 3193, 'ws_promo_sk': 3974, 'ws_quantity': 3951, 'ws_wholesale_cost': 3990, 'ws_list_price': 3991, 'ws_sales_price': 3991, 'ws_ext_discount_amt': 3991, 'ws_ext_sales_price': 3991, 'ws_ext_wholesale_cost': 3990, 'ws_ext_list_price': 3991, 'ws_ext_tax': 3978, 'ws_coupon_amt': 1488, 'ws_ext_ship_cost': 3991, 'ws_net_paid': 3991, 'ws_net_paid_inc_tax': 3991, 'ws_net_paid_inc_ship': 3991, 'ws_net_paid_inc_ship_tax': 3991, 'ws_net_profit': 3991}
+  colonnes identiques dans tous les groupes : ['ws_sold_date_sk', 'ws_sold_time_sk', 'ws_bill_customer_sk', 'ws_bill_cdemo_sk', 'ws_bill_hdemo_sk', 'ws_bill_addr_sk', 'ws_ship_customer_sk', 'ws_ship_cdemo_sk', 'ws_ship_hdemo_sk', 'ws_ship_addr_sk']
+  exemple :
+    ws_sold_date_sk  ws_sold_time_sk  ws_ship_date_sk  ws_item_sk  ws_bill_customer_sk  ws_bill_cdemo_sk  ...  ws_ext_ship_cost  ws_net_paid  ws_net_paid_inc_tax  ws_net_paid_inc_ship  ws_net_paid_inc_ship_tax  ws_net_profit
+42            36890            76520            36946       10001                 1683          100370.0  ...            775.82      4544.04              4589.48               5319.86                   5365.30        2592.74
+44            36890            76520            36963       10001                 1683          100370.0  ...            540.38       293.88               311.51                834.26                    851.89        -172.22
+69            36890            44223            36906       13530                17305         1138054.0  ...           1559.38      1879.52              1954.70               3438.90                   3514.08        -119.68
+71            36890            44223            36891       13530                17305         1138054.0  ...           1074.39      6907.04              7114.25               7981.43                   8188.64        2419.20
+  web_sales: transactions avec plus d'une valeur de ws_sold_date_sk : 0 / 89100
+  web_sales: transactions avec plus d'une valeur de ws_bill_customer_sk : 0 / 89100
+  web_sales: transactions avec plus d'une valeur de ws_ship_customer_sk : 0 / 89100
+
+=== 3. Retours -> ventes ===
+store_returns (data + refresh, 38328 lignes) : retrouvés dans store_sales sur (transaction, produit) : 37921 (98.94 %)
+  dont numéro de transaction seul présent dans les ventes : 38328 (100.00 %)
+  délai retour - vente (jours) : min 0.0, médiane 356.0, max 715.0, négatif 0, > 365 j 18323
+  quantité retournée > quantité vendue : 64
+web_returns (data + refresh, 38887 lignes) : retrouvés dans web_sales sur (transaction, produit) : 38516 (99.05 %)
+  dont numéro de transaction seul présent dans les ventes : 38887 (100.00 %)
+  délai retour - vente (jours) : min 1.0, médiane 421.0, max 835.0, négatif 0, > 365 j 22173
+  quantité retournée > quantité vendue : 54
+
+=== 4. data/ vs data_refresh/ ===
+store_sales: transactions communes aux deux dossiers : 0
+  lignes du 13/12/2005 (38697) : data 285, refresh 96
+  lignes entièrement identiques entre data et refresh : 0
+  numéros de transaction : data 0-89099, refresh 89100-89999
+web_sales: transactions communes aux deux dossiers : 0
+  lignes du 13/12/2005 (38697) : data 275, refresh 101
+  lignes entièrement identiques entre data et refresh : 0
+  numéros de transaction : data 0-89099, refresh 89100-89999
+inventory: dates refresh [np.int64(38696), np.int64(38703), np.int64(38710)] ; lignes du relevé 38696 : data 35100, refresh 54900
+  relevé 38696 présent dans les deux : 0 couples communs, quantités différentes : 0
+
+=== 5. Clics -> ventes web ===
+clics avec wcs_sales_sk : 668052 / 6770550 (9.9 %)
+  correspondance (wcs_sales_sk, wcs_item_sk) = (ws_order_number, ws_item_sk) : 676386 / 676386
+  même date clic / vente : 100.00% ; même client (wcs_user_sk = ws_bill_customer_sk) : 100.00%
+  clics avec vente mais sans utilisateur : 0
+
+=== 6. Entrepôts ===
+w_warehouse_sk : [0, 1, 2, 3, 4] | inv_warehouse_sk : [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+ws_warehouse_sk : [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+
+=== 7. Clients communs aux deux canaux (Q2 par client) ===
+clients magasin 37336, clients web 37367, communs 14916, clients référentiel 99000

@@ -1,0 +1,78 @@
+Contrôles KPI - exécuté le 2026-11-16 16:01
+Source : ~/tp_bigdata/extract/retail_project/data/
+
+=== store_sales (MAGASIN) ===
+lignes : 667579
+valeurs nulles par colonne :
+ss_sold_date_sk        0
+ss_item_sk             0
+ss_ticket_number       0
+ss_quantity            0
+ss_sales_price         0
+ss_ext_sales_price     0
+ss_ext_list_price      0
+ss_ext_discount_amt    0
+ss_coupon_amt          0
+ss_net_paid            0
+ss_store_sk            0
+transactions distinctes ( ss_ticket_number ) : 89100
+période : 36890 (2001-01-01) -> 38697 (2005-12-13)
+ext_sales_price = quantity * sales_price : 100.0000%
+ext_discount_amt = ext_list_price - ext_sales_price : 100.0000%
+net_paid = ext_sales_price - coupon_amt : 100.0000%
+quantités <= 0 : 0 | net_paid < 0 : 0
+doublons (transaction, produit) : 4136 | doublons de ligne complète : 0
+magasins distincts : 12 | tickets rattachés à plusieurs magasins : 0
+
+=== web_sales (WEB) ===
+lignes : 668052
+valeurs nulles par colonne :
+ws_sold_date_sk        0
+ws_item_sk             0
+ws_order_number        0
+ws_quantity            0
+ws_sales_price         0
+ws_ext_sales_price     0
+ws_ext_list_price      0
+ws_ext_discount_amt    0
+ws_coupon_amt          0
+ws_net_paid            0
+transactions distinctes ( ws_order_number ) : 89100
+période : 36890 (2001-01-01) -> 38697 (2005-12-13)
+ext_sales_price = quantity * sales_price : 100.0000%
+ext_discount_amt = ext_list_price - ext_sales_price : 100.0000%
+net_paid = ext_sales_price - coupon_amt : 100.0000%
+quantités <= 0 : 0 | net_paid < 0 : 0
+doublons (transaction, produit) : 4076 | doublons de ligne complète : 0
+
+=== Correspondance des clés (orphelins) ===
+store_sales.ss_item_sk absent de item : 0
+store_sales.ss_store_sk absent de store : 0
+store_sales.ss_sold_date_sk absent de date_dim : 0
+web_sales.ws_item_sk absent de item : 0
+web_sales.ws_sold_date_sk absent de date_dim : 0
+
+=== item / store ===
+item : lignes 17820 | i_item_sk unique : True | i_category nulle : 0 | catégories distinctes : 9
+store : lignes 12 | s_store_id distincts : 12
+
+=== inventory ===
+lignes : 23255100
+valeurs nulles :
+inv_date_sk                0
+inv_item_sk                0
+inv_warehouse_sk           0
+inv_quantity_on_hand    5999
+dates de relevé distinctes : 259 | 36890 (2001-01-01) -> 38696 (2005-12-12)
+écart entre relevés (jours) : {7: 258}
+entrepôts dans inventory : 5 | lignes de warehouse : 5
+quantité min / max : 0.0 / 1000.0
+dernier relevé (2005-12-12) : lignes 35100 | quantité = 0 : 47 | quantité nulle (vide) : 9 | produits distincts : 18000
+dernier relevé : lignes dont inv_item_sk est absent de item : 180 | produits concernés : 180 | dont quantité = 0 : 0
+item_sk min/max : item 0 / 17819 | inventory 0 / 17999
+lignes par (produit, entrepôt) au dernier relevé - max : 1
+
+=== data_refresh/item/item.dat ===
+commande : wc -l ; cut -d'|' -f1 | sort -n (min/max)
+lignes : 180
+i_item_sk min/max : 17820/17999

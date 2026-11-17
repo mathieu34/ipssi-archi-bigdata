@@ -1,0 +1,6 @@
+# retail_project/data/household_demographics/household_demographics.dat - 5 premières lignes brutes
+0|3|1001-5000|0|0
+1|12|5001-10000|1|2
+2|9|0-500|2|3
+3|7|501-1000|7|2
+4|16|1001-5000|6|2

@@ -1,0 +1,13 @@
+Composant;Statut (référentiel);Rôle dans le parcours;Rôle dans l'architecture Retail Intelligence;Jour;État au Jour 1
+Linux / Ubuntu;Obligatoire;Environnement de référence local;Système hôte de tous les composants locaux;J1;Installé : Ubuntu 24.04.3 LTS sous WSL2
+Python;Obligatoire;Exploration, scripts, traitements;"Profilage et contrôles de l'UC-01 ; repli d'ingestion ; scripts de contrôle";J1;"Installé et utilisé : Python 3.12, pandas, pyarrow ; profilage UC-01 et démonstration Bronze -> Silver -> Gold (preuves/demo_bronze_silver_gold/)"
+Hadoop / HDFS;Obligatoire (repli documenté);Stockage distribué local;Stockage des zones Bronze, Silver et Gold en local;J2;Non installé (prévu au Jour 2)
+Apache NiFi;Obligatoire (repli documenté);Ingestion et orchestration des flux;Flux F1 à F4 : dépôt des lots en Bronze, empreinte, manifeste;J2;Non installé (prévu au Jour 2)
+Apache Spark / PySpark;Obligatoire;Traitements distribués et transformations;"Bronze vers Silver (typage, contrôles) ; Silver vers Gold (F5) ; Spark SQL (F6)";J3;Non installé (prévu au Jour 3)
+Parquet;Format de référence;Stockage analytique colonnaire;Format des zones Silver et Gold;J3;Utilisé dans la démonstration locale (pyarrow) : Silver et Gold écrits en Parquet
+HBase;Facultatif;Approfondissement NoSQL;Non retenu dans le socle (voir section 3);J3;"Non installé ; non requis"
+PDGF;Selon kit disponible;Génération des données si le kit le permet;Non utilisé : les données sont fournies déjà générées;-;Outil de génération non communiqué (UC-01)
+Delta Lake;Facultatif;Approfondissement Lakehouse;Évolution possible vers un Lakehouse (comparaison_architectures.pdf);J3;"Non installé ; non requis"
+ADLS Gen2;Objectif obligatoire;Déclinaison cloud de l'architecture;Cible cloud des zones Bronze, Silver, Gold (local_vers_azure.pdf);J4;Conception logique uniquement
+Azure Data Factory;Présentation / étude;Orchestration et intégration cloud;Alternative cloud à NiFi pour les flux;J4;Étude uniquement
+Azure Synapse;Présentation / étude;Services analytiques cloud;Spark et SQL en cloud pour F5 et F6;J4;Étude uniquement

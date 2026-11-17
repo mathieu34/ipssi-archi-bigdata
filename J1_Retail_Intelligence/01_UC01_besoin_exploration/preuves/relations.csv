@@ -1,0 +1,48 @@
+enfant,parent,type_enfant,type_parent,lignes_enfant,nulls_enfant,pct_nulls,valeurs_distinctes,parent_unique,orphelins,orphelins_avec_refresh,pct_orphelins,parents_utilises,max_enfants_par_parent,cardinalite,statut,usage
+store_sales.ss_sold_date_sk,date_dim.d_date_sk,entier,entier,667579,0,0.0,1808,oui,0,0,0.0,1808/109573,459,N:1,Vérifié,"Q4, K08"
+store_sales.ss_sold_time_sk,time_dim.t_time_sk,entier,entier,667579,0,0.0,55645,oui,0,0,0.0,55645/86400,68,N:1,Vérifié,-
+store_sales.ss_item_sk,item.i_item_sk,entier,entier,667579,0,0.0,17820,oui,0,0,0.0,17820/17820,9029,N:1,Vérifié,Q1
+store_sales.ss_customer_sk,customer.c_customer_sk,entier,entier,667579,0,0.0,37336,oui,0,0,0.0,37336/99000,513,N:1,Vérifié,hors périmètre
+store_sales.ss_cdemo_sk,customer_demographics.cd_demo_sk,entier (nulls),entier,667579,238,0.036,36953,oui,0,0,0.0,36953/1920800,763,N:1,Vérifié,hors périmètre
+store_sales.ss_hdemo_sk,household_demographics.hd_demo_sk,entier (nulls),entier,667579,295,0.044,7161,oui,0,0,0.0,7161/7200,1156,N:1,Vérifié,hors périmètre
+store_sales.ss_addr_sk,customer_address.ca_address_sk,entier (nulls),entier,667579,448,0.067,26286,oui,0,0,0.0,26286/49500,740,N:1,Vérifié,hors périmètre
+store_sales.ss_store_sk,store.s_store_sk,entier,entier,667579,0,0.0,12,oui,0,0,0.0,12/12,57589,N:1,Vérifié,Q3
+store_sales.ss_promo_sk,promotion.p_promo_sk,entier (nulls),entier,667579,158,0.024,300,oui,0,0,0.0,300/300,2398,N:1,Vérifié,K07
+web_sales.ws_sold_date_sk,date_dim.d_date_sk,entier,entier,668052,0,0.0,1808,oui,0,0,0.0,1808/109573,460,N:1,Vérifié,K08
+web_sales.ws_ship_date_sk,date_dim.d_date_sk,entier,entier,668052,0,0.0,1927,oui,0,0,0.0,1927/109573,432,N:1,Vérifié,-
+web_sales.ws_sold_time_sk,time_dim.t_time_sk,entier,entier,668052,0,0.0,55563,oui,0,0,0.0,55563/86400,87,N:1,Vérifié,-
+web_sales.ws_item_sk,item.i_item_sk,entier,entier,668052,0,0.0,17820,oui,0,0,0.0,17820/17820,9225,N:1,Vérifié,Q1
+web_sales.ws_bill_customer_sk,customer.c_customer_sk,entier,entier,668052,0,0.0,37367,oui,0,0,0.0,37367/99000,521,N:1,Vérifié,Q2 (par client)
+web_sales.ws_ship_customer_sk,customer.c_customer_sk,entier,entier,668052,0,0.0,39377,oui,0,0,0.0,39377/99000,495,N:1,Vérifié,-
+web_sales.ws_bill_addr_sk,customer_address.ca_address_sk,entier (nulls),entier,668052,272,0.041,26208,oui,0,0,0.0,26208/49500,626,N:1,Vérifié,-
+web_sales.ws_web_page_sk,web_page.wp_web_page_sk,entier (nulls),entier,668052,164,0.025,60,oui,0,0,0.0,60/60,11337,N:1,Vérifié,-
+web_sales.ws_web_site_sk,web_site.web_site_sk,entier (nulls),entier,668052,154,0.023,30,oui,0,0,0.0,30/30,22805,N:1,Vérifié,-
+web_sales.ws_ship_mode_sk,ship_mode.sm_ship_mode_sk,entier (nulls),entier,668052,170,0.025,20,oui,0,0,0.0,20/20,33645,N:1,Vérifié,-
+web_sales.ws_warehouse_sk,warehouse.w_warehouse_sk,entier (nulls),entier,668052,158,0.024,5,oui,0,0,0.0,5/5,134208,N:1,Vérifié,Q6 (piste)
+web_sales.ws_promo_sk,promotion.p_promo_sk,entier (nulls),entier,668052,121,0.018,300,oui,0,0,0.0,300/300,2363,N:1,Vérifié,K07
+store_returns.sr_returned_date_sk,date_dim.d_date_sk,entier,entier,37902,0,0.0,2221,oui,0,0,0.0,2221/109573,83,N:1,Vérifié,hors périmètre
+store_returns.sr_item_sk,item.i_item_sk,entier,entier,37902,0,0.0,12551,oui,0,0,0.0,12551/17820,529,N:1,Vérifié,hors périmètre
+store_returns.sr_customer_sk,customer.c_customer_sk,entier,entier,37902,0,0.0,6226,oui,0,0,0.0,6226/99000,55,N:1,Vérifié,hors périmètre
+store_returns.sr_store_sk,store.s_store_sk,entier,entier,37902,0,0.0,12,oui,0,0,0.0,12/12,3380,N:1,Vérifié,hors périmètre
+store_returns.sr_reason_sk,reason.r_reason_sk,entier (nulls),entier,37902,11,0.029,35,oui,0,0,0.0,35/35,1143,N:1,Vérifié,hors périmètre
+web_returns.wr_returned_date_sk,date_dim.d_date_sk,entier,entier,38487,0,0.0,2492,oui,0,0,0.0,2492/109573,40,N:1,Vérifié,hors périmètre
+web_returns.wr_item_sk,item.i_item_sk,entier,entier,38487,0,0.0,12601,oui,0,0,0.0,12601/17820,521,N:1,Vérifié,hors périmètre
+web_returns.wr_reason_sk,reason.r_reason_sk,entier (nulls),entier,38487,7,0.018,35,oui,0,0,0.0,35/35,1168,N:1,Vérifié,hors périmètre
+web_returns.wr_web_page_sk,web_page.wp_web_page_sk,entier (nulls),entier,38487,10,0.026,60,oui,0,0,0.0,60/60,690,N:1,Vérifié,hors périmètre
+inventory.inv_date_sk,date_dim.d_date_sk,entier,entier,23255100,0,0.0,259,oui,0,0,0.0,259/109573,90000,N:1,Vérifié,"Q5, Q6"
+inventory.inv_item_sk,item.i_item_sk,entier,entier,23255100,0,0.0,18000,oui,232380,0,0.999,17820/17820,1292,N:1,Vérifié (avec data_refresh/),Q5
+inventory.inv_warehouse_sk,warehouse.w_warehouse_sk,entier,entier,23255100,0,0.0,5,oui,0,0,0.0,5/5,4662000,N:1,Vérifié,Q6
+web_clickstreams.wcs_click_date_sk,date_dim.d_date_sk,entier,entier,6770550,0,0.0,1808,oui,0,0,0.0,1808/109573,3977,N:1,Vérifié,hors périmètre
+web_clickstreams.wcs_item_sk,item.i_item_sk,entier,entier,6770550,0,0.0,17820,oui,0,0,0.0,17820/17820,9572,N:1,Vérifié,hors périmètre
+web_clickstreams.wcs_web_page_sk,web_page.wp_web_page_sk,entier (nulls),entier,6770550,164,0.002,60,oui,0,0,0.0,60/60,113476,N:1,Vérifié,hors périmètre
+web_clickstreams.wcs_user_sk,customer.c_customer_sk,entier (nulls),entier,6770550,2853461,42.145,88695,oui,0,0,0.0,88695/99000,832,N:1,Vérifié,hors périmètre
+web_clickstreams.wcs_sales_sk,web_sales.ws_order_number,entier (nulls),entier,6770550,6102498,90.133,89100,non,0,0,0.0,89100/89100,14,N:N (parent non unique),Hypothèse,hors périmètre
+product_reviews.pr_item_sk,item.i_item_sk,entier,entier,89601,0,0.0,16731,oui,0,0,0.0,16731/17820,1227,N:1,Vérifié,hors périmètre
+product_reviews.pr_user_sk,customer.c_customer_sk,entier,entier,89601,0,0.0,39244,oui,0,0,0.0,39244/99000,64,N:1,Vérifié,hors périmètre
+product_reviews.pr_order_sk,web_sales.ws_order_number,entier,entier,89601,0,0.0,88723,non,0,0,0.0,88723/89100,2,N:N (parent non unique),Hypothèse,hors périmètre
+customer.c_current_cdemo_sk,customer_demographics.cd_demo_sk,entier (nulls),entier,99000,18,0.018,96438,oui,0,0,0.0,96438/1920800,3,N:1,Vérifié,hors périmètre
+customer.c_current_hdemo_sk,household_demographics.hd_demo_sk,entier (nulls),entier,99000,29,0.029,7200,oui,0,0,0.0,7200/7200,33,N:1,Vérifié,hors périmètre
+customer.c_current_addr_sk,customer_address.ca_address_sk,entier (nulls),entier,99000,22,0.022,42734,oui,0,0,0.0,42734/49500,10,N:1,Vérifié,hors périmètre
+household_demographics.hd_income_band_sk,income_band.ib_income_band_sk,entier (nulls),entier,7200,2,0.028,20,oui,0,0,0.0,20/20,403,N:1,Vérifié,hors périmètre
+item_marketprices.imp_item_sk,item.i_item_sk,entier,entier,89100,0,0.0,17820,oui,0,0,0.0,17820/17820,13,N:1,Vérifié,hors périmètre
+promotion.p_item_sk,item.i_item_sk,entier,entier,300,0,0.0,298,oui,0,0,0.0,298/17820,2,N:1,Vérifié,hors périmètre

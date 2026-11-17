@@ -1,0 +1,23 @@
+Table;Colonne Gold;Source Silver (magasin / web);Remarque
+fait_ventes;id_ligne;_id_ligne;Clé technique (pas de numéro de ligne dans la source)
+;canal;« MAGASIN » / « WEB »;Permet Q2 et K03
+;id_transaction;canal + ss_ticket_number / ws_order_number;Canal inclus : les numéros des deux canaux se recouvrent (0 à 89 999)
+;date_key;ss_sold_date_sk / ws_sold_date_sk;vers dim_date
+;produit_key;ss_item_sk / ws_item_sk;vers dim_produit
+;magasin_key;ss_store_sk / -1;-1 = « non applicable » pour le web
+;client_key;ss_customer_sk / ws_bill_customer_sk;vers dim_client
+;entrepot_key;-1 / ws_warehouse_sk (vide -> -2);-2 = « inconnu » (158 vides)
+;quantite;ss_quantity / ws_quantity;K06
+;montant_catalogue;ss_ext_list_price / ws_ext_list_price;Base du taux de remise (K07)
+;remise;ss_ext_discount_amt / ws_ext_discount_amt;K07
+;coupon;ss_coupon_amt / ws_coupon_amt;Réduction distincte de la remise
+;ca_net;ss_net_paid / ws_net_paid;CA hors taxes, hors frais de port, retours non déduits (K01)
+fait_stock;date_key, produit_key, entrepot_key;inv_date_sk, inv_item_sk, inv_warehouse_sk;Clé composite unique (vérifiée)
+;quantite;inv_quantity_on_hand;Peut être vide
+;est_vide, est_rupture;"quantité vide ; quantité = 0";"K11 ; une photo ne s'additionne pas dans le temps"
+dim_date;date_key, date, annee, trimestre, mois, jour_semaine, nom_jour, est_weekend;d_date_sk, d_date, d_year, d_qoy, d_moy, d_dow, d_day_name, d_weekend;d_holiday exclu (Y pour tous les jours)
+dim_produit;produit_key, code, libelle, categorie, classe, marque, prix_courant;i_item_sk, i_item_id, i_product_name, i_category, i_class, i_brand, i_current_price;"data/ + data_refresh/ (18 000 produits) ; libellés synthétiques illisibles"
+dim_magasin;magasin_key, nom, ville, etat, surface;s_store_sk, s_store_name, s_city, s_state, s_floor_space;s_closed_date_sk exclue (incohérente)
+dim_client;client_key, annee_naissance, pays_naissance, client_prefere;c_customer_sk, c_birth_year, c_birth_country, c_preferred_cust_flag;Nom, e-mail, login exclus (minimisation des données personnelles)
+dim_entrepot;entrepot_key, nom, etat, surface;w_warehouse_sk, w_warehouse_name, w_state, w_warehouse_sq_ft;5 entrepôts
+Toutes les dimensions;Lignes -1 « Non applicable » et -2 « Inconnu »;-;Évite les clés vides dans les faits

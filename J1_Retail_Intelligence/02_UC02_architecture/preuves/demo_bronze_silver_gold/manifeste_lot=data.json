@@ -1,0 +1,32 @@
+{
+  "lot": "data",
+  "origine": "retail_project.zip (TPCx-BB, synthétique)",
+  "date_ingestion": "2026-11-17",
+  "schema": "schema.py (conforme à la spécification TPCx-BB v1.7.0, annexe B.2)",
+  "fichiers": [
+    {
+      "table": "store_sales",
+      "fichier": "store_sales.dat",
+      "octets": 92764700,
+      "lignes": 667579,
+      "champs_attendus": 23,
+      "sha256": "7e0a7f16b47483741754bb641c92601dd7384dacc8331d0bcfb8abac82ed3d2e"
+    },
+    {
+      "table": "item",
+      "fichier": "item.dat",
+      "octets": 6799286,
+      "lignes": 17820,
+      "champs_attendus": 22,
+      "sha256": "d8d4863009914b86119c2df6f6a55a581cc07617304551ab7b741400ef7fed21"
+    },
+    {
+      "table": "date_dim",
+      "fichier": "date_dim.dat",
+      "octets": 15395800,
+      "lignes": 109573,
+      "champs_attendus": 28,
+      "sha256": "325c892265c040d6c85491d708e4e081d1bf8532f949b3a18b14ba6e73a456af"
+    }
+  ]
+}

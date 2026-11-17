@@ -1,0 +1,6 @@
+# retail_project/data_refresh/item_marketprices/item_marketprices_audit.csv - 5 premières lignes brutes
+
+maxItems,realMaxItems,numCompetitors,minComPerITem,maxComPerItem,avgComPerItem,itemsWithoutCompetitors,itemsNotHavingMinCompetitors
+18000,17999,900,0,2,0.05000277793210734,17117,864
+List of item ID's with competitor count = 0:
+0,0

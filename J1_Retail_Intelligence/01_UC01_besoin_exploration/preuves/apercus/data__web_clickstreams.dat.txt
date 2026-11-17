@@ -1,0 +1,6 @@
+# retail_project/data/web_clickstreams/web_clickstreams.dat - 5 premières lignes brutes
+36890|71470||4867|28|
+36890|27089||15465|47|
+36890|16847||3387|31|
+36890|46031||15214|28|
+36890|8436||10556|37|

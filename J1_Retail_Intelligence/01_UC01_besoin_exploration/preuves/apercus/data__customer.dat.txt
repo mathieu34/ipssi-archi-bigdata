@@ -1,0 +1,6 @@
+# retail_project/data/customer/customer.dat - 5 premières lignes brutes
+0|AAAAAAAAAAAAAAAA|1824793|3203|2555|28776|14690|Ms.|Marisa|Harrington|N|17|4|1988|UNITED ARAB EMIRATES|RRCyuY3XfE3a|Marisa.Harrington@lawyer.com|gdMmGdU9
+1|AAAAAAAAAAAAAAAB|830976|2600|9191|94658|19931|Miss|Bessie|Calderon|N|20|10|1945|MONACO|aCJb9cc|Bessie.Calderon@snail-mail.net|hLQn0LtVa
+2|AAAAAAAAAAAAAAAC|335540|5527|14091|31783|106195|Miss|Barbara|Hoover|Y|3|4|1952|GREENLAND|59cfL9Fbpv|Barbara.Hoover@lawyer.com|vDVbSOCI
+3|AAAAAAAAAAAAAAAD|1056662|1978|19122|8741|87583|Mr.|Lanny|Berg|N|2|1|1932|CANADA|TvsKkZgPt|Lanny.Berg@gmx.fr|ZxCh4LKH
+4|AAAAAAAAAAAAAAAE|596707|3971|21996|14688|75952|Mrs.|Gina|Felix|Y|18|4|1959|NAURU|t3r2t4rC|Gina.Felix@amplimail.com|WpJjJ1
