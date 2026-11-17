@@ -2,21 +2,21 @@
 
 Preuves du dossier UC-02 (§5.2.16 du sujet). Les documents UC-02 sont des documents de **conception** :
 aucune architecture n'est déployée au Jour 1. Les fichiers CSV reprennent les tableaux des PDF pour pouvoir
-être relus ou réutilisés dans un tableur ; ils sont produits par les scripts de `sources/` (racine du projet).
+être relus ou réutilisés dans un tableur.
 
 **Point d'entrée : `index_preuves.pdf`** — titre, explication et extrait de chaque preuve, plus les schémas (architecture annotée, flux, cible Azure) en annexe.
 
 ## Preuves attendues par le sujet (§5.2.16)
 
-| Preuve attendue | Fichier(s) | Produit par |
-|---|---|---|
-| Schéma d'architecture | `../architecture_cible.pdf` (section 1) | `uc02_architecture_cible.py` |
-| Schéma des flux | `../schema_flux.pdf` (section 2), `flux.csv` | `uc02_schema_flux.py` |
-| Tableau de comparaison des architectures | `tableau_comparaison_architectures.csv`, `../comparaison_architectures.pdf` | `uc02_comparaison_architectures.py` |
-| Matrice de positionnement des composants | `matrice_composants.csv`, `../positionnement_composants.pdf` | `uc02_positionnement_composants.py` |
-| Description des zones de données | `zones_donnees.csv`, `modele_gold.csv`, `../architecture_cible.pdf` (sections 3 à 5) | `uc02_architecture_cible.py` |
-| Règles de gouvernance proposées | `regles_gouvernance.csv`, `regles_qualite.csv`, `../gouvernance.pdf` | `uc02_gouvernance.py` |
-| Comparaison local / cloud | `comparaison_local_cloud.csv`, `../local_vers_azure.pdf` | `uc02_local_vers_azure.py` |
+| Preuve attendue | Fichier(s) |
+|---|---|
+| Schéma d'architecture | `../architecture_cible.pdf` (section 1) |
+| Schéma des flux | `../schema_flux.pdf` (section 2), `flux.csv` |
+| Tableau de comparaison des architectures | `tableau_comparaison_architectures.csv`, `../comparaison_architectures.pdf` |
+| Matrice de positionnement des composants | `matrice_composants.csv`, `../positionnement_composants.pdf` |
+| Description des zones de données | `zones_donnees.csv`, `modele_gold.csv`, `../architecture_cible.pdf` (sections 3 à 5) |
+| Règles de gouvernance proposées | `regles_gouvernance.csv`, `regles_qualite.csv`, `../gouvernance.pdf` |
+| Comparaison local / cloud | `comparaison_local_cloud.csv`, `../local_vers_azure.pdf` |
 
 ## Manipulation réellement effectuée : démonstration Bronze -> Silver -> Gold
 
@@ -42,12 +42,11 @@ au lieu de HDFS, pandas + pyarrow au lieu de Spark. Ce n'est pas le déploiement
 Les preuves sur les données elles-mêmes (inventaire, qualité, relations) sont dans
 `../../01_UC01_besoin_exploration/preuves/`.
 
-## Régénérer
+## Relancer la démonstration
+
+Depuis la racine du dépôt, après avoir placé les données dans `donnees/retail_project/` (voir le README principal) :
 
 ```bash
 cd sources
-for s in uc02_comparaison_architectures uc02_architecture_cible uc02_schema_flux \
-         uc02_positionnement_composants uc02_gouvernance uc02_local_vers_azure; do
-  ../.venv/bin/python $s.py
-done
+../.venv/bin/python demo_bronze_silver_gold.py   # dépendances : pandas, pyarrow
 ```

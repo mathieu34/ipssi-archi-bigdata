@@ -2,3 +2,10 @@
 __pycache__/
 datalake_demo/
 donnees/
+
+# Générateurs de mise en page des PDF / Excel (conservés en local, hors dépôt)
+sources/uc0*_*.py
+sources/pdf_style.py
+sources/index_preuves.py
+sources/annotations_sources.py
+sources/assembler_jour1.py

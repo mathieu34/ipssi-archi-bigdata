@@ -25,10 +25,11 @@ Arborescence recommandée au §8.4 du sujet. Jeu de données : archive `retail_p
 Les dossiers `03_complementaire/`, `04_avance/` et `05_contribution_individuelle/` du §8.4 sont absents tant que
 les activités correspondantes ne sont pas réalisées.
 
-## Régénérer les documents
+## Scripts d'analyse et données
 
-Les documents sont produits par les scripts Python de `../sources/` (dépendances dans `../.venv` :
-pandas, reportlab, openpyxl). Les procédures complètes sont décrites dans `01_UC01_besoin_exploration/preuves/README.md` et `02_UC02_architecture/preuves/README.md`.
+Le dossier `../sources/` contient les scripts Python qui ont analysé les données et produit les preuves
+(profilage, contrôles, relations, démonstration Bronze -> Silver -> Gold). Leur utilisation est décrite dans
+`01_UC01_besoin_exploration/preuves/README.md` et `02_UC02_architecture/preuves/README.md`.
 
 Les données ne sont pas dans le dépôt. Pour relancer les scripts d'analyse, décompresser l'archive
 `retail_project.zip` dans `donnees/` à la racine du projet (on obtient `donnees/retail_project/data/` et

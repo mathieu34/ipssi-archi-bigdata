@@ -1,12 +1,12 @@
 # preuves (UC-01) — index des preuves
 
 Preuves du dossier UC-01 (§5.1.16 du sujet). Chaque fichier est produit par une commande ou un script
-rejouable ; les scripts sont dans `sources/` (à la racine du projet).
+d'analyse rejouable ; ces scripts sont dans `sources/` (à la racine du projet).
 
 Données examinées : archive `retail_project.zip` décompressée dans `donnees/retail_project/` (dossiers `data/` et
 `data_refresh/`). Jeu synthétique TPCx-BB.
 
-**Point d'entrée : `index_preuves.pdf`** — pour chaque preuve, un titre, ce qu'elle démontre, son origine et un extrait lisible (généré par `index_preuves.py`).
+**Point d'entrée : `index_preuves.pdf`** — pour chaque preuve, un titre, ce qu'elle démontre, son origine et un extrait lisible.
 
 ## Preuves attendues par le sujet (§5.1.16)
 
@@ -17,8 +17,8 @@ Données examinées : archive `retail_project.zip` décompressée dans `donnees/
 | Aperçu de fichiers représentatifs | `apercus/` (5 premières lignes brutes de chaque fichier) | `profilage_sources.py` |
 | Tableau des colonnes et des types | `inventaire_colonnes.csv` (522 colonnes) | `profilage_sources.py` |
 | Résultats de contrôles simples | `controles_kpi.txt`, `controles_relations.txt`, `relations.csv`, `controle_inventaire_complet.txt`, `controle_store_fermeture.txt`, `controle_date_dim.txt`, `controle_schema_vs_specification.txt`, `profilage_log.txt` | `controles_kpi.py`, `relations_qualite.py`, commandes ad hoc (en-tête de chaque fichier) |
-| Schéma des besoins métier | `schema_fonctionnel.pdf` | `uc01_schema_fonctionnel.py` |
-| Dictionnaire de KPI | `../dictionnaire_KPI.xlsx` | `uc01_dictionnaire_kpi.py` |
+| Schéma des besoins métier | `schema_fonctionnel.pdf` | Conception UC-01 |
+| Dictionnaire de KPI | `../dictionnaire_KPI.xlsx` | Livrable UC-01 (formules fondées sur `controles_kpi.txt`) |
 
 ## Intégrité de l'archive
 
@@ -39,7 +39,7 @@ sha256sum <chemin_vers_l_archive>/retail_project.zip
 | `qualification_donnees.pdf` | `relations.csv`, `controles_relations.txt`, `controle_inventaire_complet.txt` |
 | `limites_hypotheses.pdf` | toutes les preuves ci-dessus |
 
-## Rejouer l'ensemble
+## Rejouer les analyses
 
 Depuis la racine du dépôt :
 
@@ -48,10 +48,6 @@ cd sources
 ../.venv/bin/python profilage_sources.py          # ~40 s : inventaire, colonnes, aperçus, arborescence
 ../.venv/bin/python controles_kpi.py > ../J1_Retail_Intelligence/01_UC01_besoin_exploration/preuves/controles_kpi.txt
 ../.venv/bin/python relations_qualite.py          # relations.csv, controles_relations.txt
-for s in uc01_cadrage_metier uc01_questions_decisionnelles uc01_dictionnaire_kpi uc01_inventaire_sources \
-         uc01_qualification_donnees uc01_limites_hypotheses uc01_schema_fonctionnel; do
-  ../.venv/bin/python $s.py
-done
 ```
 
 Remarques :
@@ -59,4 +55,5 @@ Remarques :
   relancer `controles_kpi.py` seul ne régénère pas cette partie.
 - `controle_inventaire_complet.txt` et `controle_store_fermeture.txt` viennent de commandes ponctuelles dont la logique est
   décrite en tête de fichier.
-- Dépendances Python (dans `.venv`) : pandas, reportlab, openpyxl.
+- Les données doivent d'abord être placées dans `donnees/retail_project/` (voir le README principal).
+- Dépendances Python (dans `.venv`) : pandas, numpy, pyarrow.
