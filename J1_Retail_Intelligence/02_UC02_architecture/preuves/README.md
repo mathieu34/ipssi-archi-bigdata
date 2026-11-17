@@ -41,13 +41,3 @@ au lieu de HDFS, pandas + pyarrow au lieu de Spark. Ce n'est pas le déploiement
 
 Les preuves sur les données elles-mêmes (inventaire, qualité, relations) sont dans
 `../../01_UC01_besoin_exploration/preuves/`.
-
-## Régénérer
-
-```bash
-cd sources
-for s in uc02_comparaison_architectures uc02_architecture_cible uc02_schema_flux \
-         uc02_positionnement_composants uc02_gouvernance uc02_local_vers_azure; do
-  ../.venv/bin/python $s.py
-done
-```
