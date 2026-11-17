@@ -3,7 +3,7 @@
 Preuves du dossier UC-01 (§5.1.16 du sujet). Chaque fichier est produit par une commande ou un script
 rejouable ; les scripts sont dans `sources/` (à la racine du projet).
 
-Données examinées : `~/tp_bigdata/extract/retail_project/` (archive `retail_project.zip`, dossiers `data/` et
+Données examinées : archive `retail_project.zip` décompressée dans `donnees/retail_project/` (dossiers `data/` et
 `data_refresh/`). Jeu synthétique TPCx-BB.
 
 **Point d'entrée : `index_preuves.pdf`** — pour chaque preuve, un titre, ce qu'elle démontre, son origine et un extrait lisible (généré par `index_preuves.py`).
@@ -25,7 +25,7 @@ Données examinées : `~/tp_bigdata/extract/retail_project/` (archive `retail_pr
 `checksum.txt` contient l'empreinte SHA-256 de `retail_project.zip`. La comparer avant toute nouvelle analyse :
 
 ```bash
-sha256sum ~/tp_bigdata/raw/retail_project.zip
+sha256sum <chemin_vers_l_archive>/retail_project.zip
 ```
 
 ## Quel livrable s'appuie sur quelle preuve
@@ -41,7 +41,7 @@ sha256sum ~/tp_bigdata/raw/retail_project.zip
 
 ## Rejouer l'ensemble
 
-Depuis la racine du projet (`~/projets/ipssi-archi-bigdata`) :
+Depuis la racine du dépôt :
 
 ```bash
 cd sources
