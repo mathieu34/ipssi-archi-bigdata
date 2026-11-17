@@ -1,7 +1,7 @@
 """Contrôles sur les données qui servent à définir les KPI (UC-01, Étape B).
 
 Usage : .venv/bin/python sources/controles_kpi.py > J1_Retail_Intelligence/01_UC01_besoin_exploration/preuves/controles_kpi.txt
-S'appuie sur schema.py du dossier ~/tp_bigdata (noms de colonnes TPCx-BB, fichiers sans en-tête).
+S'appuie sur sources/schema.py (noms de colonnes TPCx-BB, fichiers sans en-tête) ; données : chemins.DONNEES.
 """
 import sys
 from datetime import datetime
@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-sys.path.insert(0, str(Path.home() / "tp_bigdata"))
+from chemins import DONNEES  # noqa: E402
 from schema import load  # noqa: E402
 
 TOL = 0.011  # tolérance d'arrondi au centime
@@ -21,7 +21,7 @@ def ok_ratio(a, b):
 
 
 print(f"Contrôles KPI - exécuté le {datetime.now():%Y-%m-%d %H:%M}")
-print("Source : ~/tp_bigdata/extract/retail_project/data/\n")
+print(f"Source : {DONNEES}/data/\n")
 
 dd = load("date_dim", usecols=["d_date_sk", "d_date"])
 date_of = dict(zip(dd.d_date_sk, dd.d_date))

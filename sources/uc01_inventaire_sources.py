@@ -210,7 +210,7 @@ README = [
     ("Archive retail_project.zip (SHA-256 dc1634e9...ed86c), version et provenance non communiquées.", ""),
     (f"36 fichiers, {fmt_int(tot)} octets décompressés : 24 dans data/ (23 tables .dat + 1 CSV d'audit), "
      "12 dans data_refresh/ (11 .dat + 1 CSV d'audit).", ""),
-    ("Emplacement d'analyse : ~/tp_bigdata/extract/retail_project/", ""),
+    ("Emplacement d'analyse : donnees/retail_project/ (archive décompressée, hors dépôt)", ""),
     ("", ""),
     ("Méthode", "h"),
     ("1. Lecture brute de chaque fichier : nombre de lignes, nombre de champs par ligne, encodage UTF-8.", ""),

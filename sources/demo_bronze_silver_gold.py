@@ -20,12 +20,10 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-sys.path.insert(0, str(Path.home() / "tp_bigdata"))
+from chemins import DONNEES, PROJET, UC02_PREUVES  # noqa: E402
 from schema import COLUMNS  # noqa: E402
 
-from chemins import PROJET, UC02_PREUVES  # noqa: E402
-
-SOURCE = Path.home() / "tp_bigdata" / "extract" / "retail_project"
+SOURCE = DONNEES
 LAKE = PROJET / "datalake_demo"
 PREUVE = UC02_PREUVES / "demo_bronze_silver_gold"
 TODAY = date.today().isoformat()

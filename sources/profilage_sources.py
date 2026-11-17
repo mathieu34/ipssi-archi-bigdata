@@ -7,7 +7,7 @@ Produit dans J1_Retail_Intelligence/01_UC01_besoin_exploration/preuves/ :
   inventaire_colonnes.csv   une ligne par colonne de chaque fichier .dat
   apercus/*.txt             5 premières lignes brutes de chaque fichier
   profilage_log.txt         journal d'exécution
-Noms de colonnes : schema.py (~/tp_bigdata), repris de la spécification TPCx-BB.
+Noms de colonnes : sources/schema.py, conformes à la spécification TPCx-BB v1.7.0 ; données : chemins.DONNEES.
 """
 import re
 import sys
@@ -18,11 +18,10 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path.home() / "tp_bigdata"))
 from schema import COLUMNS  # noqa: E402
-from chemins import UC01, UC01_PREUVES  # noqa: E402
+from chemins import DONNEES, UC01, UC01_PREUVES  # noqa: E402
 
-BASE = Path.home() / "tp_bigdata" / "extract" / "retail_project"
+BASE = DONNEES
 PREUVES = UC01_PREUVES
 APERCUS = PREUVES / "apercus"
 

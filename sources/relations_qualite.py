@@ -11,9 +11,8 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path.home() / "tp_bigdata"))
 from schema import load  # noqa: E402
-from chemins import UC01, UC01_PREUVES  # noqa: E402
+from chemins import DONNEES, UC01, UC01_PREUVES  # noqa: E402
 
 PREUVES = UC01_PREUVES
 out_lines = []
@@ -234,7 +233,7 @@ def clients_canaux():
 
 
 if __name__ == "__main__":
-    log(f"Contrôles des relations - {datetime.now():%Y-%m-%d %H:%M} - source ~/tp_bigdata/extract/retail_project")
+    log(f"Contrôles des relations - {datetime.now():%Y-%m-%d %H:%M} - source {DONNEES}")
     relations()
     doublons()
     retours()
