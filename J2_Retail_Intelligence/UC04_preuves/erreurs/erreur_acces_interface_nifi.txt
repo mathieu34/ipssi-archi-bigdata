@@ -1,0 +1,17 @@
+# Preuve : interface NiFi inaccessible depuis Windows (WSL2) et correction
+# Date : 2026-11-17 15:23
+# Symptôme : NiFi 'Status: UP', mais Chrome (Windows) -> https://localhost:8443/nifi : ERR_CONNECTION_REFUSED.
+# Diagnostic :
+#  - depuis WSL : curl -k https://localhost:8443/nifi -> HTTP 301 (NiFi répond)
+#  - depuis Windows : Test-NetConnection localhost -Port 8443 -> False
+#  - ss -ltnp : NiFi écoutait sur [::ffff:127.0.0.1]:8443 (socket IPv6), non relayé par WSL vers Windows,
+#    alors que les services écoutant en IPv4 (ex. interface HDFS sur 9870) étaient accessibles.
+# Correction : ajout dans /opt/nifi/conf/bootstrap.conf de la ligne
+#    java.arg.preferIPv4=-Djava.net.preferIPv4Stack=true
+#  puis redémarrage de NiFi. NiFi reste limité à localhost (pas d'exposition réseau).
+
+# Après correction :
+$ ss -ltn | grep :8443
+LISTEN 0      50          127.0.0.1:8443       0.0.0.0:*          
+$ Test-NetConnection -ComputerName localhost -Port 8443 (PowerShell, Windows)
+True

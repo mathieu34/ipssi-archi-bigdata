@@ -1,0 +1,44 @@
+# Preuve : test d'erreur contrôlé B - dépôt en double refusé (Conflict Resolution Strategy = fail)
+# Date : 2026-11-18 09:31 ; début du test : 2026-11-18 09:24:00
+
+# 1. Le fichier renvoyé a bien été pris par GetFile :
+$ ls -l /data/nifi/input
+total 0
+
+# 2. Erreurs PutHDFS dans le journal NiFi depuis le début du test :
+2026-11-18 09:25:19,634 WARN [Timer-Driven Process Thread-5] o.apache.nifi.processors.hadoop.PutHDFS PutHDFS[id=ea5c6f48-01a1-1000-9420-951fd95eeaeb] penalizing StandardFlowFileRecord[uuid=50fa9dd0-fdf4-4e55-bd05-c85e60b39f12,claim=[…],offset=0,name=store.dat,size=3386] and routing to failure because file with same name already exists
+#   (bloc technique "claim=[...]" raccourci ; ligne complète dans /opt/nifi/logs/nifi-app.log)
+
+# 3. FlowFile en échec journalisé par LogAttribute (relation failure) :
+Key: 'entryDate'
+	Value: 'Wed Nov 18 09:25:19 CET 2026'
+Key: 'lineageStartDate'
+	Value: 'Wed Nov 18 09:25:19 CET 2026'
+Key: 'fileSize'
+	Value: '3386'
+Key: 'absolute.path'
+	Value: '/data/nifi/input/'
+Key: 'file.creationTime'
+	Value: '2026-11-18T09:24:56+0100'
+Key: 'file.group'
+	Value: 'math34'
+Key: 'file.lastAccessTime'
+	Value: '2026-11-18T09:25:19+0100'
+Key: 'file.lastModifiedTime'
+	Value: '2026-11-18T09:24:56+0100'
+Key: 'file.owner'
+	Value: 'math34'
+Key: 'file.permissions'
+	Value: 'rw-r--r--'
+Key: 'filename'
+	Value: 'store.dat'
+Key: 'path'
+	Value: '/'
+
+# 4. HDFS : toujours UN seul store.dat, avec la date du premier dépôt (non écrasé) :
+$ hdfs dfs -ls /retail-lake/raw/nifi
+Found 1 items
+-rw-r--r--   1 math34 supergroup       3386 2026-11-17 17:54 /retail-lake/raw/nifi/store.dat
+
+$ hdfs dfs -cat /retail-lake/raw/nifi/store.dat | sha256sum
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  -

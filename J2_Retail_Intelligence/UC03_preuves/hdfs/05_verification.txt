@@ -1,0 +1,109 @@
+# Preuve : vérification du stockage HDFS de store_sales.dat (TP J2, étape 5)
+# Date : 2026-11-17 16:11
+
+# 1. Présence des répertoires attendus
+$ hdfs dfs -ls /retail-lake /retail-lake/raw /retail-lake/raw/tpcxbb
+Found 6 items
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/bronze
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/gold
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/logs
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/quality
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/silver
+Found 2 items
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/nifi
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/tpcxbb
+Found 2 items
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/tpcxbb/initial
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/tpcxbb/refresh
+
+# 2. Présence du fichier déposé
+PRÉSENT : /retail-lake/raw/tpcxbb/initial/store_sales.dat
+
+# 3. Taille : locale (octets) vs HDFS (octets)
+$ stat -c %s %n donnees/retail_project/data/store_sales/store_sales.dat
+92764700 donnees/retail_project/data/store_sales/store_sales.dat
+
+$ hdfs dfs -stat 'size=%b bytes | replication=%r | blocksize=%o | owner=%u:%g | modified=%y' /retail-lake/raw/tpcxbb/initial/store_sales.dat
+size=92764700 bytes | replication=1 | blocksize=134217728 | owner=math34:supergroup | modified=2026-11-17 16:11:25
+
+# 4. Permissions
+$ hdfs dfs -ls /retail-lake/raw/tpcxbb/initial/store_sales.dat
+-rw-r--r--   1 math34 supergroup   92764700 2026-11-17 16:11 /retail-lake/raw/tpcxbb/initial/store_sales.dat
+
+# 5. Lecture contrôlée (3 premières lignes lues depuis HDFS)
+$ hdfs dfs -cat /retail-lake/raw/tpcxbb/initial/store_sales.dat | head -n 3
+36890|71480|10001|44404|493944|2898|44093|10|294|0|31|18.00|30.78|23.08|238.70|715.48|558.00|954.18|21.46|0.00|715.48|736.94|157.48
+36890|71480|10000|44404|493944|2898|44093|10|279|0|54|99.21|148.82|83.34|3535.92|4500.36|5357.34|8036.28|225.02|0.00|4500.36|4725.38|-856.98
+36890|71480|15556|44404|493944|2898|44093|10|114|0|39|79.49|94.59|83.24|442.65|3246.36|3100.11|3689.01|184.07|616.81|2629.55|2813.62|-470.56
+
+# 6. Récupération contrôlée (vers un dossier temporaire <tmp> hors du projet, supprimé après contrôle) puis comparaison des empreintes
+$ hdfs dfs -get /retail-lake/raw/tpcxbb/initial/store_sales.dat <tmp>/store_sales.dat
+
+$ sha256sum <source locale> <copie récupérée depuis HDFS>
+7e0a7f16b47483741754bb641c92601dd7384dacc8331d0bcfb8abac82ed3d2e  donnees/retail_project/data/store_sales/store_sales.dat
+7e0a7f16b47483741754bb641c92601dd7384dacc8331d0bcfb8abac82ed3d2e  <tmp>/store_sales.dat
+
+RÉSULTAT : fichiers identiques octet par octet (cmp)
+
+# 7. Blocs et emplacement (fsck)
+$ hdfs fsck /retail-lake/raw/tpcxbb/initial/store_sales.dat -files -blocks -locations
+Connecting to namenode via http://localhost:9870/fsck?ugi=math34&files=1&blocks=1&locations=1&path=%2Fretail-lake%2Fraw%2Ftpcxbb%2Finitial%2Fstore_sales.dat
+FSCK started by math34 (auth:SIMPLE) from /127.0.0.1 for path /retail-lake/raw/tpcxbb/initial/store_sales.dat at Tue Nov 17 16:11:52 CET 2026
+
+/retail-lake/raw/tpcxbb/initial/store_sales.dat 92764700 bytes, replicated: replication=1, 1 block(s):  OK
+0. BP-446561133-127.0.1.1-1794923667916:blk_1073741825_1001 len=92764700 Live_repl=1  [DatanodeInfoWithStorage[127.0.0.1:9866,DS-3ea27600-9b82-4888-acd0-0baa6fd10524,DISK]]
+
+
+Status: HEALTHY
+ Number of data-nodes:	1
+ Number of racks:		1
+ Total dirs:			0
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	92764700 B
+ Total files:	1
+ Total blocks (validated):	1 (avg. block size 92764700 B)
+ Minimally replicated blocks:	1 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	1
+ Average block replication:	1.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Blocks queued for replication:	0
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+ Blocks queued for replication:	0
+FSCK ended at Tue Nov 17 16:11:52 CET 2026 in 26 milliseconds
+
+
+The filesystem under path '/retail-lake/raw/tpcxbb/initial/store_sales.dat' is HEALTHY
+
+# 8. Source originale conservée
+$ ls -l donnees/retail_project/data/store_sales/store_sales.dat
+-rw-rw-rw- 1 math34 math34 92764700 Nov 15 23:34 donnees/retail_project/data/store_sales/store_sales.dat
+
+# 9. Volume total du Data Lake
+$ hdfs dfs -du -h /retail-lake
+0       0       /retail-lake/bronze
+0       0       /retail-lake/gold
+0       0       /retail-lake/logs
+0       0       /retail-lake/quality
+88.5 M  88.5 M  /retail-lake/raw
+0       0       /retail-lake/silver
+

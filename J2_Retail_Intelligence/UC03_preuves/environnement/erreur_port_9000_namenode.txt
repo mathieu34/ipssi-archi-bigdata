@@ -1,0 +1,18 @@
+# Preuve : erreur de démarrage du NameNode (port 9000 occupé) et correction
+# Date de l'incident : 2026-11-17 14:55
+# Symptôme : NameNode absent de jps ; 'hdfs dfsadmin -report' -> 'RPC response has invalid length of -16777216'
+# Diagnostic : journal du NameNode (extrait ci-dessous) + 'ss -ltnp' : port 9000 tenu par un noyau Jupyter
+#   (ipykernel lancé par VS Code), qui avait pris ce port au hasard.
+# Correction : arrêt du noyau Jupyter, puis 'hdfs --daemon start namenode' (sans reformatage).
+
+$ grep -E 'ERROR|BindException' logs/hadoop-*-namenode-*.log
+2026-11-17 14:55:08,272 ERROR org.apache.hadoop.hdfs.server.namenode.NameNode: Failed to start namenode.
+Caused by: java.net.BindException: Address already in use
+
+# État après correction :
+$ jps
+26184 NameNode
+24844 SecondaryNameNode
+24589 DataNode
+$ hdfs dfsadmin -report | grep 'Live datanodes'
+Live datanodes (1):

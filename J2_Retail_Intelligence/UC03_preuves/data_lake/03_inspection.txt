@@ -1,0 +1,57 @@
+# Preuve : inspection des fichiers TPCx-BB avant dépôt (TP J2, étape 4)
+# Date : 2026-11-17 16:11
+
+################ donnees/retail_project/data/store_sales/store_sales.dat
+$ ls -l donnees/retail_project/data/store_sales/store_sales.dat
+-rw-rw-rw- 1 math34 math34 92764700 Nov 15 23:34 donnees/retail_project/data/store_sales/store_sales.dat
+
+$ file donnees/retail_project/data/store_sales/store_sales.dat
+donnees/retail_project/data/store_sales/store_sales.dat: ASCII text, with CRLF line terminators
+
+# Lisibilité :
+lisible
+
+# Nombre de lignes :
+$ wc -l donnees/retail_project/data/store_sales/store_sales.dat
+667579 donnees/retail_project/data/store_sales/store_sales.dat
+
+# Nombre de champs par ligne (séparateur |) -> nb_lignes nb_champs :
+ 667579 23
+
+# Aperçu (3 premières lignes) :
+$ head -n 3 donnees/retail_project/data/store_sales/store_sales.dat
+36890|71480|10001|44404|493944|2898|44093|10|294|0|31|18.00|30.78|23.08|238.70|715.48|558.00|954.18|21.46|0.00|715.48|736.94|157.48
+36890|71480|10000|44404|493944|2898|44093|10|279|0|54|99.21|148.82|83.34|3535.92|4500.36|5357.34|8036.28|225.02|0.00|4500.36|4725.38|-856.98
+36890|71480|15556|44404|493944|2898|44093|10|114|0|39|79.49|94.59|83.24|442.65|3246.36|3100.11|3689.01|184.07|616.81|2629.55|2813.62|-470.56
+
+# Empreinte de référence :
+$ sha256sum donnees/retail_project/data/store_sales/store_sales.dat
+7e0a7f16b47483741754bb641c92601dd7384dacc8331d0bcfb8abac82ed3d2e  donnees/retail_project/data/store_sales/store_sales.dat
+
+################ donnees/retail_project/data/store/store.dat
+$ ls -l donnees/retail_project/data/store/store.dat
+-rw-rw-rw- 1 math34 math34 3386 Nov 15 23:34 donnees/retail_project/data/store/store.dat
+
+$ file donnees/retail_project/data/store/store.dat
+donnees/retail_project/data/store/store.dat: ASCII text, with very long lines (303), with CRLF line terminators
+
+# Lisibilité :
+lisible
+
+# Nombre de lignes :
+$ wc -l donnees/retail_project/data/store/store.dat
+12 donnees/retail_project/data/store/store.dat
+
+# Nombre de champs par ligne (séparateur |) -> nb_lignes nb_champs :
+     12 29
+
+# Aperçu (3 premières lignes) :
+$ head -n 3 donnees/retail_project/data/store/store.dat
+0|AAAAAAAAAAAAAAAA|2000-08-02||71238|Forest|217|8891512|8AM-12AM|Joshua Watson|6|Unknown|realms sublate quickly outside the epitaphs; evenly silent patterns boost! th|Randy King|1|Unknown|1|Unknown|916|1st|Boulevard|XF|Post Oak|Hinsdale County|CO|47562|United States|-7|0.06
+1|AAAAAAAAAAAAAAAB|2000-07-03||18994|Hillside|244|8751339|8AM-4PM|Gary Gold|3|Unknown|close escapades across the carefully ironic grouches shall have to lose into the sauternes: sl|John Green|1|Unknown|1|Unknown|696|3rd 4th|Blvd|gcg5eGNxs|Jerusalem|Union County|TN|80145|United States|-6|0.03
+2|AAAAAAAAAAAAAAAC|2000-09-01||8900|Sherwood|266|5913334|8AM-4PM|James Anderson|6|Unknown|frays may kindle over the bold ironic epitaphs! slow quick multipliers maintain among t|Raymond Kitchens|1|Unknown|1|Unknown|293|Main Fourteenth|Ct.|8pCGst|Mount Vernon|Sierra County|CA|97832|United States|-8|0.07
+
+# Empreinte de référence :
+$ sha256sum donnees/retail_project/data/store/store.dat
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  donnees/retail_project/data/store/store.dat
+

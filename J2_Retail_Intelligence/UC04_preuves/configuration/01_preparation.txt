@@ -1,0 +1,35 @@
+# Preuve : préparation de l'ingestion NiFi (TP J2, §12.3.2)
+# Date : 2026-11-17 17:20
+
+# Dossiers créés au préalable par l'utilisateur (droits administrateur) :
+#   sudo mkdir -p /data/nifi/input /data/nifi/archive /data/nifi/error
+#   sudo chown -R math34:math34 /data/nifi
+
+# Utilisateur qui exécute NiFi :
+$ ps -o user=,pid= -p <pid du processus org.apache.nifi.NiFi>   (pid 40199 = "NiFi" dans jps)
+math34     40199
+
+# Dossiers locaux du flux et leurs droits :
+$ ls -ld /data/nifi /data/nifi/input /data/nifi/archive /data/nifi/error
+drwxr-xr-x 5 math34 math34 4096 Nov 17 17:20 /data/nifi
+drwxr-xr-x 2 math34 math34 4096 Nov 17 17:20 /data/nifi/archive
+drwxr-xr-x 2 math34 math34 4096 Nov 17 17:20 /data/nifi/error
+drwxr-xr-x 2 math34 math34 4096 Nov 17 17:20 /data/nifi/input
+
+# Copie de travail du fichier de test (l'original reste dans donnees/) :
+$ cp donnees/retail_project/data/store/store.dat /data/nifi/input/
+
+$ ls -l /data/nifi/input
+total 4
+-rw-r--r-- 1 math34 math34 3386 Nov 17 17:20 store.dat
+
+$ sha256sum donnees/retail_project/data/store/store.dat /data/nifi/input/store.dat
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  donnees/retail_project/data/store/store.dat
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  /data/nifi/input/store.dat
+
+# Destination HDFS (créée à l'UC-03) :
+$ hdfs dfs -ls -d /retail-lake/raw/nifi
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/nifi
+
+$ hdfs dfs -ls /retail-lake/raw/nifi    (vide attendu)
+(fin de liste)

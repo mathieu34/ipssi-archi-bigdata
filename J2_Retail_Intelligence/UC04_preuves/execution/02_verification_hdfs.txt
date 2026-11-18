@@ -1,0 +1,45 @@
+# Preuve : vérification du dépôt réalisé par le flux NiFi GetFile -> PutHDFS (TP J2, étape 9)
+# Date : 2026-11-17 17:55
+
+# 1. Le fichier a été consommé dans le dossier d'entrée (Keep Source File = false) :
+$ ls -l /data/nifi/input
+total 0
+
+# 2. Présence dans la destination HDFS :
+$ hdfs dfs -ls -h /retail-lake/raw/nifi
+Found 1 items
+-rw-r--r--   1 math34 supergroup      3.3 K 2026-11-17 17:54 /retail-lake/raw/nifi/store.dat
+
+$ hdfs dfs -stat size=%b bytes | replication=%r | owner=%u:%g | modified=%y /retail-lake/raw/nifi/store.dat
+size=3386 bytes | replication=1 | owner=math34:supergroup | modified=2026-11-17 17:54:44
+
+$ hdfs dfs -du -h /retail-lake/raw/nifi
+3.3 K  3.3 K  /retail-lake/raw/nifi/store.dat
+
+# 3. Lecture contrôlée (2 premières lignes lues depuis HDFS) :
+$ hdfs dfs -cat /retail-lake/raw/nifi/store.dat | head -n 2
+0|AAAAAAAAAAAAAAAA|2000-08-02||71238|Forest|217|8891512|8AM-12AM|Joshua Watson|6|Unknown|realms sublate quickly outside 
+1|AAAAAAAAAAAAAAAB|2000-07-03||18994|Hillside|244|8751339|8AM-4PM|Gary Gold|3|Unknown|close escapades across the careful
+
+# 4. Intégrité : original local vs fichier écrit par NiFi dans HDFS
+$ sha256sum donnees/retail_project/data/store/store.dat
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  donnees/retail_project/data/store/store.dat
+
+$ hdfs dfs -cat /retail-lake/raw/nifi/store.dat | sha256sum
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  -
+
+# 5. Le dépôt manuel de l'UC-03 n'a pas été touché :
+$ hdfs dfs -ls -h /retail-lake/raw/tpcxbb/initial
+Found 1 items
+-rw-r--r--   1 math34 supergroup     88.5 M 2026-11-17 16:11 /retail-lake/raw/tpcxbb/initial/store_sales.dat
+
+# 6. Ordre de démarrage dans le journal NiFi (LogAttribute, puis PutHDFS, puis GetFile), puis écriture
+#    du fichier dans HDFS à 17:54:44 (date de modification relevée au point 2).
+#    PutHDFS ne journalise pas chaque écriture au niveau INFO : la preuve de l'écriture est le point 2 et la
+#    provenance (événement SEND). L'avertissement NativeCodeLoader est sans effet : le client Hadoop utilise
+#    ses classes Java au lieu de la bibliothèque native.
+$ grep -E 'Starting (LogAttribute|PutHDFS|GetFile)|NativeCodeLoader' /opt/nifi/logs/nifi-app.log
+2026-11-17 17:54:40,152 INFO [NiFi Web Server-58] o.a.n.c.s.StandardProcessScheduler Starting LogAttribute[id=ea67191d-01a1-1000-b06c-22be13c6db60]
+2026-11-17 17:54:41,908 INFO [NiFi Web Server-203] o.a.n.c.s.StandardProcessScheduler Starting PutHDFS[id=ea5c6f48-01a1-1000-9420-951fd95eeaeb]
+2026-11-17 17:54:42,141 WARN [Timer-Driven Process Thread-10] org.apache.hadoop.util.NativeCodeLoader Unable to load native-hadoop library for your platform... 
+2026-11-17 17:54:43,865 INFO [NiFi Web Server-59] o.a.n.c.s.StandardProcessScheduler Starting GetFile[id=ea547af6-01a1-1000-e45f-634de6d18283]

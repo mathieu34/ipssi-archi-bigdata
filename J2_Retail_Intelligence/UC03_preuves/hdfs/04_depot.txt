@@ -1,0 +1,12 @@
+# Preuve : dépôt manuel de store_sales.dat dans la zone Raw (TP J2, étape 4)
+# Date : 2026-11-17 16:11
+
+# Source locale : donnees/retail_project/data/store_sales/store_sales.dat
+# Destination HDFS : /retail-lake/raw/tpcxbb/initial/
+$ hdfs dfs -put donnees/retail_project/data/store_sales/store_sales.dat /retail-lake/raw/tpcxbb/initial/
+
+# Contenu de la destination après dépôt :
+$ hdfs dfs -ls -h /retail-lake/raw/tpcxbb/initial
+Found 1 items
+-rw-r--r--   1 math34 supergroup     88.5 M 2026-11-17 16:11 /retail-lake/raw/tpcxbb/initial/store_sales.dat
+

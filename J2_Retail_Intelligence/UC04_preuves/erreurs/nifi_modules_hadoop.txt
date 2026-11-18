@@ -1,0 +1,13 @@
+# Preuve : ajout des modules Hadoop dans NiFi 2.12.0 (processeur PutHDFS)
+# Date : 2026-11-17 15:17
+# Contexte : PutHDFS est introuvable dans NiFi 2.12.0, car depuis NiFi 2.0 les processeurs Hadoop
+# ne sont plus inclus dans la distribution standard (nifi-2.12.0-bin.zip).
+# Correction : téléchargement des 2 modules depuis Maven Central dans /opt/nifi/lib, puis redémarrage de NiFi.
+
+$ ls -lh /opt/nifi/lib/nifi-hadoop*
+-rw-r--r-- 1 math34 math34 57M Sep 10 22:04 /opt/nifi/lib/nifi-hadoop-libraries-nar-2.12.0.nar
+-rw-r--r-- 1 math34 math34 17M Sep 10 22:00 /opt/nifi/lib/nifi-hadoop-nar-2.12.0.nar
+
+# Contrôle d'intégrité : SHA-1 local comparé au SHA-1 publié par Maven Central
+nifi-hadoop-nar-2.12.0.nar : local f71aecb8e05e31b12d578786fdd1b826eea73a7f / Maven Central f71aecb8e05e31b12d578786fdd1b826eea73a7f -> OK
+nifi-hadoop-libraries-nar-2.12.0.nar : local 5df53cf9fed012a6d821a8450cbd46d8d236d0ee / Maven Central 5df53cf9fed012a6d821a8450cbd46d8d236d0ee -> OK

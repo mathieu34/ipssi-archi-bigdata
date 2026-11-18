@@ -1,0 +1,44 @@
+# Preuve : provenance et extraction de l'archive TPCx-BB
+# Date : 2026-11-17 16:10
+
+$ sha256sum /mnt/c/Users/Math34/Downloads/retail_project.zip
+dc1634e95cb3192487cad0b935a4e8dbd9ae44ca9078ac0b28513575943ed86c  /mnt/c/Users/Math34/Downloads/retail_project.zip
+
+# Attendu (J1, UC01 preuves/checksum.txt) : dc1634e95cb3192487cad0b935a4e8dbd9ae44ca9078ac0b28513575943ed86c
+
+$ unzip -q -o /mnt/c/Users/Math34/Downloads/retail_project.zip -d donnees/
+
+$ ls donnees/retail_project/data
+customer
+customer_address
+customer_demographics
+date_dim
+household_demographics
+income_band
+inventory
+item
+item_marketprices
+product_reviews
+promotion
+reason
+ship_mode
+store
+store_returns
+store_sales
+time_dim
+warehouse
+web_clickstreams
+web_page
+web_returns
+web_sales
+web_site
+
+$ ls -l donnees/retail_project/data/store_sales donnees/retail_project/data/store
+donnees/retail_project/data/store:
+total 4
+-rw-rw-rw- 1 math34 math34 3386 Nov 15 23:34 store.dat
+
+donnees/retail_project/data/store_sales:
+total 90592
+-rw-rw-rw- 1 math34 math34 92764700 Nov 15 23:34 store_sales.dat
+

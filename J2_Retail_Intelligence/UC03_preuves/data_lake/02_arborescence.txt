@@ -1,0 +1,19 @@
+# Preuve : création de l'arborescence du Data Lake dans HDFS (TP J2, étape 3)
+# Date : 2026-11-17 16:11
+
+$ hdfs dfs -mkdir -p /retail-lake/raw/tpcxbb/initial /retail-lake/raw/tpcxbb/refresh /retail-lake/raw/nifi /retail-lake/bronze/tpcxbb /retail-lake/silver /retail-lake/gold /retail-lake/quality /retail-lake/logs
+
+# Arborescence obtenue (récursif)
+$ hdfs dfs -ls -R /retail-lake
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/bronze
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/bronze/tpcxbb
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/gold
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/logs
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/quality
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/nifi
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/tpcxbb
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/tpcxbb/initial
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/raw/tpcxbb/refresh
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:11 /retail-lake/silver
+

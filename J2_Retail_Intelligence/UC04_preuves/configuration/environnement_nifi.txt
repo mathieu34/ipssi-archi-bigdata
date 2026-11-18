@@ -1,0 +1,21 @@
+# Preuve : environnement Apache NiFi
+# Date : 2026-11-17 15:23
+# Les identifiants générés au premier démarrage ne sont volontairement pas reproduits ici (§11, consigne 12).
+
+$ ls /opt/nifi/lib | grep -E 'nifi-framework-nar|nifi-hadoop'
+nifi-framework-nar-2.12.0.nar
+nifi-hadoop-libraries-nar-2.12.0.nar
+nifi-hadoop-nar-2.12.0.nar
+
+$ grep nifi.web.https /opt/nifi/conf/nifi.properties
+nifi.web.https.host=localhost
+nifi.web.https.port=8443
+
+$ /opt/nifi/bin/nifi.sh status
+JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+NIFI_HOME=/opt/nifi
+2026-11-17 15:23:13,594 INFO [main] org.apache.nifi.bootstrap.Command Application Process [40199] Command Status [SUCCESS] HTTP 200
+2026-11-17 15:23:13,596 INFO [main] org.apache.nifi.bootstrap.Command Status: UP
+
+$ ss -ltn | grep :8443
+LISTEN 0      50          127.0.0.1:8443       0.0.0.0:*          

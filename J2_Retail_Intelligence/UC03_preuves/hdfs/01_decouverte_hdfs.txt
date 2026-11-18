@@ -1,0 +1,75 @@
+# Preuve : découverte des commandes HDFS (TP J2, étape 2)
+# Date : 2026-11-17 16:10
+
+# 1. État du système HDFS et 2. informations sur les nœuds
+$ hdfs dfsadmin -report
+Configured Capacity: 1081101176832 (1006.85 GB)
+Present Capacity: 1010472873984 (941.08 GB)
+DFS Remaining: 1010472845312 (941.08 GB)
+DFS Used: 28672 (28 KB)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 127.0.0.1:9866 (localhost)
+Hostname: LAPTOP-S0JER4NB.localdomain
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 15635947520 (14.56 GB)
+DFS Remaining: 1010472845312 (941.08 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 93.47%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Tue Nov 17 16:10:41 CET 2026
+Last Block Report: Tue Nov 17 14:57:33 CET 2026
+Num of Blocks: 0
+
+
+
+$ hdfs dfsadmin -safemode get
+Safe mode is OFF
+
+# 3. Répertoires disponibles à la racine
+$ hdfs dfs -ls /
+
+# 4. Création du répertoire de travail
+$ hdfs dfs -mkdir -p /retail-lake
+
+$ hdfs dfs -ls /
+Found 1 items
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:10 /retail-lake
+
+# 5. Permissions du répertoire créé (propriétaire, groupe, droits)
+$ hdfs dfs -ls -d /retail-lake
+drwxr-xr-x   - math34 supergroup          0 2026-11-17 16:10 /retail-lake
+
+# 6. Taille des données stockées
+$ hdfs dfs -du -s -h /retail-lake
+0  0  /retail-lake
+
+$ hdfs dfs -df -h /
+Filesystem                 Size  Used  Available  Use%
+hdfs://localhost:9000  1006.9 G  28 K    941.1 G    0%
+

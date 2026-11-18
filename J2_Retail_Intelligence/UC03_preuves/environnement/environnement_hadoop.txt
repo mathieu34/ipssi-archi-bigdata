@@ -1,0 +1,64 @@
+# Preuve : environnement Hadoop / HDFS (mode pseudo-distribué, mono-nœud)
+# Date : 2026-11-17 15:17
+
+$ lsb_release -ds
+Ubuntu 24.04.3 LTS
+
+$ java -version (Java 17, utilisé par Hadoop)
+openjdk version "17.0.21.0.3" 2026-10-24
+OpenJDK Runtime Environment (build 17.0.21.0.3+1-1-24.04.1-Ubuntu)
+OpenJDK 64-Bit Server VM (build 17.0.21.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)
+
+$ java -version (Java 21, utilisé par NiFi)
+openjdk version "21.0.13.0.3" 2026-10-24
+OpenJDK Runtime Environment (build 21.0.13.0.3+1-1-24.04.1-Ubuntu)
+OpenJDK 64-Bit Server VM (build 21.0.13.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)
+
+$ hadoop version
+Hadoop 3.5.0
+Source code repository https://github.com/apache/hadoop.git -r dbcc7cd797100e6b32cd84f85b53a5193a5f9af0
+Compiled by cnauroth on 2026-03-24T16:56Z
+Compiled on platform linux-x86_64
+
+$ grep -A1 -E 'fs.defaultFS|dfs.replication|dir' core-site.xml hdfs-site.xml
+<property><name>fs.defaultFS</name><value>hdfs://localhost:9000</value></property>
+<property><name>dfs.replication</name><value>1</value></property>
+<property><name>dfs.namenode.name.dir</name><value>file:///home/math34/hadoop-data/namenode</value></property>
+<property><name>dfs.datanode.data.dir</name><value>file:///home/math34/hadoop-data/datanode</value></property>
+
+$ jps
+26184 NameNode
+24844 SecondaryNameNode
+24589 DataNode
+
+$ hdfs dfsadmin -report
+Configured Capacity: 1081101176832 (1006.85 GB)
+Present Capacity: 1012550537216 (943.01 GB)
+DFS Remaining: 1012550508544 (943.01 GB)
+DFS Used: 28672 (28 KB)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 127.0.0.1:9866 (localhost)
+Hostname: LAPTOP-S0JER4NB.localdomain
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 13558284288 (12.63 GB)
