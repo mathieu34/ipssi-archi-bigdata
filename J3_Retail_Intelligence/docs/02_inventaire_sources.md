@@ -41,7 +41,7 @@
 |---|---|---|---|---|
 | A1 | `store_sales` | 4 136 lignes répètent un couple (ticket, produit) | Mesuré | Étape 3 : regarder ces lignes. Au J1, elles avaient des prix et quantités différents, donc il s'agirait de lignes légitimes et non de doublons |
 | A2 | `store_sales` | Ventes réparties sur deux fichiers (`data` et `data_refresh`) | Mesuré | Réunir les deux lots en Silver avec une colonne de provenance |
-| A3 | Les deux | Pas d'en-tête : les noms de colonnes viennent de la spécification TPCx-BB (`tp_bigdata/schema.py`) | Mesuré | Nommer les colonnes explicitement à la lecture |
+| A3 | Les deux | Pas d'en-tête : les noms de colonnes viennent de la spécification TPCx-BB (`sources/schema.py`, à la racine du dépôt) | Mesuré | Nommer les colonnes explicitement à la lecture |
 | A4 | Les deux | Fins de ligne Windows (CRLF) | Mesuré | Les types inférés pour la dernière colonne (`double`) montrent que Spark les gère. À surveiller si une colonne texte se trouve en dernière position |
 | A5 | `store` | `s_rec_end_date` est vide sur les 12 lignes, d'où un type `string` inféré au lieu de `date` | Mesuré | Typer explicitement la colonne en `date` en Silver |
 | A6 | `store` | `s_closed_date_sk` est **incohérent** : les valeurs vont de 6235 (27/01/1917) à 88139 (26/04/2141). Des magasins seraient « fermés » avant 2001 alors qu'ils vendent entre 2001 et 2005 | Mesuré (déjà relevé au J1) | Ne pas utiliser cette colonne pour exclure des magasins |

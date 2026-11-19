@@ -75,7 +75,9 @@ Les sources TPCx-BB (fichiers `.dat`, séparateur `|`, sans en-tête) **ne sont 
 |---|---|---|
 | Dossier des sources | `/home/math34/tp_bigdata/extract/retail_project` | Variable d'environnement `RETAIL_SOURCES`, ou constante `DOSSIER_SOURCES` de `scripts/nettoyage.py` |
 | Sorties Silver et Gold | `J3_Retail_Intelligence/data/` | Calculé automatiquement à partir de l'emplacement des scripts |
-| Notebook d'exploration | `DOSSIER_SOURCES`, plus `sys.path` vers le dossier qui contient `schema.py` | Cellules marquées « A ADAPTER » |
+| Notebook d'exploration | `DOSSIER_SOURCES` | Cellule marquée « A ADAPTER » |
+
+Les noms des colonnes des fichiers `.dat` viennent de **`sources/schema.py`**, à la racine du dépôt. C'est le dictionnaire `COLUMNS`, déjà utilisé aux J1 et J2. Le notebook d'exploration l'importe par un chemin relatif : il fonctionne donc sur tout clone du dépôt, sans fichier externe. Les scripts du J3 définissent leurs propres schémas typés (règle R2) et n'en dépendent pas.
 
 **Point d'attention :** si une configuration Hadoop est présente (`HADOOP_CONF_DIR`), Spark cherche les chemins sans préfixe dans HDFS. Les scripts utilisent donc toujours le préfixe `file://`.
 

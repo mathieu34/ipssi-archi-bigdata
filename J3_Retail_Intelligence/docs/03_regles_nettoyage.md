@@ -17,7 +17,7 @@
 
 | N° | Anomalie | Règle | Action appliquée | Justification |
 |---|---|---|---|---|
-| R1 | **Pas de ligne d'en-tête** : Spark nomme les colonnes `_c0`, `_c1`… | Nommer les colonnes selon la spécification TPCx-BB (`COLUMNS` de `tp_bigdata/schema.py`) | Colonnes renommées à la lecture | Sans noms explicites, les traitements seraient illisibles et fragiles |
+| R1 | **Pas de ligne d'en-tête** : Spark nomme les colonnes `_c0`, `_c1`… | Nommer les colonnes selon la spécification TPCx-BB (`COLUMNS` de `sources/schema.py`, à la racine du dépôt) | Colonnes renommées à la lecture | Sans noms explicites, les traitements seraient illisibles et fragiles |
 | R2 | **Type incorrect** : les types inférés (`inferSchema`) ne sont qu'une proposition, et `s_rec_end_date` est inférée en `string` faute de valeur | Imposer un **schéma explicite** à la lecture : identifiants et quantités en `integer`, montants en `decimal(7,2)`, dates en `date`, libellés en `string` | Lecture avec un `StructType` défini dans le script, sans `inferSchema` | L'inférence ne vaut pas validation (§4.6.2). `decimal` évite les erreurs d'arrondi des `double` sur les montants, et le schéma devient identique à chaque exécution |
 | R3 | **Échec de conversion** : une valeur non convertible devient `null` en silence (§4.7.3) | Comparer le nombre de valeurs nulles avant et après le typage, colonne par colonne | Contrôle affiché. Si une conversion crée des nulls, les lignes concernées vont dans les rejets | Vérifier que le typage n'a pas fait disparaître d'information |
 

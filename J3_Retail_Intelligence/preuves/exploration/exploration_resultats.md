@@ -19,27 +19,25 @@ print("Version Spark :", spark.version)
 
 
 
-
-
     Version Spark : 4.3.0
 
 
 
 ```python
+import os
 import sys
 
-# A ADAPTER : dossier qui contient schema.py (noms de colonnes TPCx-BB)
-sys.path.append("/home/math34/tp_bigdata")
+# Noms de colonnes TPCx-BB : sources/schema.py, a la racine du depot (deja utilise aux J1 et J2).
+# Le notebook s'execute depuis J3_Retail_Intelligence/notebooks/ : on remonte de 2 niveaux.
+sys.path.append(os.path.abspath(os.path.join("..", "..", "sources")))
 
 from schema import COLUMNS
 
 COLONNES_STORE_SALES = COLUMNS["store_sales"]
 COLONNES_STORE = COLUMNS["store"]
 
-
 print(len(COLONNES_STORE_SALES), "colonnes store_sales :", COLONNES_STORE_SALES)
 print(len(COLONNES_STORE), "colonnes store :", COLONNES_STORE)
-
 ```
 
     23 colonnes store_sales : ['ss_sold_date_sk', 'ss_sold_time_sk', 'ss_item_sk', 'ss_customer_sk', 'ss_cdemo_sk', 'ss_hdemo_sk', 'ss_addr_sk', 'ss_store_sk', 'ss_promo_sk', 'ss_ticket_number', 'ss_quantity', 'ss_wholesale_cost', 'ss_list_price', 'ss_sales_price', 'ss_ext_discount_amt', 'ss_ext_sales_price', 'ss_ext_wholesale_cost', 'ss_ext_list_price', 'ss_ext_tax', 'ss_coupon_amt', 'ss_net_paid', 'ss_net_paid_inc_tax', 'ss_net_profit']
@@ -61,7 +59,7 @@ FICHIERS = {
     "store":               f"{DOSSIER_SOURCES}/data/store/store.dat",                      # Source 2 : magasins
 }
 
-# Les noms de colonnes viennent de la cellule precedente (COLUMNS de tp_bigdata/schema.py)
+# Les noms de colonnes viennent de la cellule precedente (COLUMNS de sources/schema.py)
 
 def lire_dat(chemin, colonnes):
     """Lit un .dat TPCx-BB (separateur |, sans en-tete) et nomme les colonnes.
@@ -137,6 +135,8 @@ df_ventes.select("ss_sold_date_sk", "ss_store_sk", "ss_ticket_number", "ss_item_
      |-- ss_net_paid_inc_tax: double (nullable = true)
      |-- ss_net_profit: double (nullable = true)
     
+
+
     +---------------+-----------+----------------+----------+-----------+--------------+-----------+
     |ss_sold_date_sk|ss_store_sk|ss_ticket_number|ss_item_sk|ss_quantity|ss_sales_price|ss_net_paid|
     +---------------+-----------+----------------+----------+-----------+--------------+-----------+
@@ -188,8 +188,6 @@ df_magasins.select("s_store_sk", "s_store_id", "s_store_name", "s_closed_date_sk
      |-- s_gmt_offset: integer (nullable = true)
      |-- s_tax_precentage: double (nullable = true)
     
-
-
     +----------+----------------+------------+----------------+-------------+------------+-------+
     |s_store_sk|s_store_id      |s_store_name|s_closed_date_sk|s_floor_space|s_city      |s_state|
     +----------+----------------+------------+----------------+-------------+------------+-------+
@@ -241,6 +239,11 @@ print("Tickets presents dans les deux lots :", tickets_communs)
     +--------+--------+------------+
     
 
+
+    
+
+    
+                                                                                
 
     Tickets presents dans les deux lots : 0
 
@@ -306,6 +309,8 @@ for colonne, nb in nulls_ventes.items():
     Valeurs nulles - store_sales :
 
 
+    
+
       ss_sold_date_sk          : 0
       ss_sold_time_sk          : 0
       ss_item_sk               : 0
@@ -330,6 +335,9 @@ for colonne, nb in nulls_ventes.items():
       ss_net_paid_inc_tax      : 0
       ss_net_profit            : 0
 
+
+    
+                                                                                
 
 
 ```python
@@ -376,7 +384,6 @@ print("\nExemple : ticket", exemple["ss_ticket_number"], "- produit", exemple["s
 
     
 
-
     
 
     
@@ -415,8 +422,6 @@ print("ss_net_paid = 0        :", df_ventes_tout.filter(F.col("ss_net_paid") == 
 print("ss_net_profit < 0      :", df_ventes_tout.filter(F.col("ss_net_profit") < 0).count(),
       "(vente a perte : possible, pas forcement une erreur)")
 ```
-
-    
 
     
 
@@ -624,9 +629,9 @@ print("Jours de vente absents de date_dim :", jours_orphelins.count())
 ```
 
     d_date_sk distincts : 109573 / 109573
+
+
     Valeurs nulles : {'d_date_sk': 0, 'd_date': 0, 'd_year': 0, 'd_moy': 0}
-
-
     d_year different de l'annee de d_date : 0
 
 
