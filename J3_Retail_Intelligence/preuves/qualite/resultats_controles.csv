@@ -1,0 +1,33 @@
+id;famille;jeu;regle;resultat;statut
+C01;Completude;silver/store_sales;Champs obligatoires de Q3 non nuls (ss_store_sk, ss_ticket_number, ss_item_sk, ss_sold_date_sk, ss_quantity, ss_net_paid);0 valeur(s) nulle(s);OK
+C02;Completude;silver/store_sales;Liens facultatifs : taux de nulls < 1 % (regle R6 : conserves);ss_cdemo_sk=250, ss_hdemo_sk=308, ss_addr_sk=462, ss_promo_sk=159 (max 0.069 %);OK
+C03;Completude;silver/store;Identifiant, nom et localisation renseignes;0 valeur(s) nulle(s);OK
+C04;Completude;gold/q3_ca_magasin_annee;Aucune valeur nulle sur les dimensions et mesures;0 valeur(s) nulle(s);OK
+C05;Unicite;silver/store;Cle candidate (s_store_sk) unique;12 distinct(s) / 12 ligne(s);OK
+C06;Unicite;silver/store;Cle candidate (s_store_id) unique;12 distinct(s) / 12 ligne(s);OK
+C07;Unicite;silver/date_dim;Cle candidate (d_date_sk) unique;109573 distinct(s) / 109573 ligne(s);OK
+C08;Unicite;gold/q3_ca_magasin_annee;Cle candidate (annee, ss_store_sk) unique;60 distinct(s) / 60 ligne(s);OK
+C09;Unicite;silver/store_sales;Aucun doublon strict (23 colonnes identiques);0 doublon(s);OK
+C10;Unicite;silver/store_sales;Un ticket = un seul passage en caisse (1 magasin, 1 jour, 1 heure, 1 client);0 ticket(s) ambigu(s);OK
+C11;Validite;silver/store_sales;Types attendus : ss_store_sk=int, ss_ticket_number=int, ss_quantity=int, ss_sold_date_sk=int, ss_net_paid=decimal(7,2), ss_ext_sales_price=decimal(7,2), lot_source=string;0 ecart(s);OK
+C12;Validite;silver/store;Types attendus : s_store_sk=int, s_store_name=string, s_rec_start_date=date, s_rec_end_date=date;0 ecart(s);OK
+C13;Validite;silver/date_dim;Types attendus : d_date_sk=int, d_date=date, d_year=int;0 ecart(s);OK
+C14;Validite;gold/q3_ca_magasin_annee;Types attendus : annee=int, ca_net=decimal(17,2), nb_transactions=bigint, panier_moyen=decimal(18,2), rang_annee=int;0 ecart(s);OK
+C15;Coherence;silver/store_sales;ss_quantity entre 1 et 100;0 ligne(s) hors domaine;OK
+C16;Coherence;silver/store_sales;ss_net_paid >= 0;0 ligne(s) negative(s);OK
+C17;Coherence;silver/store_sales;ss_ext_sales_price = ss_quantity x ss_sales_price (+/- 0,01);0 ecart(s);OK
+C18;Coherence;silver/store_sales;ss_net_paid = ss_ext_sales_price - ss_coupon_amt (+/- 0,01);0 ecart(s);OK
+C19;Coherence;silver/store_sales;Ventes comprises entre le 01/01/2001 et le 31/12/2005;du 2001-01-01 au 2005-12-31;OK
+C20;Coherence;gold/q3_ca_magasin_annee;panier_moyen = ca_net / nb_transactions (+/- 0,01);0 ecart(s);OK
+C21;Coherence;gold/q3_ca_magasin_annee;Chaque annee : 12 magasins classes de 1 a 12;0 annee(s) incoherente(s);OK
+C22;Coherence;silver/store;Aucun magasin ferme avant le debut de ses ventes (s_closed_date_sk);5 magasin(s) 'fermes' avant 2001 mais avec des ventes 2001-2005 (regle R18);A SIGNALER
+C23;Volume;silver/store_sales;Lignes Silver + rejets = lignes des fichiers sources;674211 + 0 = 674211 / sources : 674211;OK
+C24;Volume;silver/store_sales;Les deux lots sont presents (data et data_refresh);{'data_refresh': 6632, 'data': 667579};OK
+C25;Volume;silver/store;12 magasins;12 ligne(s);OK
+C26;Volume;gold/q3_ca_magasin_annee;12 magasins x 5 annees = 60 lignes;60 ligne(s);OK
+C27;Volume;gold/q3_ca_magasin_annee;Volumes annuels comparables (ecart < 5 % : pas d'annee tronquee);lignes de vente par annee {2001: 134873, 2002: 135084, 2003: 134773, 2004: 136014, 2005: 133467}, ecart max 1.9 %;OK
+C28;Integrite;silver/store_sales -> silver/store;Tout ss_store_sk existe dans s_store_sk;0 vente(s) orpheline(s);OK
+C29;Integrite;silver/store_sales -> silver/date_dim;Tout ss_sold_date_sk existe dans d_date_sk;0 vente(s) orpheline(s);OK
+C30;Integrite;gold -> silver/store;Tout magasin du Gold existe dans store;0 ligne(s) orpheline(s);OK
+C31;Coherence;gold <-> silver;Somme ca_net (Gold) = somme ss_net_paid (Silver);1162073847.88 / 1162073847.88;OK
+C32;Coherence;gold <-> silver;Somme nb_transactions (Gold) = tickets distincts (Silver);90000 / 90000;OK

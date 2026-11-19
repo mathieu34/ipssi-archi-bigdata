@@ -1,0 +1,130 @@
+Version Spark : 4.3.0
+Sources : /home/math34/tp_bigdata/extract/retail_project 
+
+[R3] store - conversions echouees : aucune
+[R17] store - 12 lignes, 12 s_store_sk distincts
+[R3] date_dim - conversions echouees : aucune
+[R21] date_dim - 109573 lignes, 109573 d_date_sk distincts
+[R4] store_sales data         : 667579 lignes
+[R4] store_sales data_refresh : 6632 lignes
+[R3] store_sales - conversions echouees : aucune
+[R4] store_sales apres union : 674211 lignes
+[R7] doublons stricts retires : 0
+
+===== BILAN =====
+store       : 12 magasins conserves
+date_dim    : 109573 jours conserves (4 colonnes)
+store_sales : 674211 lignes conservees, 0 lignes rejetees
+
+Rejets par motif :
+  aucun
+Lignes conservees par lot :
++------------+------+
+|  lot_source| count|
++------------+------+
+|        data|667579|
+|data_refresh|  6632|
++------------+------+
+
+Schema des ventes nettoyees :
+root
+ |-- ss_sold_date_sk: integer (nullable = true)
+ |-- ss_sold_time_sk: integer (nullable = true)
+ |-- ss_item_sk: integer (nullable = true)
+ |-- ss_customer_sk: integer (nullable = true)
+ |-- ss_cdemo_sk: integer (nullable = true)
+ |-- ss_hdemo_sk: integer (nullable = true)
+ |-- ss_addr_sk: integer (nullable = true)
+ |-- ss_store_sk: integer (nullable = true)
+ |-- ss_promo_sk: integer (nullable = true)
+ |-- ss_ticket_number: integer (nullable = true)
+ |-- ss_quantity: integer (nullable = true)
+ |-- ss_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_list_price: decimal(7,2) (nullable = true)
+ |-- ss_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_discount_amt: decimal(7,2) (nullable = true)
+ |-- ss_ext_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_ext_list_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_tax: decimal(7,2) (nullable = true)
+ |-- ss_coupon_amt: decimal(7,2) (nullable = true)
+ |-- ss_net_paid: decimal(7,2) (nullable = true)
+ |-- ss_net_paid_inc_tax: decimal(7,2) (nullable = true)
+ |-- ss_net_profit: decimal(7,2) (nullable = true)
+ |-- lot_source: string (nullable = false)
+
+Schema des magasins nettoyes :
+root
+ |-- s_store_sk: integer (nullable = true)
+ |-- s_store_id: string (nullable = true)
+ |-- s_rec_start_date: date (nullable = true)
+ |-- s_rec_end_date: date (nullable = true)
+ |-- s_closed_date_sk: integer (nullable = true)
+ |-- s_store_name: string (nullable = true)
+ |-- s_number_employees: integer (nullable = true)
+ |-- s_floor_space: integer (nullable = true)
+ |-- s_hours: string (nullable = true)
+ |-- s_manager: string (nullable = true)
+ |-- s_market_id: integer (nullable = true)
+ |-- s_geography_class: string (nullable = true)
+ |-- s_market_desc: string (nullable = true)
+ |-- s_market_manager: string (nullable = true)
+ |-- s_division_id: integer (nullable = true)
+ |-- s_division_name: string (nullable = true)
+ |-- s_company_id: integer (nullable = true)
+ |-- s_company_name: string (nullable = true)
+ |-- s_street_number: string (nullable = true)
+ |-- s_street_name: string (nullable = true)
+ |-- s_street_type: string (nullable = true)
+ |-- s_suite_number: string (nullable = true)
+ |-- s_city: string (nullable = true)
+ |-- s_county: string (nullable = true)
+ |-- s_state: string (nullable = true)
+ |-- s_zip: string (nullable = true)
+ |-- s_country: string (nullable = true)
+ |-- s_gmt_offset: decimal(5,2) (nullable = true)
+ |-- s_tax_precentage: decimal(5,2) (nullable = true)
+
+Schema du calendrier nettoye :
+root
+ |-- d_date_sk: integer (nullable = true)
+ |-- d_date: date (nullable = true)
+ |-- d_year: integer (nullable = true)
+ |-- d_moy: integer (nullable = true)
+
+
+===== ZONE SILVER : /home/math34/projets/ipssi-archi-bigdata/J3_Retail_Intelligence/data/silver =====
+[Silver] store_sales        | 2 fichier(s) parquet |  40.14 Mo |  674211 lignes relues / 674211 attendues | schema conserve : True | OK
+[Silver] store_sales_rejets | 1 fichier(s) parquet |   0.00 Mo |       0 lignes relues / 0 attendues | schema conserve : True | OK
+[Silver] store              | 1 fichier(s) parquet |   0.01 Mo |      12 lignes relues / 12 attendues | schema conserve : True | OK
+[Silver] date_dim           | 1 fichier(s) parquet |   0.84 Mo |  109573 lignes relues / 109573 attendues | schema conserve : True | OK
+
+Schema relu de silver/store_sales :
+root
+ |-- ss_sold_date_sk: integer (nullable = true)
+ |-- ss_sold_time_sk: integer (nullable = true)
+ |-- ss_item_sk: integer (nullable = true)
+ |-- ss_customer_sk: integer (nullable = true)
+ |-- ss_cdemo_sk: integer (nullable = true)
+ |-- ss_hdemo_sk: integer (nullable = true)
+ |-- ss_addr_sk: integer (nullable = true)
+ |-- ss_store_sk: integer (nullable = true)
+ |-- ss_promo_sk: integer (nullable = true)
+ |-- ss_ticket_number: integer (nullable = true)
+ |-- ss_quantity: integer (nullable = true)
+ |-- ss_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_list_price: decimal(7,2) (nullable = true)
+ |-- ss_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_discount_amt: decimal(7,2) (nullable = true)
+ |-- ss_ext_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_ext_list_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_tax: decimal(7,2) (nullable = true)
+ |-- ss_coupon_amt: decimal(7,2) (nullable = true)
+ |-- ss_net_paid: decimal(7,2) (nullable = true)
+ |-- ss_net_paid_inc_tax: decimal(7,2) (nullable = true)
+ |-- ss_net_profit: decimal(7,2) (nullable = true)
+ |-- lot_source: string (nullable = true)
+ |-- _fichiers_source: string (nullable = true)
+ |-- _date_traitement: timestamp (nullable = true)
+

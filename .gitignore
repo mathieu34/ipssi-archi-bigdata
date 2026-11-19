@@ -14,3 +14,9 @@ sources/readme_jour2.py
 # Mémo personnel de compréhension (hors livrable)
 J2_Retail_Intelligence/_memo_comprehension_J2.pdf
 sources/memo_comprehension_j2.py
+
+# Jour 3 : sorties de test Spark (regenerables, hors livrable)
+J3_Retail_Intelligence/data/test/
+
+# Jour 3 : sommes de controle Spark (inutiles hors Spark local)
+*.crc

@@ -1,0 +1,23 @@
+Version Spark : 4.3.0 
+
+Jeu compare : silver/store_sales, 674211 lignes, 24 colonnes
+
+Reference : fichiers sources .dat (texte delimite par |, sans en-tete) : 89.35 Mo
+
+Format   |    Taille | Lignes relues | Lecture complete | Lecture 1 colonne | Type relu de ss_net_paid / ss_quantity
+----------------------------------------------------------------------------------------------------------------------
+CSV      |  91.97 Mo |        674211 |          0.25 s |           0.36 s | string / string
+JSON     | 353.00 Mo |        674211 |          0.75 s |           0.77 s | double / bigint
+Parquet  |  40.13 Mo |        674211 |          0.10 s |           0.13 s | decimal(7,2) / int
+
+Somme de ss_net_paid relue dans chaque format (controle d'exactitude) :
+  CSV      : 1162073847.88
+  JSON     : 1162073847.88
+  Parquet  : 1162073847.88
+
+Apercu du contenu brut (debut du premier fichier) :
+  CSV : ss_sold_date_sk,ss_sold_time_sk,ss_item_sk,ss_customer_sk,ss_cdemo_sk,ss_hdemo_sk,ss_addr_sk,ss_store_sk,ss_promo_sk,ss_ticket_number,ss_quantity,ss_w
+        36890,5087,3560,97616,1167784,2883,47563,6,165,35,31,51.62,94.98,74.08,647.90,2296.48,1600.22,2944.38,160.75,0.00,2296.48,2457.23,696.26,data
+  JSON : {"ss_sold_date_sk":36890,"ss_sold_time_sk":5087,"ss_item_sk":3560,"ss_customer_sk":97616,"ss_cdemo_sk":1167784,"ss_hdemo_sk":2883,"ss_addr_sk":47563,"
+         {"ss_sold_date_sk":36890,"ss_sold_time_sk":76375,"ss_item_sk":4677,"ss_customer_sk":83216,"ss_cdemo_sk":1440692,"ss_hdemo_sk":1124,"ss_addr_sk":34331,
+  Parquet : fichier binaire (non lisible dans un editeur de texte)

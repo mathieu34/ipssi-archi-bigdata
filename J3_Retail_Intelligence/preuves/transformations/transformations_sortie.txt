@@ -1,0 +1,121 @@
+Version Spark : 4.3.0 
+
+===== 1. Lecture de la zone Silver : /home/math34/projets/ipssi-archi-bigdata/J3_Retail_Intelligence/data/silver =====
+ventes : 674211 | magasins : 12 | jours : 109573
+
+===== 2. Jointures (§4.8.3) =====
+[Jointure 1 ventes x store] lignes avant : 674211 | apres : 674211 | non rapprochees : 0
+[Jointure 2 ventes x date_dim] lignes avant : 674211 | apres : 674211 | non rapprochees : 0
+[Controle tickets] tickets rattaches a plusieurs magasins ou jours : 0
+
+Echantillon des ventes enrichies :
++----------------+-----------+------------+------------+----------+------+-----------+----------+
+|ss_ticket_number|ss_store_sk|s_store_name|      s_city|    d_date|d_year|ss_net_paid|lot_source|
++----------------+-----------+------------+------------+----------+------+-----------+----------+
+|              35|          6|  Bloomfield|  Union Hill|2001-01-01|  2001|    2296.48|      data|
+|              46|          9|  Germantown|      Pierce|2001-01-01|  2001|    7504.20|      data|
+|              41|         11|     Bedford|       Lyons|2001-01-01|  2001|    4221.72|      data|
+|              50|          7|     Buffalo|   Lewisburg|2001-01-02|  2001|     714.70|      data|
+|              93|         10|      Avalon|Cold Springs|2001-01-02|  2001|    1062.00|      data|
++----------------+-----------+------------+------------+----------+------+-----------+----------+
+only showing top 5 rows
+===== 3. Agregation Q3 (§4.8.5) : CA net par magasin et par annee =====
+Lignes du resultat : 60 (attendu : 12 magasins x 5 annees = 60)
+
+Controle de coherence : total du CA net
+  somme ventes : 1162073847.88 | somme agregat : 1162073847.88 | ecart : 0.00
+
+Classement par annee (top 3 et dernier) :
++-----+----------+------------+-----------+---------------+------------+
+|annee|rang_annee|s_store_name|ca_net     |nb_transactions|panier_moyen|
++-----+----------+------------+-----------+---------------+------------+
+|2001 |1         |Hillside    |20022451.30|1522           |13155.36    |
+|2001 |2         |Bloomfield  |19691621.56|1489           |13224.73    |
+|2001 |3         |Buffalo     |19621456.34|1510           |12994.34    |
+|2001 |12        |Avalon      |18737675.19|1467           |12772.78    |
+|2002 |1         |Buffalo     |20039676.27|1570           |12764.13    |
+|2002 |2         |Avalon      |19951690.01|1521           |13117.48    |
+|2002 |3         |Bloomfield  |19736162.06|1551           |12724.80    |
+|2002 |12        |Williamstown|18417258.30|1457           |12640.53    |
+|2003 |1         |Buffalo     |20387489.54|1599           |12750.15    |
+|2003 |2         |Forest      |20117544.12|1524           |13200.49    |
+|2003 |3         |Williamstown|20041806.97|1519           |13194.08    |
+|2003 |12        |Bloomfield  |18600271.10|1406           |13229.21    |
+|2004 |1         |Buffalo     |20748576.85|1569           |13224.08    |
+|2004 |2         |Williamstown|20717130.74|1530           |13540.61    |
+|2004 |3         |Pioneer     |20282799.41|1564           |12968.54    |
+|2004 |12        |Avalon      |18184148.04|1453           |12514.90    |
+|2005 |1         |Germantown  |20430494.13|1556           |13130.14    |
+|2005 |2         |Forest      |19895636.83|1522           |13072.03    |
+|2005 |3         |Hillside    |19530334.98|1524           |12815.18    |
+|2005 |12        |Egypt       |18200785.43|1482           |12281.23    |
++-----+----------+------------+-----------+---------------+------------+
+
+Synthese 2001-2005 (toutes annees confondues) :
++-----------+------------+------------+---------------------+------------+----+
+|ss_store_sk|s_store_name|ca_net_5_ans|nb_transactions_5_ans|panier_moyen|rang|
++-----------+------------+------------+---------------------+------------+----+
+|7          |Buffalo     |99898051.59 |7717                 |12945.19    |1   |
+|0          |Forest      |97862230.86 |7536                 |12985.96    |2   |
+|4          |Elmwood     |97804771.06 |7547                 |12959.42    |3   |
+|9          |Germantown  |97763566.82 |7511                 |13016.05    |4   |
+|8          |Williamstown|97328830.56 |7480                 |13011.88    |5   |
+|3          |Pioneer     |97059006.20 |7473                 |12987.96    |6   |
+|1          |Hillside    |96896791.67 |7497                 |12924.74    |7   |
+|11         |Bedford     |96397146.04 |7515                 |12827.30    |8   |
+|6          |Bloomfield  |95669223.01 |7357                 |13003.84    |9   |
+|10         |Avalon      |95397094.54 |7497                 |12724.70    |10  |
+|5          |Egypt       |95260986.94 |7454                 |12779.85    |11  |
+|2          |Sherwood    |94736148.59 |7416                 |12774.56    |12  |
++-----------+------------+------------+---------------------+------------+----+
+
+Ecart entre le 1er et le dernier magasin, par annee :
++-----+-----------+-----------+---------+
+|annee|     ca_max|     ca_min|ecart_pct|
++-----+-----------+-----------+---------+
+| 2001|20022451.30|18737675.19|     6.86|
+| 2002|20039676.27|18417258.30|     8.81|
+| 2003|20387489.54|18600271.10|     9.61|
+| 2004|20748576.85|18184148.04|    14.10|
+| 2005|20430494.13|18200785.43|    12.25|
++-----+-----------+-----------+---------+
+
+===== 4. Zone Gold : /home/math34/projets/ipssi-archi-bigdata/J3_Retail_Intelligence/data/gold/q3_ca_magasin_annee =====
+[Gold] lignes relues : 60 (attendu 60) | couples (annee, magasin) distincts : 60 | CA total relu : 1162073847.88 (attendu 1162073847.88)
+[Gold] controle apres ecriture : OK
+
+Schema relu du jeu Gold :
+root
+ |-- annee: integer (nullable = true)
+ |-- rang_annee: integer (nullable = true)
+ |-- ss_store_sk: integer (nullable = true)
+ |-- s_store_id: string (nullable = true)
+ |-- s_store_name: string (nullable = true)
+ |-- s_city: string (nullable = true)
+ |-- s_state: string (nullable = true)
+ |-- ca_net: decimal(17,2) (nullable = true)
+ |-- nb_transactions: long (nullable = true)
+ |-- panier_moyen: decimal(18,2) (nullable = true)
+ |-- nb_lignes_vente: long (nullable = true)
+ |-- quantite_vendue: long (nullable = true)
+ |-- _sources: string (nullable = true)
+ |-- _date_traitement: timestamp (nullable = true)
+
+Contenu (annee 2005) :
++-----+----------+-----------+----------------+------------+------------+-------+-----------+---------------+------------+---------------+---------------+
+|annee|rang_annee|ss_store_sk|s_store_id      |s_store_name|s_city      |s_state|ca_net     |nb_transactions|panier_moyen|nb_lignes_vente|quantite_vendue|
++-----+----------+-----------+----------------+------------+------------+-------+-----------+---------------+------------+---------------+---------------+
+|2005 |1         |9          |AAAAAAAAAAAAAAAJ|Germantown  |Pierce      |WV     |20430494.13|1556           |13130.14    |11619          |586686         |
+|2005 |2         |0          |AAAAAAAAAAAAAAAA|Forest      |Post Oak    |CO     |19895636.83|1522           |13072.03    |11277          |569474         |
+|2005 |3         |1          |AAAAAAAAAAAAAAAB|Hillside    |Jerusalem   |TN     |19530334.98|1524           |12815.18    |11388          |573172         |
+|2005 |4         |10         |AAAAAAAAAAAAAAAK|Avalon      |Cold Springs|TN     |19449757.42|1538           |12646.14    |11321          |572325         |
+|2005 |5         |4          |AAAAAAAAAAAAAAAE|Elmwood     |Lakeside    |KY     |19427361.77|1537           |12639.79    |11357          |572423         |
+|2005 |6         |11         |AAAAAAAAAAAAAAAL|Bedford     |Lyons       |KY     |19375520.03|1516           |12780.69    |11101          |554219         |
+|2005 |7         |3          |AAAAAAAAAAAAAAAD|Pioneer     |Austin      |TX     |19139697.25|1484           |12897.37    |11183          |566390         |
+|2005 |8         |7          |AAAAAAAAAAAAAAAH|Buffalo     |Lewisburg   |KS     |19100852.59|1469           |13002.62    |11080          |561351         |
+|2005 |9         |6          |AAAAAAAAAAAAAAAG|Bloomfield  |Union Hill  |IN     |18843608.62|1442           |13067.69    |10759          |548460         |
+|2005 |10        |8          |AAAAAAAAAAAAAAAI|Williamstown|State Line  |TX     |18686741.81|1464           |12764.17    |10852          |548477         |
+|2005 |11        |2          |AAAAAAAAAAAAAAAC|Sherwood    |Mount Vernon|CA     |18627011.45|1456           |12793.28    |10913          |547910         |
+|2005 |12        |5          |AAAAAAAAAAAAAAAF|Egypt       |Redland     |KY     |18200785.43|1482           |12281.23    |10617          |541646         |
++-----+----------+-----------+----------------+------------+------------+-------+-----------+---------------+------------+---------------+---------------+
+

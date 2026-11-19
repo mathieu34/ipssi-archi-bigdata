@@ -1,0 +1,9 @@
+# Versions observees le 18/11/2026
+PRETTY_NAME="Ubuntu 24.04.3 LTS"
+Python 3.12.3
+openjdk version "21.0.13.0.3" 2026-10-24
+PySpark 4.3.0
+Hadoop 3.5.0
+Coeurs : 16
+               total        used        free      shared  buff/cache   available
+Mem:           9.7Gi       6.8Gi       1.5Gi       4.0Mi       1.6Gi       2.9Gi
